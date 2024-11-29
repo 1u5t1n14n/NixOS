@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+
+  environment.systemPackages = [
+    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
+  ];
 
   programs.firefox = {
     enable = true;

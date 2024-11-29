@@ -1,5 +1,5 @@
 hardware-configuration.nix
-configuration.nix
+#configuration.nix
 
 *.7z
 *.dmg
