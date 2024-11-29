@@ -1,14 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
-  environment.systemPackages = [
-    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
-  ];
-
   programs.firefox = {
     enable = true;
-
     preferences = {
       "app.normandy.api_url" = "";
       "app.normandy.enabled" = false;
