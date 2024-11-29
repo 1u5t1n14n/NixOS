@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, firefox, home-manager, ... }:
     let
       system = "86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
