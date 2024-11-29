@@ -9,6 +9,7 @@
       "ALT, RETURN, exec, alacritty"
       "ALT, SPACE, exec, rofi -show combi -combi-modes 'drun,recursivebrowser,keys,ssh,window,run' -modes combi"
       "ALT, F, exec, nautilus"
+      "ALT, V, exec, vi %F"
 
       "ALT, Q, killactive"
       "ALT, ESCAPE, exit"
