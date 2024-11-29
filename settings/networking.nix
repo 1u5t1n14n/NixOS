@@ -23,7 +23,7 @@
 
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
   };
 
   # networking.proxy.default = "http://user:password@proxy:port/";
