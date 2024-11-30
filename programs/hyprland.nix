@@ -23,6 +23,7 @@
 	environment.systemPackages = with pkgs; [
 		rofi-wayland
 		hyprpaper
+    nwg-dock-hyprland
 		mpv
 		superfile
 		zathura
