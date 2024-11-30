@@ -87,7 +87,7 @@
         activate-window-menu = ["<Alt>comma"];
         close = ["<Alt>q"];
         maximize = ["<Alt>Up"];
-        unmaximize = ["<Alt>Down"];
+        unmaximize = ["<Alt>s"];
         minimize = ["<Alt>minus"];
         always-on-top = ["<Alt><Shift>p"];
         switch-to-workspace-right = ["<Super>l"];
@@ -128,5 +128,13 @@
       };
     };
   };
+
+  home.file".config/gtk-3.0/bookmarks".text = ''
+file:///home/1u5t1n14n/Documents
+file:///home/1u5t1n14n/Repositories
+file:///home/1u5t1n14n/Repositories/NixOS
+file:///home/1u5t1n14n/Pictures
+file:///home/1u5t1n14n/Downloads
+  '';
 
 }

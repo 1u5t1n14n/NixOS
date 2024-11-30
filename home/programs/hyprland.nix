@@ -75,7 +75,6 @@
     ];
     exec-once = [
       "hyprpaper"
-      "nwg-dock-hyprland"
     ];
     general = {
       gaps_in = 8;
@@ -168,16 +167,6 @@
 [preferred]
 default = hyprland;gtk
 org.freedesktop.impl.portal.FileChooser = gnome
-  '';
-
-  home.file.".config/nwg-dock-hyprland/config.json".text = ''
-{
-  "launcher": "nwg-drawer",
-  "launchers": [
-    "firefox",
-    "obsidian",
-  ]
-}
   '';
 
 }
