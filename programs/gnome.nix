@@ -56,6 +56,11 @@
     morewaita-icon-theme
     wordbook
     errands
+    switcheroo
+    key-rack
+    morphosis
+    rnote
+    snoop
   ];
 
 }

@@ -5,6 +5,8 @@
   environment.systemPackages = with pkgs.gnomeExtensions; [
     gsconnect
     dock-from-dash
+    just-perfection
+    custom-hot-corners-extended
     blur-my-shell
     unite
     transparent-window-moving
