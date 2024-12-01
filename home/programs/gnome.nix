@@ -46,12 +46,14 @@
           "just-perfection-desktop@just-perfection"
         ];
         favorite-apps = [
-          "Alacritty.desktop" #Wezterm einstellen!
+          "Alacritty.desktop"
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
-          "org.gnome.Calendar.desktop"
           "obsidian.desktop"
-          "mpv.desktop"
+          "minecraft-launcher.desktop"
+          "discord.desktop"
+          "steam.desktop"
+          "jetbrains-toolbox.desktop"
           "org.inkscape.Inkscape.desktop"
         ];
       };

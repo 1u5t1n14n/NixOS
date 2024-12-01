@@ -10,7 +10,7 @@
 		./gnome.nix
 		./neovim.nix
 		./tmux.nix
-    ./alacritty.nix
+    ./wezterm.nix
     ./steam.nix
     ./code.nix
 	];

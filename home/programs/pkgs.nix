@@ -10,7 +10,7 @@
     ./hyprland.nix
     ./firefox.nix
     ./github.nix
-    ./alacritty.nix
+    ./wezterm.nix
     ./superfile.nix
   ];
 
