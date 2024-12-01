@@ -134,6 +134,10 @@ file:///home/1u5t1n14n/Repositories
 file:///home/1u5t1n14n/Repositories/NixOS
 file:///home/1u5t1n14n/Pictures
 file:///home/1u5t1n14n/Downloads
+
+https://www.rustfinity.com/
+https://coconote.app/brainrot
+https://marblescience.com/message-defying-entropy
   '';
 
 }
