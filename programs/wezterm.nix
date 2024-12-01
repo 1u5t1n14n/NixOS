@@ -7,6 +7,7 @@
     wl-clipboard
     git
     onefetch
+    uwufetch
     lazygit
     cmatrix
     wget
