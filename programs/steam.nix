@@ -9,7 +9,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    dissent
+    discord
   ];
 
 }
