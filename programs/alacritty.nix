@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     wl-clipboard
     git
+    onefetch
     lazygit
     cmatrix
     alacritty
