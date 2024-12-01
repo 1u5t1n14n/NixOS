@@ -225,10 +225,10 @@
     MOZ_ENABLE_WAYLAND = "1";
   };
 
-  system.activationScripts = {
-    customScript = {
-      text = lib.fileContents ../home/files/src/sidebar.sh;
-    };
-  };
+  #system.activationScripts = {
+    #customScript = {
+      #text = lib.fileContents ../home/files/src/sidebar.sh;
+    #};
+  #};
 
 }
