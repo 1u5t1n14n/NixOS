@@ -9,6 +9,7 @@ config.webgpu_power_preference = "HighPerformance"
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 11.0
 config.enable_tab_bar = false
+config.audible_bell = "Disabled"
 
 config.window_padding = {
 	left = 0,
