@@ -2,12 +2,6 @@
 
 {
 
-  # doesnt work as intended
-  #xdg.mime.defaultApplications = {
-  #  "inode/directory" = "org.gnome.Nautilus.desktop";
-  #  "application/x-gnome-saved-search" = "org.gnome.Nautilus.desktop";
-  #};
-
   services.xserver = {
     displayManager.gdm = {
       enable = true;
@@ -37,13 +31,11 @@
     totem
     geary
     baobab
-    cheese
     gnome-text-editor
     gnome-clocks
     gnome-logs
     gnome-system-monitor
     gnome-weather
-    gnome-connections
     simple-scan
     file-roller
     gnome-console
