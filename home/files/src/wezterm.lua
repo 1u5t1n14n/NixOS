@@ -37,5 +37,5 @@ config.color_scheme = "Kanagawa (Gogh)"
 	--local tab, pane, window = mux.spawn_window(cmd or {})
 	--local gui_window = window:gui_window()
 	--gui_window:maximize()
-end)
+--end)
 return config
