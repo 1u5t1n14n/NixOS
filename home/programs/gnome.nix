@@ -43,9 +43,10 @@
           "gsconnect@andyholmes.github.io"
           "launch-new-instance@gnome-shell-extensions.gcampax.github.com"
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
+          "just-perfection-desktop@just-perfection"
         ];
         favorite-apps = [
-          "Alacritty.desktop"
+          "Alacritty.desktop" #Wezterm einstellen!
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
           "org.gnome.Calendar.desktop"
@@ -58,6 +59,11 @@
         hide-window-titlebars = "always";
         show-window-buttons = "never";
         show-window-title = "never";
+      };
+      "org/gnome/shell/extensions/just-perfection" = {
+        dash = false;
+        dash-separator = true;
+        activities-button = false;
       };
       "org/gnome/shell/app-switcher" = {
         current-workspace-only = true;
