@@ -7,20 +7,6 @@
     name = "Firefox";
     isDefault = true;
     id = 0;
-    containers = {
-      personal = {
-        name = "Personal";
-        color = "purple";
-        icon = "fingerprint";
-        id = 1;
-      };
-      educational = {
-        name = "Educational";
-        color = "green";
-        icon = "tree";
-        id = 2;
-      };
-    };
     search = {
       force = true;
       default = "SearXNG";
