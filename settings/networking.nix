@@ -5,8 +5,11 @@
     hostName = "Morpheus";
     networkmanager.enable = true;
     firewall.enable = true;
-    firewall.allowedTCPPorts = [ 22 ];
+    firewall.allowedTCPPorts = [ 22 3389 ];
+    firewall.allowedUDPPorts = [ 3389 ];
   };
+
+  services.gnome.gnome-remote-desktop.enable = true;
 
   services.openssh = {
     enable = true;

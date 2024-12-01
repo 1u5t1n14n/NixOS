@@ -24,6 +24,7 @@
 
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
+    gnome-connections
     gnome-disk-utility
     gnome-music
     nixos-render-docs
@@ -43,6 +44,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    gnome-remote-desktop
     gnome-frog
     wike
     dialect
