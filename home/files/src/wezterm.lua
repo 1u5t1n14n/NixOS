@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 --config.default_prog = { "fish", "-l" }
 
-config.enable_wayland = true
+config.enable_wayland = false
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
 
