@@ -46,7 +46,7 @@
           "just-perfection-desktop@just-perfection"
         ];
         favorite-apps = [
-          "Alacritty.desktop"
+          "org.wezfurlong.wezterm.desktop"
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
           "obsidian.desktop"
