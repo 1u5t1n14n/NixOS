@@ -62,6 +62,7 @@
     key-rack
     morphosis
     rnote
+    gnome-secrets
     snoop
   ];
 
