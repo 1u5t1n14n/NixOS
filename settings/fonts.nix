@@ -8,4 +8,8 @@
     corefonts
   ];
 
+  environment.systemPackages = with pkgs; [
+    atkinson-hyperlegible
+  ];
+
 }

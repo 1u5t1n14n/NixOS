@@ -217,6 +217,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.cmd("set cursorline")
 
+vim.o.list = true
+vim.o.listchars = 'tab:→ ,space:·,trail:-,nbsp:·'
+
 vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
 
 vim.g.mapleader = " "
