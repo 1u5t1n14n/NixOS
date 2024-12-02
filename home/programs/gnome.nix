@@ -54,7 +54,7 @@
           "discord.desktop"
           "steam.desktop"
           "jetbrains-toolbox.desktop"
-          "org.inkscape.Inkscape.desktop"
+          "io.github.mrvladus.List.desktop"
         ];
       };
       "org/gnome/shell/extensions/unite" = {
