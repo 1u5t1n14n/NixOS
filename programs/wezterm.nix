@@ -4,6 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     wezterm
+    fzf
     wl-clipboard
     git
     onefetch
