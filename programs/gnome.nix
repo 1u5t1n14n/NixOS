@@ -64,6 +64,7 @@
     rnote
     gnome-secrets
     snoop
+    citations
   ];
 
 }
