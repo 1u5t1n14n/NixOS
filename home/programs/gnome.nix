@@ -5,6 +5,26 @@
   dconf = {
     enable = true;
     settings = {
+      "com/github/tenderowl/frog" = {
+        active-language = "deu";
+        telemetry = false;
+      };
+      "io/github/mrvladus/List" = {
+        launch-on-startup = false;
+        maximized = false;
+        run-in-background = false;
+      };
+      "re/sonny/Tangram/instances/5423a868258b43c19a0c1cac5f8166d1" = {
+        name = "Proton Calendar";
+        url = "https://calendar.proton.me/";
+      };
+      "re/sonny/Tangram/instances/b7669cb25b2a4729b096d7f16ff99cb1" = {
+        name = "Proton Mail";
+        url = "https://mail.proton.me/";
+      };
+      "re/sonny/Tangram" = {
+        instances = ["b7669cb25b2a4729b096d7f16ff99cb1", "5423a868258b43c19a0c1cac5f8166d1"];
+      };
       "org/gnome/desktop/applications/terminal" = {
         exec = "alacritty";
         exec-arg = "-e";
