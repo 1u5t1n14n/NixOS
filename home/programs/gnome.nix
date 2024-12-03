@@ -23,7 +23,7 @@
         url = "https://mail.proton.me/";
       };
       "re/sonny/Tangram" = {
-        instances = ["b7669cb25b2a4729b096d7f16ff99cb1", "5423a868258b43c19a0c1cac5f8166d1"];
+        instances = ["b7669cb25b2a4729b096d7f16ff99cb1" "5423a868258b43c19a0c1cac5f8166d1"];
       };
       "org/gnome/desktop/applications/terminal" = {
         exec = "alacritty";
