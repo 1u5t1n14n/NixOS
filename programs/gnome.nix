@@ -26,6 +26,7 @@
     gnome-tour
     gnome-connections
     gnome-disk-utility
+    gnome.cheese
     gnome-music
     nixos-render-docs
     yelp
@@ -33,12 +34,12 @@
     geary
     baobab
     gnome-text-editor
-    gnome-clocks
+    #gnome-clocks
     gnome-logs
     gnome-system-monitor
     gnome-weather
     simple-scan
-    file-roller
+    #file-roller
     gnome-console
     seahorse
   ];
