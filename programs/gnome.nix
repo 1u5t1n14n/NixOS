@@ -54,6 +54,8 @@
     mousam
     impression
     gnome-tweaks
+    textpieces
+    mousai
     papers
     dconf-editor
     morewaita-icon-theme
