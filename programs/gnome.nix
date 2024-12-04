@@ -26,7 +26,8 @@
     gnome-tour
     gnome-connections
     gnome-disk-utility
-    gnome.cheese
+    cheese
+    snapshot
     gnome-music
     nixos-render-docs
     yelp
