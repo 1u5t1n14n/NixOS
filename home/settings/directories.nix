@@ -19,6 +19,7 @@
   };
 
   home.file."Repositories/.keep".text = "";
+  home.file."Pictures/Wallpapers/.keep".text = "";
 
   home.file."Templates/index.html".text = ''
 <!DOCTYPE html>

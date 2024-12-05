@@ -29,8 +29,9 @@
 
 	system.activationScripts = {
 		wallpaperDownload.text = ''
-			wget https://images.alphacoders.com/134/1347517.png -o /home/1u5t1n14n/Pictures/Wallpapers/Wallpaper.png
-			wget https://images7.alphacoders.com/134/1345733.png -o /home/1u5t1n14n/Pictures/Wallpapers/WallpaperDark.png
+			cd /home/1u5t1n14n/Pictures/Wallpapers/
+			${pkgs.wget}/bin/wget https://images.alphacoders.com/134/1347517.png -O Wallpaper.png
+			${pkgs.wget}/bin/wget https://images7.alphacoders.com/134/1345733.png -O WallpaperDark.png
 		'';
 	};
 
