@@ -209,7 +209,7 @@ require("telescope").setup({
 require("telescope").load_extension("ui-select")
 
 -- General Settings
-vim.cmd("set expandtab")
+vim.cmd("set noexpandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")

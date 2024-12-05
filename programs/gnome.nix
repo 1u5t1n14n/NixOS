@@ -23,52 +23,56 @@
   services.gvfs.enable = true;
 
   environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-connections
-    gnome-disk-utility
-    cheese
-    snapshot
-    gnome-music
-    nixos-render-docs
-    yelp
-    totem
-    geary
     baobab
-    gnome-text-editor
-    #gnome-clocks
-    gnome-logs
-    gnome-system-monitor
-    gnome-weather
-    simple-scan
-    #file-roller
+    cheese
+    geary
+    gnome-connections
     gnome-console
+    gnome-disk-utility
+    gnome-logs
+    gnome-music
+    gnome-system-monitor
+    gnome-text-editor
+    gnome-tour
+    gnome-weather
+    nixos-render-docs
     seahorse
+    simple-scan
+    snapshot
+    totem
+    yelp
   ];
 
   environment.systemPackages = with pkgs; [
-    gnome-remote-desktop
-    gnome-frog
-    wike
-    dialect
-    tangram
-    memorado
-    mousam
-    impression
-    gnome-tweaks
-    textpieces
-    mousai
-    papers
-    dconf-editor
-    morewaita-icon-theme
-    wordbook
-    errands
-    switcheroo
-    key-rack
-    morphosis
-    rnote
-    gnome-secrets
-    snoop
+    alpaca
+    apostrophe
+    celeste
     citations
+    dconf-editor
+    dialect
+    errands
+    fragments
+    gnome-frog
+    gnome-remote-desktop
+    gnome-secrets
+    gnome-tweaks
+    impression
+    key-rack
+    memorado
+    morewaita-icon-theme
+    morphosis
+    mousai
+    mousam
+    papers
+    parabolic
+    rnote
+    snoop
+    switcheroo
+    tangram
+    textpieces
+    upscaler
+    wike
+    wordbook
   ];
 
 }
