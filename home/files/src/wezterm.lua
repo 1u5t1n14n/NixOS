@@ -30,12 +30,5 @@ config.window_background_opacity = 0.9
 config.text_background_opacity = 1.0
 
 config.color_scheme = "Kanagawa (Gogh)"
---config.window_decorations = "NONE" (is kinda not working)
 
---local mux = wezterm.mux
---wezterm.on("gui-startup", function(window)
-	--local tab, pane, window = mux.spawn_window(cmd or {})
-	--local gui_window = window:gui_window()
-	--gui_window:maximize()
---end)
 return config
