@@ -52,10 +52,19 @@
 				logout-prompt = false;
 			};
 			"org/gnome/settings-daemon/plugins/power" = {
+				idle-dim = false;
+				power-button-action = "poweroff";
+				power-saver-profile-on-low-battery = true;
 				sleep-inactive-battery-timeout = 2700;
 				sleep-inactive-ac-timeout = 0;
 			};
+			"org/gnome/settings-daemon/plugins/media-keys" = {
+				increase-text-size = ["<Super>p"];
+				logout = ["<Alt>escape"];
+			};
 			"org/gnome/shell" = {
+				last-selected-power-profile = "power-saver";
+				remember-mount-password = true;
 				disable-user-extensions = false;
 				enabled-extensions = [
 					"unite@hardpixel.eu"
