@@ -27,6 +27,13 @@
     };
   };
 
+	system.activationScripts = {
+		wallpaperDownload.text = ''
+			wget https://images.alphacoders.com/134/1347517.png -o /home/1u5t1n14n/Pictures/Wallpapers/Wallpaper.png
+			wget https://images7.alphacoders.com/134/1345733.png -o /home/1u5t1n14n/Pictures/Wallpapers/WallpaperDark.png
+		'';
+	};
+
   nixpkgs.config.allowBroken = true;
   nixpkgs.config.allowUnfree = true;
 

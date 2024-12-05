@@ -5,7 +5,7 @@
     hostName = "Morpheus";
     networkmanager.enable = true;
     firewall.enable = true;
-    firewall.allowedTCPPorts = [ 22 3000 3389 ];
+    firewall.allowedTCPPorts = [ 22 3389 ];
     firewall.allowedUDPPorts = [ 3389 ];
   };
 

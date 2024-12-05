@@ -33,8 +33,8 @@
 				exec-arg = "-e";
 			};
 			"org/gnome/desktop/background" = {
-				picture-uri-dark = "file:///home/1u5t1n14n/Pictures/Wallpapers/MacOS.png";
-				picture-uri = "file:///home/1u5t1n14n/Pictures/Wallpapers/MacOS-Light.jpg";
+				picture-uri-dark = "file:///home/1u5t1n14n/Pictures/Wallpapers/WallpaperDark.png";
+				picture-uri = "file:///home/1u5t1n14n/Pictures/Wallpapers/Wallpaper.png";
 			};
 			"org/gnome/tweaks" = {
 				show-extensions-notice = false;
