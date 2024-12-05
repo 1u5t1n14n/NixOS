@@ -115,7 +115,7 @@
 			"org/gnome/mutter" = {
 				edge-tiling = true;
 				dynamic-workspaces = true;
-				workspaces-only-primary = false;
+				workspaces-only-primary = true;
 				center-new-windows = false;
 			};
 			"org/gnome/desktop/privacy" = {
