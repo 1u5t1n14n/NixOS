@@ -14,16 +14,16 @@
         maximized = false;
         run-in-background = false;
       };
-      "re/sonny/Tangram/instances/5423a868258b43c19a0c1cac5f8166d1" = {
+      "re/sonny/Tangram/instances/calendar" = {
         name = "Proton Calendar";
         url = "https://calendar.proton.me/";
       };
-      "re/sonny/Tangram/instances/b7669cb25b2a4729b096d7f16ff99cb1" = {
+      "re/sonny/Tangram/instances/mail" = {
         name = "Proton Mail";
         url = "https://mail.proton.me/";
       };
       "re/sonny/Tangram" = {
-        instances = ["b7669cb25b2a4729b096d7f16ff99cb1" "5423a868258b43c19a0c1cac5f8166d1"];
+        instances = ["calendar" "mail"];
       };
       "org/gnome/desktop/applications/terminal" = {
         exec = "alacritty";
@@ -86,6 +86,9 @@
         dash = false;
         dash-separator = true;
         activities-button = false;
+        overlay-key = false;
+        startup-status = 0;
+        workspace-wrap-around = true;
       };
       "org/gnome/shell/app-switcher" = {
         current-workspace-only = true;
