@@ -44,12 +44,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    alpaca
-    apostrophe
     celeste
     citations
     dconf-editor
-    dialect
     errands
     fragments
     gnome-frog
@@ -57,7 +54,6 @@
     gnome-secrets
     gnome-tweaks
     impression
-    key-rack
     memorado
     morewaita-icon-theme
     morphosis
@@ -70,7 +66,6 @@
     switcheroo
     tangram
     textpieces
-    upscaler
     wike
     wordbook
   ];
