@@ -4,7 +4,6 @@
 
   imports = [
     ./locale.nix
-    ./linkwarden.nix
     ./user.nix
     ./networking.nix
     ./sound.nix
