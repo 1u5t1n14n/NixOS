@@ -33,13 +33,13 @@
         default_theme = "simple";
       };
       engines = lib.mapAttrsToList (name: value: { inherit name; } // value) {
-        "duckduckgo".disabled = true;
-        "brave".disabled = true;
+        "duckduckgo".disabled = false;
+        "brave".disabled = false;
         "bing".disabled = false;
-        "mojeek".disabled = true;
+        "mojeek".disabled = false;
         "mwmbl".disabled = false;
         "mwmbl".weight = 0.4;
-        "qwant".disabled = true;
+        "qwant".disabled = false;
         "crowdview".disabled = false;
         "crowdview".weight = 0.5;
         "curlie".disabled = true;
@@ -55,14 +55,14 @@
         "wikiversity".weight = 0.5;
         "wikivoyage".disabled = false;
         "wikivoyage".weight = 0.5;
-        "currency".disabled = true;
+        "currency".disabled = false;
         "dictzone".disabled = true;
-        "lingva".disabled = true;
+        "lingva".disabled = false;
         "bing images".disabled = false;
-        "brave.images".disabled = true;
-        "duckduckgo images".disabled = true;
+        "brave.images".disabled = false;
+        "duckduckgo images".disabled = false;
         "google images".disabled = false;
-        "qwant images".disabled = true;
+        "qwant images".disabled = false;
         "1x".disabled = true;
         "artic".disabled = false;
         "deviantart".disabled = false;
