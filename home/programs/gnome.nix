@@ -8,10 +8,6 @@
 			"org/gnome/epiphany" = {
 				ask-for-default = false;
 			};
-			"com/github/tenderowl/frog" = {
-				active-language = "deu";
-				telemetry = false;
-			};
 			"io/github/mrvladus/List" = {
 				launch-on-startup = false;
 				maximized = false;

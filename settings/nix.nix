@@ -2,30 +2,30 @@
 
 {
 
-  imports = [
-    ./locale.nix
-    ./user.nix
-    ./networking.nix
-    ./sound.nix
-    ./displaylink.nix
-    ./printing.nix
-    ./gsconnect.nix
-    ./executable.nix
-    ./searxng.nix
-    ./fonts.nix
-  ];
+	imports = [
+		./displaylink.nix
+		./executable.nix
+		./fonts.nix
+		./gsconnect.nix
+		./locale.nix
+		./networking.nix
+		./printing.nix
+		./searxng.nix
+		./sound.nix
+		./user.nix
+	];
 
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
+	nix = {
+		settings = {
+			auto-optimise-store = true;
+			experimental-features = [ "nix-command" "flakes" ];
+		};
+		gc = {
+			automatic = true;
+			dates = "03:15";
+			options = "--delete-older-than 2d";
+		};
+	};
 
 	system.activationScripts = {
 		wallpaperDownload.text = ''
@@ -35,7 +35,7 @@
 		'';
 	};
 
-  nixpkgs.config.allowBroken = true;
-  nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowBroken = true;
+	nixpkgs.config.allowUnfree = true;
 
 }

@@ -16,20 +16,20 @@
 	};
 
 	environment.systemPackages = with pkgs; [
-    cmake
-    gnumake
+		cmake
+		gnumake
 		gcc
 		tree-sitter
 		nodejs
 		zip
 		unzip
-    fd
-    ripgrep
+		fd
+		ripgrep
 	];
 
-  programs.java = {
-    enable = true;
-    package = pkgs.jdk;
-  };
+	programs.java = {
+		enable = true;
+		package = pkgs.jdk;
+	};
 
 }

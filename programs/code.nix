@@ -2,10 +2,9 @@
 
 {
 
-  environment.systemPackages = with pkgs; [
-    jetbrains.idea-ultimate
-    jetbrains-toolbox
-    greenfoot
-  ];
+	environment.systemPackages = with pkgs; [
+		jetbrains-toolbox
+		greenfoot
+	];
 
 }

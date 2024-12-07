@@ -2,6 +2,6 @@
 
 {
 
-  home.file.".config/wezterm/wezterm.lua".text = lib.fileContents ../files/src/wezterm.lua;
+	home.file.".config/wezterm/wezterm.lua".text = lib.fileContents ../files/wezterm.lua;
 
 }

@@ -72,12 +72,6 @@
 					updateInterval = 7 * 24 * 60 * 60 * 1000;
 					definedAliases = [ "@yt" ];
 				};
-				"Perplexity" = {
-					urls = [{ template = "https://www.perplexity.ai/search/{searchTerms}"; }];
-					iconUpdateURL = "https://www.perplexity.ai/favicon.ico";
-					updateInterval = 7 * 24 * 60 * 60 * 1000;
-					definedAliases = [ "@pp" ];
-				};
 				"Arch Wiki" = {
 					urls = [{ template = "https://wiki.archlinux.org/title/Special:Search/{searchTerms}"; }];
 					iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";

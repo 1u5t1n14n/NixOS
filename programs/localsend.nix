@@ -2,7 +2,7 @@
 
 {
 
-  programs.localsend.enable = true;
-  programs.localsend.openFirewall = true;
+	programs.localsend.enable = true;
+	programs.localsend.openFirewall = true;
 
 }

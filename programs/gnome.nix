@@ -2,25 +2,24 @@
 
 {
 
-  services.xserver = {
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome.enable = true;
-  };
+	services.xserver = {
+		displayManager.gdm = {
+			enable = true;
+			wayland = true;
+		};
+		desktopManager.gnome.enable = true;
+	};
 
-  environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "gtk2";
-  };
+	environment.sessionVariables = {
+		QT_QPA_PLATFORMTHEME = "gtk2";
+	};
 
-  services.libinput.enable = true;
-
-  services.gnome.evolution-data-server.enable = true;
-  services.gnome.gnome-online-accounts.enable = true;
-  services.accounts-daemon.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.gvfs.enable = true;
+	services.libinput.enable = true;
+	services.gnome.evolution-data-server.enable = true;
+	services.gnome.gnome-online-accounts.enable = true;
+	services.accounts-daemon.enable = true;
+	services.gnome.gnome-keyring.enable = true;
+	services.gvfs.enable = true;
 
 	environment.gnome.excludePackages = with pkgs; [
 		baobab
@@ -50,8 +49,6 @@
 		dconf-editor
 		errands
 		fragments
-		gnome-frog
-		gnome-remote-desktop
 		gnome-secrets
 		gnome-tweaks
 		impression

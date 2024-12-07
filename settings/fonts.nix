@@ -2,14 +2,11 @@
 
 {
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    inter
-    corefonts
-  ];
-
-  environment.systemPackages = with pkgs; [
-    atkinson-hyperlegible
-  ];
+	fonts.packages = with pkgs; [
+		(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+		inter
+		corefonts
+		atkinson-hyperlegible
+	];
 
 }

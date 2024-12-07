@@ -2,14 +2,14 @@
 
 {
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+	programs.steam = {
+		enable = true;
+		remotePlay.openFirewall = true;
+		dedicatedServer.openFirewall = true;
+	};
 
-  environment.systemPackages = with pkgs; [
-    discord
-  ];
+	environment.systemPackages = with pkgs; [
+		discord
+	];
 
 }

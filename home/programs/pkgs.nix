@@ -1,20 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./gnome.nix
-    ./neovim.nix
-    ./git.nix
-    ./zsh.nix
-    ./zathura.nix
-    ./hyprland.nix
-    ./firefox.nix
-    ./github.nix
-    ./wezterm.nix
-    ./superfile.nix
-  ];
+	imports = [
+		./firefox.nix
+		./git.nix
+		./github.nix
+		./gnome.nix
+		./hyprland.nix
+		./neovim.nix
+		./superfile.nix
+		./wezterm.nix
+		./zathura.nix
+		./zsh.nix
+	];
 
-  home.packages = with pkgs; [
-  ];
+	home.packages = with pkgs; [ ];
 
 }

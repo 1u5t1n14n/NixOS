@@ -2,8 +2,8 @@
 
 {
 	imports = [
-    ./programs/pkgs.nix
-    ./settings/directories.nix
+		./programs/pkgs.nix
+		./settings/directories.nix
 	];
 
 	home.username = "1u5t1n14n";

@@ -2,21 +2,23 @@
 
 {
 
-  environment.systemPackages = with pkgs; [
-    wezterm
-    fzf
-    wl-clipboard
-    git
-    onefetch
-    uwufetch
-    lazygit
-    cmatrix
-    wget
-    bat
-    fastfetch
-    browsh
-    figlet
-    zfxtop
-  ];
+	environment.systemPackages = with pkgs; [
+		bat
+		browsh
+		cmatrix
+		fastfetch
+		figlet
+		fzf
+		gh
+		git
+		lazygit
+		onefetch
+		uwufetch
+		wezterm
+		wget
+		wl-clipboard
+		zfxtop
+		zsh
+	];
 
 }

@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
+			{ out,                            "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -33,12 +33,12 @@ local plugins = {
 		branch = "v3.x",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
 	},
-	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-lualine/lualine.nvim",        dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "OXY2DEV/markview.nvim", lazy = false },
-	{ "lervag/vimtex", lazy = false },
+	{ "OXY2DEV/markview.nvim",            lazy = false },
+	{ "lervag/vimtex",                    lazy = false },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -60,7 +60,7 @@ local plugins = {
 	},
 	{ "hrsh7th/nvim-cmp" },
 	{ "eandrju/cellular-automaton.nvim" },
-	{ "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" } },
+	{ "goolord/alpha-nvim",             dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" } },
 	{ "rebelot/kanagawa.nvim" },
 }
 local opts = {}
