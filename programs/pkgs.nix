@@ -12,7 +12,6 @@
 		./steam.nix
 		./tmux.nix
 		./wezterm.nix
-		./zsh.nix
 	];
 
 	environment.systemPackages = with pkgs; [
