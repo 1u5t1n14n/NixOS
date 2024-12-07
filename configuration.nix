@@ -3,7 +3,7 @@
 {
 
 	imports = [
-		/etc/nixos/hardware-configuration.nix
+		./hardware-configuration.nix
 		./programs/pkgs.nix
 		./settings/nix.nix
 	];
