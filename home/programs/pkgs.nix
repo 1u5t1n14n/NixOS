@@ -4,7 +4,6 @@
 	imports = [
 		./firefox.nix
 		./git.nix
-		./github.nix
 		./gnome.nix
 		./hyprland.nix
 		./neovim.nix
