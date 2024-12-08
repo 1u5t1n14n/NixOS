@@ -49,6 +49,7 @@
 		dconf-editor
 		errands
 		fragments
+		gapless
 		gnome-secrets
 		gnome-tweaks
 		impression
