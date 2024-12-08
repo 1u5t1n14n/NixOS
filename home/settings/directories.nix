@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -33,5 +33,14 @@
 </body>
 </html>
 	'';
+
+	home.activation = {
+		wallpaperDownload = lib.hm.dag.entryAfter ["writeBoundary"] ''
+			mkdir -p $HOME/Pictures/Wallpapers
+			cd $HOME/Pictures/Wallpapers
+			${pkgs.wget}/bin/wget https://images.alphacoders.com/134/1347517.png -O Wallpaper.png
+			${pkgs.wget}/bin/wget https://images7.alphacoders.com/134/1345733.png -O WallpaperDark.png
+		'';
+	};
 
 }

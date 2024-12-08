@@ -27,14 +27,6 @@
 		};
 	};
 
-	system.activationScripts = {
-		wallpaperDownload.text = ''
-			cd /home/1u5t1n14n/Pictures/Wallpapers/
-			${pkgs.wget}/bin/wget https://images.alphacoders.com/134/1347517.png -O Wallpaper.png
-			${pkgs.wget}/bin/wget https://images7.alphacoders.com/134/1345733.png -O WallpaperDark.png
-		'';
-	};
-
 	nixpkgs.config.allowBroken = true;
 	nixpkgs.config.allowUnfree = true;
 
