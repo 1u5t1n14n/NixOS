@@ -30,6 +30,28 @@
 </html>
 	'';
 
+	home.file."Templates/main.tex".text = ''
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{fullpage}
+\usepackage{float}
+
+\usepackage{tikz}
+% Here go your TikZ styles
+
+\usepackage[ngerman]{babel}
+
+\title{}
+\author{}
+\date{\today}
+
+
+\begin{document}
+
+\end{document}
+	'';
+
 	home.activation = {
 		wallpaperDownload = lib.hm.dag.entryAfter ["writeBoundary"] ''
 			mkdir -p $HOME/Pictures/Wallpapers
