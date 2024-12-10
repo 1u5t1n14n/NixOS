@@ -67,6 +67,7 @@
 					"dock-from-dash@fthx"
 					"blur-my-shell@aunetx"
 					"transparent-window-moving@noobsai.github.com"
+					"caffeine@patapon.info"
 					"native-window-placement@gnome-shell-extensions.gcampax.github.com"
 					"gsconnect@andyholmes.github.io"
 					"launch-new-instance@gnome-shell-extensions.gcampax.github.com"
