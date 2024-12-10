@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out,                            "WarningMsg" },
+			{ out, "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -33,12 +33,12 @@ local plugins = {
 		branch = "v3.x",
 		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
 	},
-	{ "nvim-lualine/lualine.nvim",        dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "OXY2DEV/markview.nvim",            lazy = false },
-	{ "lervag/vimtex",                    lazy = false },
+	{ "OXY2DEV/markview.nvim", lazy = false },
+	{ "lervag/vimtex", lazy = false },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -60,8 +60,9 @@ local plugins = {
 	},
 	{ "hrsh7th/nvim-cmp" },
 	{ "eandrju/cellular-automaton.nvim" },
-	{ "goolord/alpha-nvim",             dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" } },
+	{ "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons", "nvim-tree/nvim-web-devicons" } },
 	{ "rebelot/kanagawa.nvim" },
+	{ "m4xshen/autoclose.nvim" },
 }
 local opts = {}
 require("lazy").setup(plugins, opts)
@@ -93,9 +94,10 @@ vim.g.vimtex_format_enabled = 1
 vim.g.vimtex_compiler_method = "latexmk"
 require("markview")
 -- LSP
+require("autoclose").setup()
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "ltex" },
+	ensure_installed = { "lua_ls", "ltex", "clangd" },
 })
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -104,6 +106,9 @@ lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 })
 lspconfig.ltex.setup({
+	capabilities = capabilities,
+})
+lspconfig.clangd.setup({
 	capabilities = capabilities,
 })
 
@@ -218,7 +223,7 @@ vim.opt.relativenumber = true
 vim.cmd("set cursorline")
 
 vim.o.list = true
-vim.o.listchars = 'tab:→ ,space:·,trail:-,nbsp:·'
+vim.o.listchars = "tab:→ ,space:·,trail:-,nbsp:·"
 
 vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
 

@@ -5,6 +5,7 @@
 	programs.zsh.enable = true;
 
 	environment.systemPackages = with pkgs; [
+		aerc
 		bat
 		browsh
 		cmatrix

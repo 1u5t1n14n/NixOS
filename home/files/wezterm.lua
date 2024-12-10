@@ -26,9 +26,7 @@ config.mouse_bindings = {
 	},
 }
 
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1.0
 config.text_background_opacity = 1.0
-
-config.color_scheme = "Kanagawa (Gogh)"
 
 return config
