@@ -18,6 +18,19 @@
 		};
 	};
 
+	home.file."Templates/file.hidden".text = ''
+.git
+*.aux
+*.bcf-SAVE-ERROR
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.out
+*.toc
+*.xdv
+	'';
+
 	home.file."Templates/index.html".text = ''
 <!DOCTYPE html>
 <html>
@@ -32,6 +45,9 @@
 
 	home.file."Templates/main.tex".text = ''
 \documentclass{article}
+
+\usepackage{darkmode}
+\enabledarkmode
 
 \usepackage{amsmath}
 \usepackage{fullpage}
