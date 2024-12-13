@@ -13,6 +13,7 @@
 		./searxng.nix
 		./sound.nix
 		./user.nix
+		./wowlan.nix
 	];
 
 	nix = {
