@@ -21,6 +21,9 @@
 	services.gnome.gnome-keyring.enable = true;
 	services.gvfs.enable = true;
 
+	programs.nautilus-open-any-terminal.enable = true;
+	programs.nautilus-open-any-terminal.terminal = "wezterm";
+
 	environment.gnome.excludePackages = with pkgs; [
 		baobab
 		cheese

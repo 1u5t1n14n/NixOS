@@ -69,7 +69,7 @@ local plugins = {
 		---@type snacks.Config
 		opts = {
 			bigfile = { enabled = true },
-			dashboard = { enabled = true },
+			dashboard = { enabled = false },
 			indent = { enabled = true },
 			input = { enabled = true },
 			notifier = {
@@ -78,7 +78,7 @@ local plugins = {
 			},
 			quickfile = { enabled = true },
 			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
+			statuscolumn = { enabled = false },
 			words = { enabled = true },
 			styles = {
 				notification = {
@@ -179,7 +179,7 @@ local plugins = {
 				desc = "Dismiss All Notifications",
 			},
 			{
-				"<c-/>",
+				"<c-k>",
 				function()
 					Snacks.terminal()
 				end,
