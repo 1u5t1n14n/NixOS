@@ -5,11 +5,12 @@
 	wayland.windowManager.hyprland.enable = true;
 	wayland.windowManager.hyprland.settings = {
 		bind = [
-			"ALT, W, exec, firefox"
+			"ALT, 2, exec, firefox"
+			"ALT, 1, exec, wezterm"
 			"ALT, RETURN, exec, wezterm"
 			"ALT, SPACE, exec, rofi -show combi -combi-modes 'drun,recursivebrowser,keys,ssh,window,run' -modes combi"
-			"ALT, F, exec, nautilus"
-			"ALT, V, exec, vi %F"
+			"ALT, 3, exec, nautilus"
+			"ALT, V, exec, wezterm start vi"
 
 			"ALT, Q, killactive"
 			"ALT, ESCAPE, exit"
