@@ -12,11 +12,12 @@
 			default = "SearXNG";
 			engines = {
 				"Google".metaData.alias = "@g";
-				"NixOS Wiki" = {
-					urls = [{ template = "https://wiki.nixos.org/index.php?search={searchTerms}"; }];
+				"DuckDuckGo".metaData.alias = "@d";
+				"NixOS Options" = {
+					urls = [{ template = "https://search.nixos.org/options?query={searchTerms}"; }];
 					iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
 					updateInterval = 7 * 24 * 60 * 60 * 1000;
-					definedAliases = [ "@nw" ];
+					definedAliases = [ "@no" ];
 				};
 				"Startpage" = {
 					urls = [{ template = "https://www.startpage.com/sp/search?query={searchTerms}"; }];
