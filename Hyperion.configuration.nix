@@ -3,7 +3,7 @@
 {
 
 	imports = [
-		./hardware-configuration.nix
+		./Hyperion.hardware-configuration.nix
 		./programs/pkgs.nix
 		./settings/nix.nix
 	];
