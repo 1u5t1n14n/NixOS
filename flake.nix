@@ -33,7 +33,7 @@
 					inherit inputs;
 				};
 				modules = [
-					./configuration.nix
+					./Morpheus.configuration.nix
 					inputs.home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
@@ -47,7 +47,7 @@
 					inherit inputs;
 				};
 				modules = [
-					./configuration.nix
+					./Hyperion.configuration.nix
 					inputs.home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
