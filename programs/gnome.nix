@@ -46,8 +46,7 @@
 	];
 
 	environment.systemPackages = with pkgs; [
-		alpaca
-		celeste
+		bottles
 		citations
 		dconf-editor
 		errands
