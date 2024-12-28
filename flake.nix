@@ -25,12 +25,12 @@
 		pkgs = nixpkgs.legacyPackages.${system};
 		pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 
-		mainUser = "1u5t1n14n";
+		userName = "1u5t1n14n";
 	in {
 		nixosConfigurations = {
 			Morpheus = nixpkgs.lib.nixosSystem {
 				specialArgs = {
-					inherit inputs;
+					inherit inputs userName;
 					hostname = "Morpheus";
 				};
 				modules = [
@@ -39,14 +39,14 @@
 					inputs.home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.users.${mainUser} = import ./home/home.nix;
+						home-manager.users.${userName} = import ./home/home.nix;
 						home-manager.backupFileExtension = "HMbackup";
 					}
 				];
 			};
 			Hyperion = nixpkgs.lib.nixosSystem {
 				specialArgs = {
-					inherit inputs;
+					inherit inputs userName;
 					hostname = "Hyperion";
 				};
 				modules = [
@@ -55,7 +55,7 @@
 					inputs.home-manager.nixosModules.home-manager {
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
-						home-manager.users.${mainUser} = import ./home/home.nix;
+						home-manager.users.${userName} = import ./home/home.nix;
 						home-manager.backupFileExtension = "HMbackup";
 					}
 				];
