@@ -37,6 +37,10 @@
 					./configuration.nix
 					./Hardware/Morpheus.nix
 					inputs.home-manager.nixosModules.home-manager {
+						home-manager.extraSpecialArgs = {
+							inherit userName;
+							hostname = "Morpheus";
+						};
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
 						home-manager.users.${userName} = import ./home/home.nix;
@@ -53,6 +57,10 @@
 					./configuration.nix
 					./Hardware/Hyperion.nix
 					inputs.home-manager.nixosModules.home-manager {
+						home-manager.extraSpecialArgs = {
+							inherit userName;
+							hostname = "Hyperion";
+						};
 						home-manager.useGlobalPkgs = true;
 						home-manager.useUserPackages = true;
 						home-manager.users.${userName} = import ./home/home.nix;

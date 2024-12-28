@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userName, ... }:
 
 {
 	imports = [
@@ -6,7 +6,7 @@
 		./settings/directories.nix
 	];
 
-	home.username = "1u5t1n14n";
+	home.username = "${userName}";
 	home.homeDirectory = "/home/${config.home.username}";
 
 	programs.home-manager.enable = true;

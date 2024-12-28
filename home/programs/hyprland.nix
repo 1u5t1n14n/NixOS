@@ -157,9 +157,9 @@
 	};
 
 	home.file.".config/hypr/hyprpaper.conf".text = ''
-		preload = /home/1u5t1n14n/Pictures/Wallpapers/Wallpaper.png
+		preload = ${config.home.homeDirectory}/Pictures/Wallpapers/Wallpaper.png
 
-		wallpaper = ,/home/1u5t1n14n/Pictures/Wallpapers/Wallpaper.png
+		wallpaper = ,${config.home.homeDirectory}/Pictures/Wallpapers/Wallpaper.png
 
 		splash = false
 	'';
