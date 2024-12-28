@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
 	imports = [
@@ -7,7 +7,7 @@
 	];
 
 	home.username = "1u5t1n14n";
-	home.homeDirectory = "/home/1u5t1n14n";
+	home.homeDirectory = "/home/${config.home.username}";
 
 	programs.home-manager.enable = true;
 
