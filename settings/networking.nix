@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostname, ... }:
 
 {
 	networking = {
-		hostName = "Morpheus";
+		hostName = "${hostname}";
 		networkmanager.enable = true;
 		firewall.enable = true;
 		firewall.allowedTCPPorts = [ 22 3389 ];

@@ -20,7 +20,7 @@
 
 	outputs = { nixpkgs, ... }@inputs:
 	let
-		system = "86_64-linux";
+		system = "x86_64-linux";
 
 		pkgs = nixpkgs.legacyPackages.${system};
 		pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
@@ -31,6 +31,7 @@
 			Morpheus = nixpkgs.lib.nixosSystem {
 				specialArgs = {
 					inherit inputs;
+					hostname = "Morpheus";
 				};
 				modules = [
 					./configuration.nix
@@ -46,6 +47,7 @@
 			Hyperion = nixpkgs.lib.nixosSystem {
 				specialArgs = {
 					inherit inputs;
+					hostname = "Hyperion";
 				};
 				modules = [
 					./configuration.nix
