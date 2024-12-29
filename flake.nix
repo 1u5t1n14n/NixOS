@@ -31,7 +31,7 @@
 		let
 			makeConfiguration = hostname: nixpkgs.lib.nixosSystem {
 				inherit system;
-				specialArgs = { inherit inputs pkgs pkgs-stable mainUser; };
+				specialArgs = { inherit inputs pkgs pkgs-stable userName; };
 				modules = [
 					./configuration.nix
 					./Hardware/${hostname}.nix
@@ -56,4 +56,3 @@
 			};
 		};
 	}
-}
