@@ -1,8 +1,8 @@
-{ config, pkgs, lib, inputs, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
 
-	environment.systemPackages = [ inputs.zen-browser.packages."x86_64-linux".specific ];
+	environment.systemPackages = [ inputs.zen-browser.packages.${system}.specific ];
 
 	programs.firefox = {
 		enable = true;

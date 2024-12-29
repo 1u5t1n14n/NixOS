@@ -53,9 +53,6 @@
 \usepackage{fullpage}
 \usepackage{float}
 
-\usepackage{tikz}
-% Here go your TikZ styles
-
 \usepackage[ngerman]{babel}
 
 \title{}
