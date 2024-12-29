@@ -30,14 +30,13 @@
 	in
 		let
 			makeConfiguration = hostname: nixpkgs.lib.nixosSystem {
-				inherit system;
-				specialArgs = { inherit inputs pkgs pkgs-stable userName; };
+				specialArgs = { inherit inputs pkgs pkgs-stable userName; hostName = "${hostname}"; system = "${system}"; };
 				modules = [
 					./configuration.nix
 					./Hardware/${hostname}.nix
-					home-manager.nixosModules.home-manager {
+					inputs.home-manager.nixosModules.home-manager {
 						home-manager = {
-							home-manager.extraSpecialArgs = {
+							extraSpecialArgs = {
 								inherit userName;
 								hostName = "${hostname}";
 							};
@@ -45,7 +44,7 @@
 							useUserPackages = true;
 							users.${userName} = import ./home/home.nix;
 							backupFileExtension = "HMbackup";
-							};
+						};
 					}
 				];
 			};
