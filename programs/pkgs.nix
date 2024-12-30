@@ -20,6 +20,7 @@
 		pdfarranger
 		minecraft
 		geogebra6
+		obsidian
 		onlyoffice-bin
 		libreoffice-fresh
 		inkscape-with-extensions

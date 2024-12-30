@@ -3,7 +3,6 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
 		nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
 		zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -27,32 +26,48 @@
 		pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 
 		userName = "1u5t1n14n";
-
-	in
-		let
-			makeConfiguration = hostname: nixpkgs.lib.nixosSystem {
-				specialArgs = { inherit inputs pkgs pkgs-stable userName; hostName = "${hostname}"; system = "${system}"; };
+	in {
+		nixosConfigurations = {
+			Morpheus = nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					inherit inputs userName;
+					hostname = "Morpheus";
+				};
 				modules = [
 					./configuration.nix
-					./Hardware/${hostname}.nix
+					./Hardware/Morpheus.nix
 					inputs.home-manager.nixosModules.home-manager {
-						home-manager = {
-							extraSpecialArgs = {
-								inherit userName;
-								hostName = "${hostname}";
-							};
-							useGlobalPkgs = true;
-							useUserPackages = true;
-							users.${userName} = import ./home/home.nix;
-							backupFileExtension = "HMbackup";
+						home-manager.extraSpecialArgs = {
+							inherit userName;
+							hostname = "Morpheus";
 						};
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.${userName} = import ./home/home.nix;
+						home-manager.backupFileExtension = "HMbackup";
 					}
 				];
 			};
-		in {
-			nixosConfigurations = {
-				Morpheus = makeConfiguration "Morpheus";
-				Hyperion = makeConfiguration "Hyperion";
+			Hyperion = nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					inherit inputs userName;
+					hostname = "Hyperion";
+				};
+				modules = [
+					./configuration.nix
+					./Hardware/Hyperion.nix
+					inputs.home-manager.nixosModules.home-manager {
+						home-manager.extraSpecialArgs = {
+							inherit userName;
+							hostname = "Hyperion";
+						};
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.${userName} = import ./home/home.nix;
+						home-manager.backupFileExtension = "HMbackup";
+					}
+				];
 			};
 		};
-	}
+	};
+}

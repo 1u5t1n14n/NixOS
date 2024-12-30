@@ -1,8 +1,8 @@
-{ config, pkgs, hostName, ... }:
+{ config, pkgs, hostname, ... }:
 
 {
 	networking = {
-		hostName = "${hostName}";
+		hostName = "${hostname}";
 		networkmanager.enable = true;
 		firewall.enable = true;
 		firewall.allowedTCPPorts = [ 22 3389 ];
