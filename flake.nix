@@ -18,7 +18,7 @@
 		};
 	};
 
-	outputs = { nixpkgs, ... }@inputs:
+	outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs:
 	let
 		system = "x86_64-linux";
 
@@ -26,48 +26,34 @@
 		pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
 
 		userName = "1u5t1n14n";
+
+		mkNixosConfig = { hostname, hasDesktop }:
+			nixpkgs.lib.nixosSystem {
+				specialArgs = {
+					inherit inputs userName;
+					inherit hostname;
+					inherit hasDesktop;
+				};
+				modules = [
+					./configuration.nix
+					./Hardware/${hostname}.nix
+					home-manager.nixosModules.home-manager {
+						home-manager.extraSpecialArgs = {
+							inherit userName;
+							inherit hostname;
+							inherit hasDesktop;
+						};
+						home-manager.useGlobalPkgs = true;
+						home-manager.useUserPackages = true;
+						home-manager.users.${userName} = import ./home/home.nix;
+						home-manager.backupFileExtension = "HMbackup";
+					}
+				];
+			};
 	in {
 		nixosConfigurations = {
-			Morpheus = nixpkgs.lib.nixosSystem {
-				specialArgs = {
-					inherit inputs userName;
-					hostname = "Morpheus";
-				};
-				modules = [
-					./configuration.nix
-					./Hardware/Morpheus.nix
-					inputs.home-manager.nixosModules.home-manager {
-						home-manager.extraSpecialArgs = {
-							inherit userName;
-							hostname = "Morpheus";
-						};
-						home-manager.useGlobalPkgs = true;
-						home-manager.useUserPackages = true;
-						home-manager.users.${userName} = import ./home/home.nix;
-						home-manager.backupFileExtension = "HMbackup";
-					}
-				];
-			};
-			Hyperion = nixpkgs.lib.nixosSystem {
-				specialArgs = {
-					inherit inputs userName;
-					hostname = "Hyperion";
-				};
-				modules = [
-					./configuration.nix
-					./Hardware/Hyperion.nix
-					inputs.home-manager.nixosModules.home-manager {
-						home-manager.extraSpecialArgs = {
-							inherit userName;
-							hostname = "Hyperion";
-						};
-						home-manager.useGlobalPkgs = true;
-						home-manager.useUserPackages = true;
-						home-manager.users.${userName} = import ./home/home.nix;
-						home-manager.backupFileExtension = "HMbackup";
-					}
-				];
-			};
+			Morpheus = mkNixosConfig { hostname = "Morpheus"; hasDesktop = true; };
+			Hyperion = mkNixosConfig { hostname = "Hyperion"; hasDesktop = true; };
 		};
 	};
 }

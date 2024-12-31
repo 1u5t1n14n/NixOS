@@ -1,4 +1,4 @@
-{ config, pkgs, userName, ... }:
+{ pkgs, userName, ... }:
 
 {
 

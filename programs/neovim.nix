@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -16,16 +16,17 @@
 	};
 
 	environment.systemPackages = with pkgs; [
-		gnuplot
 		cmake
-		gnumake
-		gcc
-		tree-sitter
-		nodejs
-		zip
-		unzip
 		fd
+		gcc
+		gnumake
+		gnuplot
+		nodejs
 		ripgrep
+		texliveFull
+		tree-sitter
+		unzip
+		zip
 	];
 
 	programs.java = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -24,7 +24,6 @@
 		onlyoffice-bin
 		libreoffice-fresh
 		inkscape-with-extensions
-		texliveFull
 		vlc
 	];
 

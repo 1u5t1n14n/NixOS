@@ -1,4 +1,4 @@
-{ config, pkgs, hostname, ... }:
+{ config, pkgs, hostname, hasDesktop, ... }:
 
 {
 	networking = {
@@ -9,7 +9,7 @@
 		firewall.allowedUDPPorts = [ 3389 ];
 	};
 
-	services.gnome.gnome-remote-desktop.enable = true;
+	services.gnome.gnome-remote-desktop.enable = hasDesktop;
 
 	services.openssh = {
 		enable = true;
@@ -31,7 +31,7 @@
 
 	programs.gnupg.agent = {
 		enable = true;
-		enableSSHSupport = false;
+		enableSSHSupport = config.services.openssh.enable;
 	};
 
 	# networking.proxy.default = "http://user:password@proxy:port/";
