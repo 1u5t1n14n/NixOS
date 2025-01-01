@@ -2,7 +2,7 @@
 
 {
 
-	services.xserver.videoDrivers = [ "intel" "displaylink" "modesetting" ];
+	services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
 	services.xserver.xrandrHeads = [
 		{ output = "eDP-1"; primary = true; }
 		{ output = "HDMI-1"; }

@@ -3,8 +3,8 @@
 {
 
 	imports = [
-		./programs/pkgs.nix
-		./settings/nix.nix
+		./Programs/pkgs.nix
+		./Services/nix.nix
 	];
 
 	boot.loader.systemd-boot.enable = true;

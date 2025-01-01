@@ -9,10 +9,9 @@
 		firewall.allowedUDPPorts = [ 3389 ];
 	};
 
-	services.gnome.gnome-remote-desktop.enable = hasDesktop;
-
 	services.openssh = {
 		enable = true;
+		settings.X11Forwarding = true;
 		ports = [ 22 ];
 		settings = {
 			PasswordAuthentication = true;
@@ -20,7 +19,10 @@
 		};
 	};
 
+	programs.ssh.setXAuthLocation = config.services.openssh.settings.X11Forwarding;
+
 	environment.systemPackages = with pkgs; [
+		xorg.xauth
 		ethtool
 		iw
 	];

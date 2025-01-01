@@ -1,19 +1,22 @@
-{ ... }:
+{ lib, hasDesktop, ... }:
 
 {
 
-	imports = [
-		./displaylink.nix
-		./executable.nix
-		./fonts.nix
-		./gsconnect.nix
-		./locale.nix
-		./networking.nix
-		./printing.nix
-		./searxng.nix
-		./sound.nix
-		./user.nix
-	];
+	imports =
+		[
+			./executable.nix
+			./fonts.nix
+			./locale.nix
+			./networking.nix
+			./printing.nix
+			./user.nix
+		]
+		++ lib.optionals hasDesktop [
+			./displaylink.nix
+			./gsconnect.nix
+			./searxng.nix
+			./sound.nix
+		];
 
 	nix = {
 		settings = {

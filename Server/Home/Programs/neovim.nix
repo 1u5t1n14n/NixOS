@@ -4,7 +4,7 @@
 
 	programs.neovim = {
 		enable = true;
-		extraLuaConfig = lib.fileContents ../files/init.lua;
+		extraLuaConfig = lib.fileContents ../init.lua;
 	};
 
 }
