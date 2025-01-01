@@ -46,7 +46,6 @@
 	];
 
 	environment.systemPackages = with pkgs; [
-		bottles
 		citations
 		dconf-editor
 		errands
