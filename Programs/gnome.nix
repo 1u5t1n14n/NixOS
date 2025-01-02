@@ -14,15 +14,14 @@
 		QT_QPA_PLATFORMTHEME = "gtk2";
 	};
 
-	services.libinput.enable = true;
-	services.gnome.evolution-data-server.enable = true;
-	services.gnome.gnome-online-accounts.enable = true;
 	services.accounts-daemon.enable = true;
+	services.gnome.evolution-data-server.enable = true;
 	services.gnome.gnome-keyring.enable = true;
+	services.gnome.gnome-online-accounts.enable = true;
 	services.gvfs.enable = true;
+	services.libinput.enable = true;
 
-	programs.nautilus-open-any-terminal.enable = true;
-	programs.nautilus-open-any-terminal.terminal = "wezterm";
+	services.flatpak.enable = true;
 
 	environment.gnome.excludePackages = with pkgs; [
 		baobab
@@ -34,7 +33,6 @@
 		gnome-logs
 		gnome-music
 		gnome-system-monitor
-		gnome-text-editor
 		gnome-tour
 		gnome-weather
 		nixos-render-docs

@@ -19,8 +19,6 @@
 		rofi-wayland
 		hyprpaper
 		mpv
-		superfile
-		zathura
 		hyprpicker
 	];
 

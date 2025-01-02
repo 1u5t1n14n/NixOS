@@ -9,6 +9,7 @@
 		cmatrix
 		fastfetch
 		figlet
+		superfile
 		fzf
 		gh
 		git
