@@ -94,7 +94,6 @@
 			active_opacity = 0.9;
 			fullscreen_opacity = 0.98;
 			inactive_opacity = 0.8;
-			drop_shadow = true;
 			rounding = 15;
 			blur = {
 				enabled = true;
