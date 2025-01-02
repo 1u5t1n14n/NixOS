@@ -23,7 +23,7 @@
 
 	# If using GNOME Software add FLathub:
 	# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-	services.flatpak.enable = true;
+	services.flatpak.enable = false;
 
 	environment.gnome.excludePackages = with pkgs; [
 		baobab
@@ -34,6 +34,7 @@
 		gnome-disk-utility
 		gnome-logs
 		gnome-music
+		gnome-software
 		gnome-system-monitor
 		gnome-tour
 		gnome-weather
