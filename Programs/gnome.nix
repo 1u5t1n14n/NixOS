@@ -21,6 +21,8 @@
 	services.gvfs.enable = true;
 	services.libinput.enable = true;
 
+	# If using GNOME Software add FLathub:
+	# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	services.flatpak.enable = true;
 
 	environment.gnome.excludePackages = with pkgs; [
