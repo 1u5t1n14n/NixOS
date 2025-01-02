@@ -75,10 +75,9 @@
 					"just-perfection-desktop@just-perfection"
 				];
 				favorite-apps = [
-					"org.wezfurlong.wezterm.desktop"
+					"com.mitchellh.ghostty.desktop"
 					"firefox.desktop"
 					"org.gnome.Nautilus.desktop"
-					"obsidian.desktop"
 					"minecraft-launcher.desktop"
 					"discord.desktop"
 					"steam.desktop"
