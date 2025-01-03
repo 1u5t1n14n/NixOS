@@ -18,4 +18,6 @@
 		autorandr
 	];
 
+	powerManagement.cpuFreqGovernor = "performance";
+
 }
