@@ -72,6 +72,7 @@
 
 		onlyoffice-bin
 		libreoffice-fresh
+		obsidian
 	];
 
 }
