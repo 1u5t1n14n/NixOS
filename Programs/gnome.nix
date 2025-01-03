@@ -69,6 +69,9 @@
 		textpieces
 		wike
 		wordbook
+
+		onlyoffice-bin
+		libreoffice-fresh
 	];
 
 }
