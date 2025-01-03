@@ -5,6 +5,7 @@
 	environment.systemPackages = with pkgs.gnomeExtensions; [
 		gsconnect
 		caffeine
+		clipboard-indicator
 		dock-from-dash
 		just-perfection
 		blur-my-shell

@@ -68,6 +68,7 @@
 					"blur-my-shell@aunetx"
 					"transparent-window-moving@noobsai.github.com"
 					"caffeine@patapon.info"
+					"clipboard-indicator@tudmotu.com"
 					"native-window-placement@gnome-shell-extensions.gcampax.github.com"
 					"gsconnect@andyholmes.github.io"
 					"launch-new-instance@gnome-shell-extensions.gcampax.github.com"
