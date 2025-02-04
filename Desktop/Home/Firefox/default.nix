@@ -8,7 +8,6 @@
 	];
 
 	programs.firefox.enable = true;
-	programs.firefox.languagePacks = [ "*" ];
 	programs.firefox.profiles.enlightedFox = {
 		name = "Enlighted Fox";
 		isDefault = true;

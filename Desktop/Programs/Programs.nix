@@ -5,7 +5,7 @@
 	imports = [
 		./localsend.nix
 		./code.nix
-		./firefox.nix
+		./Firefox/default.nix
 		./gnome.nix
 		./hyprland.nix
 		./localsend.nix
