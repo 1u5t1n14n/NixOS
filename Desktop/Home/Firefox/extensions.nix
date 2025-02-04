@@ -2,7 +2,7 @@
 
 {
 
-	programs.firefox.profiles.Firefox.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+	programs.firefox.profiles.enlightedFox.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 		clearurls
 		duckduckgo-privacy-essentials
 		facebook-container

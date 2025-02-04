@@ -9,8 +9,8 @@
 
 	programs.firefox.enable = true;
 	programs.firefox.languagePacks = [ "*" ];
-	programs.firefox.profiles.Firefox = {
-		name = "Firefox";
+	programs.firefox.profiles.enlightedFox = {
+		name = "Enlighted Fox";
 		isDefault = true;
 		id = 0;
 	};
