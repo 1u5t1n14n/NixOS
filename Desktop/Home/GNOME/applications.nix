@@ -33,6 +33,7 @@
 		"org/gnome/desktop/app-folders/folders/Office".apps = [
 			"calc.desktop"
 			"draw.desktop"
+			"impress.desktop"
 			"math.desktop"
 			"writer.desktop"
 			"base.desktop"
