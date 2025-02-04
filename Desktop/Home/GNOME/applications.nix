@@ -21,6 +21,7 @@
 				"Documents"
 			];
 		};
+		"org/gnome/desktop/app-folders/folders/Documents".name = "Documents";
 		"org/gnome/desktop/app-folders/folders/Documents".apps = [
 			"org.gnome.Papers.desktop"
 			"com.github.johnfactotum.Foliate.desktop"
@@ -28,6 +29,7 @@
 			"com.github.jeromerobert.pdfarranger.desktop"
 			"org.gnome.World.Citations.desktop"
 		];
+		"org/gnome/desktop/app-folders/folders/Office".name = "Office";
 		"org/gnome/desktop/app-folders/folders/Office".apps = [
 			"calc.desktop"
 			"draw.desktop"
