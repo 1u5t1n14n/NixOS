@@ -8,6 +8,7 @@
 	];
 
 	programs.firefox.enable = true;
+	programs.firefox.nativeMessagingHosts.gsconnect = true;
 	programs.firefox.policies = {
 		DisableFirefoxScreenshots = true;
 		DisableFirefoxStudies = true;
