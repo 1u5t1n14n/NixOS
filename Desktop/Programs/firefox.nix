@@ -36,6 +36,11 @@
 		"browser.uitour.enabled" = false;
 		"browser.download.start_downloads_in_tmp_dir" = true;
 		"browser.ctrlTab.sortByRecentlyUsed" = true;
+		"browser.tabs.hoverPreview.enabled" = true;
+		"browser.tabs.hoverPreview.showThumbnails" = true;
+		"browser.tabs.closeTabByDblclick" = true;
+		"browser.tabs.warnOnCloseOtherTabs" = false;
+		"browser.tabs.unloadTabInContextMenu" = true;
 		
 		# Disable Activity Stream on new windows and tab pages
 		"browser.newtabpage.enabled" = false;
