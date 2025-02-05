@@ -24,6 +24,7 @@
 		"org/gnome/desktop/app-folders/folders/Documents".name = "Documents";
 		"org/gnome/desktop/app-folders/folders/Documents".apps = [
 			"org.gnome.Papers.desktop"
+			"org.gnome.Evince.desktop"
 			"com.github.johnfactotum.Foliate.desktop"
 			"io.github.diegoivan.pdf_metadata_editor.desktop"
 			"com.github.jeromerobert.pdfarranger.desktop"
