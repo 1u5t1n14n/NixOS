@@ -62,6 +62,7 @@
 				"steam.desktop"
 				"jetbrains-toolbox.desktop"
 				"io.github.mrvladus.List.desktop"
+				"org.gnome.World.Secrets.desktop"
 			];
 		};
 	};
