@@ -12,6 +12,14 @@
 		name = "Rising Fox";
 		isDefault = true;
 		id = 0;
+		settings = {
+			"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+			"browser.ctrlTab.sortByRecentlyUsed" = true;
+			"browser.tabs.hoverPreview.enabled" = true;
+			"browser.tabs.hoverPreview.showThumbnails" = true;
+			"sidebar.verticalTabs" = true;
+			"sidebar.revamp" = true;
+		};
 	};
 
 }
