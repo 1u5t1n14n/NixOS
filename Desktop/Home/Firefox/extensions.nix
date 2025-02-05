@@ -5,9 +5,6 @@
 	programs.firefox.profiles.risingFox.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 		clearurls
 		duckduckgo-privacy-essentials
-		facebook-container
-		gnome-shell-integration
-		google-container
 		multi-account-containers
 		privacy-badger
 		private-relay
