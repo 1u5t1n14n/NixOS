@@ -2,7 +2,7 @@
 
 {
 
-	programs.firefox.profiles.enlightedFox.search = {
+	programs.firefox.profiles.risingFox.search = {
 		force = true;
 		default = "DuckDuckGo";
 		engines = {
