@@ -3,13 +3,12 @@
 {
 
 	imports = [
-		./localsend.nix
-		./code.nix
 		./Firefox/default.nix
+		./code.nix
+		./games.nix
 		./gnome.nix
 		./hyprland.nix
 		./localsend.nix
-		./games.nix
 		./pkgs.nix
 	];
 
