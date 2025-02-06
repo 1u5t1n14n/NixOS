@@ -129,15 +129,6 @@
 		"security.ssl.treat_unsafe_negotiation_as_broken" = true;
 		"browser.xul.error_pages.expert_bad_cert" = true;
 		"layout.css.prefers-color-scheme.content-override" = 0;
-		"ui.systemUsesDarkTheme" = 1;
-		"browser.ctrlTab.recentlyUsedOrder" = true;
-		"accessibility.browsewithcaret" = true;
-		"browser.tabs.closeWindowWithLastTab" = false;
-		"browser.toolbars.bookmarks.visibility" = "never";
-		"browser.tabs.tabmanager.enabled" = false;
-		"browser.tabs.unloadTabInContextMenu" = true;
-		"browser.tabs.warnOnCloseOtherTabs" = false;
-		"browser.tabs.closeTabByDblclick" = true;
 		"ui.key.menuAccessKeyFocuses" = false;
 		"cookiebanners.bannerClicking.enabled" = 2;
 
