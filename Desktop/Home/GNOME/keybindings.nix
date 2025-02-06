@@ -4,7 +4,6 @@
 
 	dconf.settings = {
 		"org/gnome/settings-daemon/plugins/media-keys" = {
-			increase-text-size = ["<Super>p"];
 			logout = ["<Alt>escape"];
 		};
 		"org/gnome/desktop/wm/preferences" = {
@@ -32,7 +31,7 @@
 			shift-overview-down = ["<Super>Down"];
 			shift-overview-up = ["<Super>Up"];
 			toggle-quick-settings = ["<Super>comma"];
-			toggle-application-view = ["<Alt>space"];
+			toggle-overview = ["<Alt>space"];
 			toggle-message-tray = ["<Super>n"];
 			open-new-window-application-1 = ["<Alt>1"];
 			open-new-window-application-2 = ["<Alt>2"];
