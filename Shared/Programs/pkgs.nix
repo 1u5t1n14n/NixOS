@@ -3,24 +3,25 @@
 {
 
 	environment.systemPackages = with pkgs; [
-		imagemagick
-		yt-dlp
-		pandoc
-		ffmpeg
+		browsh
 		btop
 		cmake
 		fd
+		ffmpeg
 		gcc
 		gnumake
 		gnuplot
+		imagemagick
 		nodejs
+		pandoc
 		ripgrep
 		texliveFull
-		tree-sitter
-		unzip
-		zip
 		tree
+		tree-sitter
 		typst
+		unzip
+		yt-dlp
+		zip
 	];
 
 	programs.dconf.enable = true;
