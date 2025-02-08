@@ -4,6 +4,7 @@
 
         imports = [
 		./radicale.nix
+		./jellyfin.nix
 		./calibre.nix
 		./paperless.nix
                 ./searxng.nix
