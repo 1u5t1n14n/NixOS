@@ -3,6 +3,7 @@
 {
 
 	environment.systemPackages = with pkgs; [
+		syncthing
 		wezterm
 		wl-clipboard
 		onlyoffice-bin

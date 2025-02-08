@@ -1,4 +1,4 @@
-{ pkgs, config, hostName, userName, ... }:
+{ ... }:
 
 {
 
@@ -10,7 +10,6 @@
 			c = "clear";
 			spf = "superfile";
 			f = "vi $(fzf)";
-			update = "find ~/.config -name '*.HMbackup*' -delete && sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/Repositories/NixOS#${hostName} && find ~/.config -name '*.HMbackup*' -delete";
 		};
 	};
 
