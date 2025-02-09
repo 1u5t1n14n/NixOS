@@ -3,6 +3,7 @@
 {
 
 	imports = [
+		./syncthing.nix
 		./executable.nix
 		./homeManagerRemover.nix
 		./fonts.nix
