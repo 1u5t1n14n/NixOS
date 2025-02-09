@@ -3,6 +3,7 @@
 {
 
         imports = [
+		./immich.nix
 		./syncthing.nix
 		./radicale.nix
 		./jellyfin.nix
