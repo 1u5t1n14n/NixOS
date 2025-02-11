@@ -11,6 +11,10 @@
 			user = "${userName}";
 			password = "goodPassword";
 		};
+		settings.devices."Prometheus" = {
+			id = "SSILW5K-54C77OJ-JC2R6I2-GT4U5ZO-PBWQ4ZB-F7YSMK2-R4ZJZEK-5HXSDAX";
+			autoAcceptFolders = true;
+		};
 	};
 
 	networking.firewall = {
