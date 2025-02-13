@@ -9,7 +9,7 @@
 
 	programs.firefox.enable = true;
 	programs.firefox.profiles.risingFox = {
-		name = "Rising Fox";
+		name = "Arkenfox";
 		isDefault = true;
 		id = 0;
 		settings = {
