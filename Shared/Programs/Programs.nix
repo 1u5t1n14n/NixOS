@@ -4,7 +4,6 @@
 
 	imports = [
 		./tty.nix
-		./firefox.nix
 	];
 
 	environment.systemPackages = with pkgs; [
