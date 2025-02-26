@@ -6,10 +6,6 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-		firefox = {
-			url = "github:nix-community/flake-firefox-nightly";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
 		agenix.url = "github:ryantm/agenix";
 		nixVim = {
 			url = "github:nix-community/nixvim";
