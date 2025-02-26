@@ -7,9 +7,12 @@
 		user = "${userName}";
 		dataDir = "/home/${userName}";
 		configDir = "${config.services.syncthing.dataDir}/.config/syncthing";
-		settings.gui = {
-			user = "${userName}";
-			password = "goodPassword";
+		settings = {
+			options.urAccepted = -1;
+			gui = {
+				user = "${userName}";
+				password = "goodPassword";
+			};
 		};
 	};
 

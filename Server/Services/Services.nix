@@ -3,6 +3,7 @@
 {
 
         imports = [
+		./onlyoffice.nix
 		./kian.nix
 		./syncthing.nix
 		./radicale.nix
@@ -10,7 +11,6 @@
 		./calibre.nix
 		./paperless.nix
 		./searxng.nix
-		./nginx.nix
 		./stirling.nix
 		./avahi.nix
 	];

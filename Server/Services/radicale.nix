@@ -5,17 +5,13 @@
 	services.radicale = {
 		enable = true;
 		settings = {
-			server = {
-				hosts = [ "0.0.0.0:5232" ];
-			};
+			server.hosts = [ "0.0.0.0:5232" ];
 			auth = {
 				type = "htpasswd";
 				htpasswd_filename = "/var/lib/radicale/users";
 				htpasswd_encryption = "bcrypt";
 			};
-			storage = {
-				filesystem_folder = "/var/lib/radicale/collections";
-			};
+			storage.filesystem_folder = "/var/lib/radicale/collections";
 		};
 	};
 
@@ -26,14 +22,15 @@
 		home = "/var/lib/radicale";
 		createHome = true;
 	};
+
 	users.groups.radicale = {};
 
-	system.activationScripts = {
-		radicale-setup = ''
+	system.activationScripts.radicaleSetup = ''
+		if [ ! -d "/var/lib/radicale/collections" ]; then
 			mkdir -p /var/lib/radicale/collections
 			chown -R radicale:radicale /var/lib/radicale
-		'';
-	};
+		fi
+	'';
 
 	networking.firewall.allowedTCPPorts = [ 5232 ];
 

@@ -15,4 +15,6 @@
 		};
 	};
 
+	networking.domain = "local";
+
 }

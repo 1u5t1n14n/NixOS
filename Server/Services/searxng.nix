@@ -14,7 +14,6 @@
                                 privacypolicy_url = false;
                                 enable_metrics = false;
                         };
-
                         ui = {
                                 static_use_hash = true;
                                 default_locale = "de";
@@ -26,7 +25,6 @@
                                 search_on_category_select = false;
                                 hotkeys = "vim";
                         };
-
                         search = {
                                 safe_search = 2;
                                 autocomplete_min = 2;
@@ -34,7 +32,6 @@
                                 ban_time_on_fail = 5;
                                 max_ban_time_on_fail = 120;
                         };
-
                         enabled_plugins = [
                                 "Basic Calculator"
                                 "Hash plugin"
@@ -44,7 +41,6 @@
                                 "Unit converter plugin"
                                 "Tracker URL remover"
                         ];
-
                         server = {
                                 port = 8888;
                                 bind_address = "0.0.0.0";

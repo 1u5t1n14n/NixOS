@@ -24,4 +24,11 @@
 
 	users.groups.jellyfin = {};
 
+	system.activationScripts.jellyfinLibrarySetup = ''
+		if [ ! -d "/var/lib/jellyfin/Movies" ]; then
+			mkdir -p /var/lib/jellyfin/Movies
+			sudo chown -R jellyfin:jellyfin /var/lib/jellyfin/Movies
+		fi
+	'';
+
 }
