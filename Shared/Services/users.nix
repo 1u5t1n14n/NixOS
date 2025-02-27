@@ -19,4 +19,10 @@
 		'';
 	};
 
+	environment.sessionVariables = {
+		SUDO_EDITOR = "nvim";
+		EDITOR = "nvim";
+		VISUAL = "nvim";
+	};
+
 }
