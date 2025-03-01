@@ -35,6 +35,11 @@
 			};
 	in {
 		nixosConfigurations = {
+			Prometheus = mkNixosConfig {
+				hostName = "Prometheus";
+				hasDesktop = false;
+				system = "x86_64-linux";
+			};
 			Morpheus = mkNixosConfig {
 				hostName = "Morpheus";
 				hasDesktop = true;
