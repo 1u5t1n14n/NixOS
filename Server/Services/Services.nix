@@ -3,6 +3,7 @@
 {
 
         imports = [
+		./nginx.nix
 		./onlyoffice.nix
 		./kian.nix
 		./syncthing.nix
