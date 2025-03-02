@@ -4,7 +4,7 @@
 
         imports = [
 		./nginx.nix
-		./onlyoffice.nix
+		./grocy.nix
 		./kian.nix
 		./syncthing.nix
 		./radicale.nix
