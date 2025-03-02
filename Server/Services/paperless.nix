@@ -11,7 +11,7 @@
 			PAPERLESS_ADMIN_USER = "${userName}";
 			PAPERLESS_OCR_USER_ARGS = {
 				optimize = 1;
-				pdfa_image_compression "lossless";
+				pdfa_image_compression = "lossless";
 			};
 		};
 		consumptionDirIsPublic = true;

@@ -13,7 +13,6 @@
 		./paperless.nix
 		./searxng.nix
 		./stirling.nix
-		./avahi.nix
 	];
 
 }
