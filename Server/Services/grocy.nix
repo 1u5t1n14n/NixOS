@@ -12,20 +12,17 @@
 	};
 
 	services.nginx.virtualHosts."${config.services.grocy.hostName}" = {
+		listen = [
+			{ addr = "0.0.0.0"; port = 9283; }
+		];
 		locations."/" = {
-			proxyPass = "http://127.0.0.1:${toString config.services.grocy.port}";
+			proxyPass = "http://127.0.0.1:9283";
 		};
 	};
 	
 	services.dnsmasq = {
 		enable = true;
 		settings.address = "/grocy.home/127.0.0.1";
-	};
-
-	security.acme = {
-		acceptTerms = true;
-		email = "acme.concerned782@passinbox.com";
-		certs."grocy.home".webroot = "/var/lib/acme/acme-challenge";
 	};
 
 }
