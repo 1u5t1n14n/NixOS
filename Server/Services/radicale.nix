@@ -25,6 +25,8 @@
 
 	users.groups.radicale = {};
 
+	security.auditd.enable = true;
+
 	system.activationScripts.radicaleSetup = ''
 		if [ ! -d "/var/lib/radicale/collections" ]; then
 			mkdir -p /var/lib/radicale/collections

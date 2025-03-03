@@ -11,7 +11,7 @@
 
 	environment.systemPackages = with pkgs; [
 		firefox
-		geogebra
+		geogebra6
 		wezterm
 		wl-clipboard
 		onlyoffice-bin
