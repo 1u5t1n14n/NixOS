@@ -3,8 +3,8 @@
 {
 
         imports = [
-		./nginx.nix
 		./grocy.nix
+		./nginx.nix
 		./kian.nix
 		./syncthing.nix
 		./radicale.nix
