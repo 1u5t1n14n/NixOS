@@ -10,6 +10,7 @@
 	];
 
 	environment.systemPackages = with pkgs; [
+		firefox
 		geogebra
 		wezterm
 		wl-clipboard
