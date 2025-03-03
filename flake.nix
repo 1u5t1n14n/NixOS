@@ -40,6 +40,11 @@
 				hasDesktop = false;
 				system = "x86_64-linux";
 			};
+			Hyperion = mkNixosConfig {
+				hostName = "Hyperion";
+				hasDesktop = true;
+				system = "x86_64-linux";
+			};
 			Morpheus = mkNixosConfig {
 				hostName = "Morpheus";
 				hasDesktop = true;
