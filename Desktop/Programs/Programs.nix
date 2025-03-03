@@ -10,6 +10,7 @@
 	];
 
 	environment.systemPackages = with pkgs; [
+		geogebra
 		wezterm
 		wl-clipboard
 		onlyoffice-bin

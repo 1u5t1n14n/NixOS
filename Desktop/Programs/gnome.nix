@@ -38,6 +38,7 @@
 		paper-clip
 		papers
 		warp
+		televido
 
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
