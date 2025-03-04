@@ -2,6 +2,8 @@
 
 {
 
+	environment.systemPackages = [ pkgs.apacheHttpd ];
+
 	services.radicale = {
 		enable = true;
 		settings = {
@@ -15,7 +17,7 @@
 		};
 	};
 
-	# sudo -u radicale nix-shell -p apacheHttpd --run "htpasswd -B -c /var/lib/radicale/users yourusername"
+	# sudo htpasswd -B /var/lib/radicale/users username
 	users.users.radicale = {
 		isSystemUser = true;
 		group = "radicale";
@@ -24,8 +26,6 @@
 	};
 
 	users.groups.radicale = {};
-
-	security.auditd.enable = true;
 
 	system.activationScripts.radicaleSetup = ''
 		if [ ! -d "/var/lib/radicale/collections" ]; then
