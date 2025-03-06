@@ -14,9 +14,4 @@
 		./stirling.nix
 	];
 
-	services.dokuwiki.sites."localhost" = {
-		enable = true;
-		settings.title = "My Wiki";
-	};
-
 }
