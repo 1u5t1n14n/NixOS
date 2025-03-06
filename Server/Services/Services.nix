@@ -3,7 +3,6 @@
 {
 
         imports = [
-		./grocy.nix
 		./nginx.nix
 		./kian.nix
 		./syncthing.nix
@@ -14,5 +13,10 @@
 		./searxng.nix
 		./stirling.nix
 	];
+
+	services.dokuwiki.sites."localhost" = {
+		enable = true;
+		settings.title = "My Wiki";
+	};
 
 }
