@@ -66,7 +66,7 @@
 		"browser.safebrowsing.downloads.remote.url" = "";
 
 		# Implicit Outbound
-		network.prefetch-next
+		"network.prefetch-next" = false;
 		"network.dns.disablePrefetch" = true;
 		"network.dns.disablePrefetchFromHTTPS" = true;
 		"network.predictor.enabled" = false;
@@ -106,7 +106,7 @@
 		"network.auth.subresource-http-auth-allow" = 1;
 
 		# Disk Avoidance
-		browser.cache.disk.enable
+		"browser.cache.disk.enable" = false;
 		"browser.privatebrowsing.forceMediaMemoryCache" = true;
 		"media.memory_cache_max_size" = 65536;
 		"browser.sessionstore.privacy_level" = 2;
@@ -115,7 +115,7 @@
 
 		# HTTPS
 		"security.ssl.require_safe_negotiation" = true;
-		security.tls.enable_0rtt_data
+		"security.tls.enable_0rtt_data" = true;
 
 		"security.OCSP.enabled" = 1;
 		"security.OCSP.require" = true;
@@ -136,7 +136,7 @@
 		# Containers
 		"privacy.userContext.enabled" = true;
 		"privacy.userContext.ui.enabled" = true;
-		browser.link.force_default_user_context_id_for_external_opens
+		"browser.link.force_default_user_context_id_for_external_opens" = false;
 		"extensions.autoDisableScopes" = 0;
 
 		# Plugins
