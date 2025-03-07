@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostName, config, ... }:
 
 {
 
@@ -15,7 +15,6 @@
 	};
 
 	services.nginx = {
-		enable = true;
 		recommendedProxySettings = true;
 		virtualHosts = {
 			localhost = {

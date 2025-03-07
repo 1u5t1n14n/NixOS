@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostName, ... }:
 
 {
 
@@ -15,10 +15,6 @@
 			};
 			storage.filesystem_folder = "${config.users.users.radicale.home}/collections";
 		};
-	};
-
-	services.nginx.virtualHosts."cal.${hostName}.${config.networking.domain}".locations."/" = {
-		proxyPass = "http://127.0.0.1:5232";
 	};
 
 	# sudo htpasswd -B(c) /var/lib/radicale/users username
