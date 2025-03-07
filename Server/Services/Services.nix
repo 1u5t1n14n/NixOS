@@ -5,7 +5,7 @@
         imports = [
 		./codeServer.nix
 		./gitlab.nix
-		./nginx.nix
+		./domain.nix
 		./kian.nix
 		./syncthing.nix
 		./radicale.nix

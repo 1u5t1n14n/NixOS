@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -10,25 +10,28 @@
 			server.hosts = [ "0.0.0.0:5232" ];
 			auth = {
 				type = "htpasswd";
-				htpasswd_filename = "/var/lib/radicale/users";
+				htpasswd_filename = "${config.users.users.radicale.home}/users";
 				htpasswd_encryption = "bcrypt";
 			};
-			storage.filesystem_folder = "/var/lib/radicale/collections";
+			storage.filesystem_folder = "${config.users.users.radicale.home}/collections";
 		};
 	};
 
-	# sudo htpasswd -B /var/lib/radicale/users username
+	services.nginx.virtualHosts."cal.${hostName}.${config.networking.domain}".locations."/" = {
+		proxyPass = "http://127.0.0.1:5232";
+	};
+
+	# sudo htpasswd -B(c) /var/lib/radicale/users username
 	users.users.radicale = {
 		isSystemUser = true;
 		group = "radicale";
 		home = "/var/lib/radicale";
 		createHome = true;
 	};
-
 	users.groups.radicale = {};
 
 	system.activationScripts.radicaleSetup = ''
-		if [ ! -d "/var/lib/radicale/collections" ]; then
+		if [ ! -d "${config.services.radicale.settings.storage.filesystem_folder}" ]; then
 			mkdir -p /var/lib/radicale/collections
 			chown -R radicale:radicale /var/lib/radicale
 		fi

@@ -4,7 +4,10 @@
 
 	programs.appimage.enable = hasDesktop;
 
-	programs.nix-ld.enable = true;
-	programs.nix-ld.libraries = with pkgs; [ ];
+	programs.nix-ld = {
+		enable = true;
+		package = pkgs.nix-ld-rs;
+		libraries = with pkgs; [ ];
+	};
 
 }
