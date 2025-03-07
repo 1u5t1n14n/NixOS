@@ -3,6 +3,8 @@
 {
 
         imports = [
+		./codeServer.nix
+		./gitlab.nix
 		./nginx.nix
 		./kian.nix
 		./syncthing.nix
