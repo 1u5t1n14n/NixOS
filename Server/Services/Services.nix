@@ -3,6 +3,7 @@
 {
 
         imports = [
+		./immich.nix
 		./codeServer.nix
 		./gitlab.nix
 		./domain.nix
