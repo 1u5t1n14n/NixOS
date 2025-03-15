@@ -3,9 +3,10 @@
 {
 
         imports = [
-		./immich.nix
+		./nextcloud.nix
+		#./immich.nix
 		./codeServer.nix
-		./gitlab.nix
+		#./gitlab.nix
 		./domain.nix
 		./kian.nix
 		./syncthing.nix

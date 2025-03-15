@@ -6,6 +6,7 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+		nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-24.11";
 		agenix.url = "github:ryantm/agenix";
 		homeManager = {
 			url = "github:nix-community/home-manager";
@@ -26,6 +27,7 @@
 			nixpkgs.lib.nixosSystem {
 				specialArgs = {
 					inherit inputs;
+					inherit system;
 					inherit userName;
 					inherit hostName;
 					inherit hasDesktop;
