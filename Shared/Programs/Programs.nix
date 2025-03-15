@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
 
@@ -39,6 +39,7 @@
 		zfxtop
 		zip
 		zsh
+		inputs.agenix.packages."${system}".default 
 	];
 
 	programs.dconf.enable = true;
