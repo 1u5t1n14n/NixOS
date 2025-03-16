@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
 	jellyfin = config.services.jellyfin;
@@ -13,7 +13,7 @@ in {
 	};
 
 	environment.systemPackages = with pkgs; [
-		jellyfin
+		#jellyfin
 		jellyfin-web
 		jellyfin-ffmpeg
 	];
