@@ -2,7 +2,6 @@
 
 let
 	paperless = config.services.paperless;
-	pass = builtins.getEnv "PAPERLESS";
 
 in {
 
@@ -22,7 +21,7 @@ in {
 		consumptionDirIsPublic = true;
 	};
 
-	environment.etc."paperless/password".text = "${pass}";
+	environment.etc."paperless/password".text = "${builtins.getEnv "PAPERLESS"}";
 
 	networking.firewall.allowedTCPPorts = [ paperless.port ];
 

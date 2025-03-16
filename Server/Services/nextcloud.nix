@@ -1,9 +1,6 @@
 { config, inputs, system, hostName, ... }:
 
-let
-	pass = builtins.getEnv "NEXTCLOUD";
-
-in {
+{
 
 	services.nextcloud = {
 		enable = true;
@@ -45,7 +42,7 @@ in {
 		};
 	};
 
-	environment.etc."nextcloudRoot".text = "${pass}";
+	environment.etc."nextcloudRoot".text = "${builtins.getEnv "NEXTCLOUD"}";
 
 	users.groups.cloudaccess = {};
 	users.users.nextcloud.extraGroups = [ "cloudaccess" ];

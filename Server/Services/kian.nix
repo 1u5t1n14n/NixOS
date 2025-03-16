@@ -1,13 +1,11 @@
 { pkgs, ... }:
 
-let
-	pass = builtins.getEnv "KIAN";
 {
 
 	users.users.kian = {
 		isNormalUser = true;
 		createHome = true;
-		initialHashedPassword = "${pass}";
+		initialHashedPassword = "${builtins.getEnv "KIAN"}";
 		description = "Kian";
 		shell = pkgs.zsh;
 		extraGroups = [ "networkmanager" ];
