@@ -1,6 +1,9 @@
 { ... }:
 
-{
+let
+	searxng = services.searx;
+
+in {
 
         services.searx = {
                 enable = true;
@@ -49,6 +52,6 @@
                 };
         };
 
-        networking.firewall.allowedTCPPorts = [ 8888 ];
+        networking.firewall.allowedTCPPorts = [ searxng.settings.server.port ];
 
 }

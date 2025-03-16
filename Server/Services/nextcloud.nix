@@ -21,6 +21,8 @@
 			dbtype = "pgsql";
 			dbuser = "nextcloud";
 			adminuser = "root";
+
+			# TODO -> agenix
 			adminpassFile = "/etc/nextcloudRoot";
 		};
 
@@ -32,6 +34,9 @@
 		];
 	};
 
+	users.users.nextcloud.extraGroups = [ "cloudaccess" ];
+
+	# TODO -> agenix
 	environment.etc."nextcloudRoot".text = "goodPassword';:2";
 
 }

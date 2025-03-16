@@ -1,6 +1,9 @@
 { userName, ... }:
 
-{
+let
+	codeServer = services.code-server;
+
+in {
 
 	services.code-server = {
 		enable = true;
@@ -10,6 +13,6 @@
 		group = "users";
 	};
 
-	networking.firewall.allowedTCPPorts = [ 8080 ];
+	networking.firewall.allowedTCPPorts = [ codeServer.port ];
 
 }

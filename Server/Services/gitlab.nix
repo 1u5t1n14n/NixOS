@@ -25,6 +25,4 @@
 
 	systemd.services.gitlab-backup.environment.BACKUP = "dump";
 
-	networking.firewall.allowedTCPPorts = [ 8080 ];
-
 }

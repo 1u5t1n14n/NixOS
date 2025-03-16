@@ -6,7 +6,7 @@
 		enable = true;
 		openFirewall = true;
 		user = "jellyfin";
-		group = "jellyfin";
+		group = "cloudaccess";
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -19,9 +19,7 @@
 		home = "/var/lib/jellyfin";
 		createHome = true;
 		description = "Jellyfin";
-		extraGroups = [ "jellyfin" ];
+		extraGroups = [ "cloudaccess" ];
 	};
-
-	users.groups.jellyfin = {};
 
 }

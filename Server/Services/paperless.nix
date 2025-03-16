@@ -1,6 +1,9 @@
 { userName, ... }:
 
-{
+let
+	paperless = services.paperless;
+
+in {
 
 	services.paperless = {
 		enable = true;
@@ -14,11 +17,13 @@
 				pdfa_image_compression = "lossless";
 			};
 		};
+		# TODO -> find out what this means
 		consumptionDirIsPublic = true;
 	};
 
+	# TODO -> agenix
 	environment.etc."paperless/password".text = "goodPassword";
 
-	networking.firewall.allowedTCPPorts = [ 28981 ];
+	networking.firewall.allowedTCPPorts = [ paperless.port ];
 
 }

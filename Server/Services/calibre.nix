@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
-{
+let
+	calibre = services.calibre-web;
+
+in {
 
 	services.calibre-web = {
 		enable = true;
@@ -14,7 +17,7 @@
 		};
 		dataDir = "calibreWeb";
 		user = "calibreweb";
-		group = "calibreweb";
+		group = "cloudaccess";
 	};
 
 	users.users.calibreweb = {
@@ -22,12 +25,10 @@
 		home = "/var/lib/calibreWeb";
 		createHome = true;
 		description = "Calibre-Web";
-		extraGroups = [ "calibreweb" ];
+		extraGroups = [ "${calibre.group}" ];
 	};
 
-	users.groups.calibreweb = {};
-
-	networking.firewall.allowedTCPPorts = [ 8083 ];
+	networking.firewall.allowedTCPPorts = [ calibre.listen.port ];
 
 	system.activationScripts.calibreDatabaseDownload = ''
 		mkdir -p /var/lib/calibreWeb/collections
@@ -35,7 +36,7 @@
 			cd /var/lib/calibreWeb
 			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
 		fi
-		chown -R calibreweb:calibreweb /var/lib/calibreWeb
+		chown -R ${calibre.user}:${calibre.group} /var/lib/calibreWeb
 	'';
 
 }
