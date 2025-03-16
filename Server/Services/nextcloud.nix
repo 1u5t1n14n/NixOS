@@ -34,6 +34,7 @@
 		];
 	};
 
+	users.groups.cloudaccess = {};
 	users.users.nextcloud.extraGroups = [ "cloudaccess" ];
 
 	# TODO -> agenix

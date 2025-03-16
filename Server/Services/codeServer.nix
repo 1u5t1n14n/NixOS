@@ -1,7 +1,7 @@
-{ userName, ... }:
+{ userName, config, ... }:
 
 let
-	codeServer = services.code-server;
+	codeServer = config.services.code-server;
 
 in {
 

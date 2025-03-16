@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-	calibre = services.calibre-web;
+	calibre = config.services.calibre-web;
 
 in {
 

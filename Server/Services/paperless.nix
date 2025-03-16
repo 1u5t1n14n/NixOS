@@ -1,7 +1,7 @@
-{ userName, ... }:
+{ userName, config, ... }:
 
 let
-	paperless = services.paperless;
+	paperless = config.services.paperless;
 
 in {
 

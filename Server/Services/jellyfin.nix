@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
-{
+let
+	jellyfin = config.services.jellyfin;
+
+in {
 
 	services.jellyfin = {
 		enable = true;
@@ -21,5 +24,10 @@
 		description = "Jellyfin";
 		extraGroups = [ "cloudaccess" ];
 	};
+
+	system.activationScripts.jellyfinPermissionManager = ''
+		mkdir -p /var/lib/jellyfin/
+		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/jellyfin
+	'';
 
 }

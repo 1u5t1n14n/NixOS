@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 
 let
-	stirling = services.stirling-pdf;
+	stirling = config.services.stirling-pdf;
 
 in {
 

@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 
 let
-	searxng = services.searx;
+	searxng = config.services.searx;
 
 in {
 
