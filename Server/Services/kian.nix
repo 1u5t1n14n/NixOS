@@ -1,13 +1,13 @@
 { pkgs, ... }:
 
+let
+	pass = builtins.getEnv "KIAN";
 {
 
 	users.users.kian = {
 		isNormalUser = true;
 		createHome = true;
-
-		# TODO -> agenix
-		initialHashedPassword = "$y$j9T$OPBgQ9p/.wQp/w73CWohx/$aochBGA4fXfdeifRAsPhSYPNhfprwJXsE5wwmuneQT7";
+		initialHashedPassword = "${pass}";
 		description = "Kian";
 		shell = pkgs.zsh;
 		extraGroups = [ "networkmanager" ];

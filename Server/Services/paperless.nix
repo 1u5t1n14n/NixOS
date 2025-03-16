@@ -2,6 +2,7 @@
 
 let
 	paperless = config.services.paperless;
+	pass = builtins.getEnv "PAPERLESS";
 
 in {
 
@@ -21,8 +22,7 @@ in {
 		consumptionDirIsPublic = true;
 	};
 
-	# TODO -> agenix
-	environment.etc."paperless/password".text = "goodPassword";
+	environment.etc."paperless/password".text = "${pass}";
 
 	networking.firewall.allowedTCPPorts = [ paperless.port ];
 

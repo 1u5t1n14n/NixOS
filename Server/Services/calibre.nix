@@ -2,6 +2,7 @@
 
 let
 	calibre = config.services.calibre-web;
+	pass = builtins.getEnv "CALIBRE";
 
 in {
 

@@ -1,11 +1,14 @@
 { pkgs, userName, ... }:
 
-{
+let
+	pass = builtins.getEnv "PASSWD";
+
+in {
 
 	users.users."${userName}" = {
 		isNormalUser = true;
 		createHome = true;
-		initialHashedPassword = "$y$j9T$HySwm5pX60uPCduxwrM5z/$eE2wbhrAPu6jqTyKg7MbJrQCH6WEg0niHf1hMvkkSO6";
+		initialHashedPassword = "${pass}";
 		description = "${userName}";
 		shell = pkgs.zsh;
 		extraGroups = [ "networkmanager" "wheel" ];
