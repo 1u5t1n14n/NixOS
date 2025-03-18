@@ -20,15 +20,15 @@ in {
 		group = "cloudaccess";
 	};
 
+	networking.firewall.allowedTCPPorts = [ calibre.listen.port ];
+
 	users.users.calibreweb = {
 		isNormalUser = true;
 		home = "/var/lib/calibreWeb";
 		createHome = true;
 		description = "Calibre-Web";
-		extraGroups = [ "${calibre.group}" ];
+		group = "${calibre.group}";
 	};
-
-	networking.firewall.allowedTCPPorts = [ calibre.listen.port ];
 
 	system.activationScripts.calibreDatabaseDownload = ''
 		mkdir -p /var/lib/calibreWeb/collections
@@ -36,7 +36,7 @@ in {
 			cd /var/lib/calibreWeb
 			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
 		fi
-		chown -R ${calibre.user}:${calibre.group} /var/lib/calibreWeb
+		chown -R ${calibre.user}:${calibre.group} ${config.users.users.calibreweb.home}
 	'';
 
 }

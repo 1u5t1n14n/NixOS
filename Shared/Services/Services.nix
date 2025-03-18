@@ -10,7 +10,6 @@
 		./users.nix
 		./executable.nix
 		./networking.nix
-		./syncthing.nix
 	];
 
 }

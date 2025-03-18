@@ -1,4 +1,4 @@
-{ config, inputs, system, hostName, ... }:
+{ config, inputs, system, hostName, userName, ... }:
 
 {
 
@@ -16,7 +16,7 @@
 		autoUpdateApps.enable = true;
 		extraAppsEnable = true;
 		extraApps = with config.services.nextcloud.package.packages.apps; {
-			inherit calendar contacts notes tasks mail cookbook music maps registration bookmarks;
+			inherit calendar contacts notes tasks mail cookbook music maps bookmarks;
 		};
 
 		nginx = {
@@ -45,6 +45,7 @@
 	environment.etc."nextcloudRoot".text = "${builtins.getEnv "NEXTCLOUD"}";
 
 	users.groups.cloudaccess = {};
+	users.users."${userName}".extraGroups = [ "cloudaccess" ];
 	users.users.nextcloud.extraGroups = [ "cloudaccess" ];
 
 }

@@ -11,6 +11,8 @@ in {
 		port = 8080;
 		user = "${userName}";
 		group = "users";
+		disableTelemetry = true;
+		auth = "none";
 	};
 
 	networking.firewall.allowedTCPPorts = [ codeServer.port ];

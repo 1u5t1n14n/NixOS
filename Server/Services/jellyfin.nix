@@ -13,7 +13,6 @@ in {
 	};
 
 	environment.systemPackages = with pkgs; [
-		#jellyfin
 		jellyfin-web
 		jellyfin-ffmpeg
 	];
@@ -22,11 +21,11 @@ in {
 		home = "/var/lib/jellyfin";
 		createHome = true;
 		description = "Jellyfin";
-		extraGroups = [ "cloudaccess" ];
+		group = "${jellyfin.group}";
 	};
 
 	system.activationScripts.jellyfinPermissionManager = ''
-		mkdir -p /var/lib/jellyfin/
+		mkdir -p ${config.users.users.jellyfin.home}
 		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/jellyfin
 	'';
 
