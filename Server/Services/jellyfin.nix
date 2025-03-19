@@ -19,6 +19,7 @@ in {
 
 	users.users.jellyfin = {
 		home = "/var/lib/jellyfin";
+		homeMode = "770";
 		createHome = true;
 		description = "Jellyfin";
 		group = "${jellyfin.group}";

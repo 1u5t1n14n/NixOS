@@ -25,6 +25,7 @@ in {
 	users.users.calibreweb = {
 		isNormalUser = true;
 		home = "/var/lib/calibreWeb";
+		homeMode = "770";
 		createHome = true;
 		description = "Calibre-Web";
 		group = "${calibre.group}";
