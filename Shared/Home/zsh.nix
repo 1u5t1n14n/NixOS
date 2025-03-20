@@ -9,7 +9,6 @@
 		shellAliases = {
 			c = "clear";
 			spf = "superfile";
-			f = "vi $(fzf)";
 		};
 	};
 

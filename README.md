@@ -9,6 +9,7 @@ PAPERLESS   # passwd for Paperless Admin
 PASSWD      # hashed passwd for main user
 NEXTCLOUD   # passwd for Nextcloud Admin
 KIAN        # hashed passwd for Kian (please use meme passwds or remove him)
+GITEMAIL    # E-Mail used for Git
 ```
 
 Have all these variables in one line of the file! Sorted organization in not
