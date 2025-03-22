@@ -57,7 +57,7 @@
 				"org.wezfurlong.wezterm.desktop"
 				"firefox.desktop"
 				"org.gnome.Nautilus.desktop"
-				"minecraft-launcher.desktop"
+				"org.prismlauncher.PrismLauncher.desktop"
 				"discord.desktop"
 				"steam.desktop"
 				"jetbrains-toolbox.desktop"
