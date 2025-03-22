@@ -19,8 +19,6 @@ in {
 				pdfa_image_compression = "lossless";
 			};
 			PAPERLESS_EMPTY_TRASH_DELAY = 15;
-			PAPERLESS_CONSUMER_RECURSIVE = true;
-			PAPERLESS_CONSUMER_SUBDIRS_AS_TAGS = true;
 			# Needed for Office Document Support
 			PAPERLESS_TIKA_ENABLED = true;
 			PAPERLESS_TIKA_ENDPOINT = "http://localhost:${toString config.services.tika.port}";
