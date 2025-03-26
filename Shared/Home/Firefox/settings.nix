@@ -2,7 +2,7 @@
 
 {
 
-	programs.firefox.profiles.Firefox.settings = {
+	programs.firefox.profiles.default.settings = {
 		# This is just copied from the arkenfox Project.
 		# Take a look at it for more details.
 

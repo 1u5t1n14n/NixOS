@@ -4,11 +4,12 @@
 
 	imports = [
 		./settings.nix
+		./search.nix
 	];
 
 	programs.firefox = {
 		enable = true;
-		profiles.Firefox = {
+		profiles.default = {
 			isDefault = true;
 			name = "Firefox";
 			id = 0;
