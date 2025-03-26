@@ -10,7 +10,7 @@
 	dconf.settings = {
 		"org/gnome/desktop/background" = {
 			show-desktop-icons = true;
-			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/Wallpapers/WallpaperDark.png";
+			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/Wallpapers/WallpaperDark.jpg";
 			picture-uri = "file://${config.home.homeDirectory}/Pictures/Wallpapers/Wallpaper.png";
 		};
 		"org/gnome/desktop/interface" = {
