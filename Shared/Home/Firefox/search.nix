@@ -38,7 +38,7 @@ in {
 
 			bing.metaData.hidden = true;
 			google.metaData.hidden = true;
-		}
+		};
 	};
 
 }
