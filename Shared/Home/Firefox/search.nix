@@ -36,8 +36,8 @@ in {
 				definedAliases = [ "@nw" ];
 			};
 
-			bing.metaData.hidden = true;
-			google.metaData.hidden = true;
+			"Bing".metaData.hidden = true;
+			"Google".metaData.hidden = true;
 		};
 	};
 
