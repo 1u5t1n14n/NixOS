@@ -7,7 +7,10 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 		nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-24.11";
-		agenix.url = "github:ryantm/agenix";
+		nur = {
+			url = "github:nix-community/NUR";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 		homeManager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -35,8 +38,6 @@
 				modules = [
 					./Configuration.nix
 					./Shared/Hardware/${hostName}.nix
-
-					inputs.agenix.nixosModules.default
 				];
 			};
 
@@ -60,6 +61,7 @@
 			pkgs = nixpkgs.legacyPackages."${system}";
 			extraSpecialArgs = {
 				inherit userName;
+				inherit inputs;
 			};
 			modules = [ ./Home.nix ];
 		};

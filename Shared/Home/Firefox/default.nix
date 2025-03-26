@@ -5,6 +5,7 @@
 	imports = [
 		./settings.nix
 		./search.nix
+		./extensions.nix
 	];
 
 	programs.firefox = {
