@@ -204,6 +204,7 @@
 		"browser.ml.chat.enabled" = true;
 		"browser.ml.chat.hideLocalhost" = false;	# For later.
 		"browser.ml.chat.provider" = "https://duck.ai";
+		"browser.ml.chat.shortcuts" = false;
 		#"keyword.enabled" = false;
 		"browser.startup.homepage_override.mstone" = "ignore";
 
