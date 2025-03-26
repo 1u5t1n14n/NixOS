@@ -1,9 +1,12 @@
-{ inputs, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
+	nixpkgs.overlays = [ inputs.nur.overlay ];
+
 	programs.firefox.profiles.default.extensions = {
-		packages = with pkgs.inputs.nur.repos.rycee.firefox-addons; [
+		force = true;
+		packages = with pkgs.nur.repos.rycee.firefox-addons; [
 			ublock-origin
 			clearurls
 			multi-account-containers
