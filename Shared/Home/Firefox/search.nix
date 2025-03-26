@@ -35,6 +35,8 @@
 
 			"Bing".metaData.hidden = true;
 			"Google".metaData.hidden = true;
+			"DuckDuckGo".metaData.alias = "@d";
+			"Wikipedia (en)".metaData.alias = "@w";
 		};
 	};
 

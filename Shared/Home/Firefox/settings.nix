@@ -21,6 +21,7 @@
 		"browser.newtabpage.activity-stream.default.sites" = false;
 		"browser.newtabpage.activity-stream.feeds.telemetry" = false;
 		"browser.newtabpage.activity-stream.telemetry" = false;
+		"extensions.pocket.enabled" = false;
 
 		# Geolocation
 		"geo.provider.ms-windows-location" = false;
@@ -196,9 +197,20 @@
 
 		# Preferences
 		"browser.download.folderList" = 2;
+		"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
 		"dom.popup_allowed_events" = "click dblclick mousedown pointerdown";
+		"browser.toolbars.bookmarks.visibility" = "never";
+		"browser.download.autohideButton" = false;
+		"browser.ml.chat.enabled" = true;
+		"browser.ml.chat.hideLocalhost" = false;	# For later.
+		"browser.ml.chat.provider" = "https://duck.ai";
 		#"keyword.enabled" = false;
 		"browser.startup.homepage_override.mstone" = "ignore";
+
+		"browser.tabs.closeTabByDblclick" = true;
+		"browser.tabs.closeWindowWithLastTab" = false;
+		"browser.warnOnQuit" = false;
+		"browser.warnOnQuitShortcut" = false;
 	};
 
 }
