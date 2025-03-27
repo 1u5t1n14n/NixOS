@@ -13,6 +13,9 @@
 			facebook-container
 			duckduckgo-privacy-essentials
 			privacy-badger
+			vimium
+			return-youtube-dislikes
+			proton-vpn
 		];
 		settings."uBlock0@raymondhill.net".settings = {
 			selectedFilterLists = [
