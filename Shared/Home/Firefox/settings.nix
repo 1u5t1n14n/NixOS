@@ -2,6 +2,14 @@
 
 {
 
+	programs.firefox.policies = {
+		DisablePocket = true;
+		DisableSetDesktopBackground = true;
+		DisableTelemetry = true;
+		DisableFirefoxStudies = true;
+		DontCheckDefaultBrowser = true;
+		NoDefaultBookmarks = true;
+	};
 	programs.firefox.profiles.default.settings = {
 		# This is just copied from the arkenfox Project.
 		# Take a look at it for more details.
@@ -11,6 +19,7 @@
 		# options.
 
 		"browser.aboutConfig.showWarning" = false;
+		"identity.fxaccounts.enabled" = false;
 
 		# Startup
 		"browser.startup.page" = 0;
