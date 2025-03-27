@@ -1,6 +1,9 @@
 { ... }:
 
-{
+let
+	font = "JetBrainsMono Nerd Font";
+
+in {
 
 	programs.zed-editor = {
 		enable = true;
@@ -20,9 +23,9 @@
 			active_pane_modifiers.border_size = 0.0;
 			autosave = "off";
 			restore_on_startup = "none";
-			buffer_font_family = "JetBrainsMono";
-			terminal.font_family = "JetBrainsMono";
-			ui_font_family = "JetBrainsMono";
+			buffer_font_family = "${font}";
+			terminal.font_family = "${font}";
+			ui_font_family = "${font}";
 			dock = "right";
 			cursor_blink = false;
 			cursor_shape = "block";
