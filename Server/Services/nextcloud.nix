@@ -16,7 +16,7 @@
 		autoUpdateApps.enable = true;
 		extraAppsEnable = true;
 		extraApps = with config.services.nextcloud.package.packages.apps; {
-			inherit calendar onlyoffice contacts notes tasks mail cookbook music maps bookmarks;
+			inherit calendar contacts notes tasks mail cookbook music maps bookmarks;
 		};
 
 		nginx = {
