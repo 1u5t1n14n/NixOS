@@ -9,7 +9,6 @@
 		#./gitlab.nix
 		./domain.nix
 		./kian.nix
-		./radicale.nix
 		./jellyfin.nix
 		./calibre.nix
 		./paperless.nix
