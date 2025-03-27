@@ -17,7 +17,7 @@ in {
 		};
 		dataDir = "calibreWeb";
 		user = "calibreweb";
-		group = "cloudaccess";
+		group = "calibreweb";
 	};
 
 	networking.firewall.allowedTCPPorts = [ calibre.listen.port ];
@@ -25,7 +25,6 @@ in {
 	users.users.calibreweb = {
 		isNormalUser = true;
 		home = "/var/lib/calibreWeb";
-		homeMode = "770";
 		createHome = true;
 		description = "Calibre-Web";
 		group = "${calibre.group}";

@@ -9,7 +9,7 @@ in {
 		enable = true;
 		openFirewall = true;
 		user = "jellyfin";
-		group = "cloudaccess";
+		group = "jellyfin";
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -19,10 +19,9 @@ in {
 
 	users.users.jellyfin = {
 		home = "/var/lib/jellyfin";
-		homeMode = "770";
 		createHome = true;
 		description = "Jellyfin";
-		group = "${jellyfin.group}";
+		group = "jellyfin";
 	};
 
 	system.activationScripts.jellyfinPermissionManager = ''
