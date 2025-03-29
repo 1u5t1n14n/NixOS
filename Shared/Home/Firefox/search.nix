@@ -7,7 +7,7 @@
 		engines = {
 			"Nix Packages" = {
 				name = "Nix Packages";
-				urls = [{ template = "https://search.nixos.org/packages"; }];
+				urls = [{ template = "https://search.nixos.org/packages?channel=unstable&query={searchTerms}"; }];
 				iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
 				definedAliases = [ "@np" ];
 			};
