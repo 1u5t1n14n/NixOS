@@ -24,14 +24,4 @@ in {
 		group = "${jellyfin.group}";
 	};
 
-	users.users.jellyfinData = {
-		home = "/var/lib/jellyfinData";
-		createHome = true;
-		homeMode = "777";
-		description = "Library Manager for Jellyfin";
-		group = "jellyfinData";
-		isSystemUser = true;
-	};
-	users.groups.jellyfinData = {};
-
 }
