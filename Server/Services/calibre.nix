@@ -29,6 +29,7 @@ in {
 		description = "Calibre-Web";
 		group = "${calibre.group}";
 	};
+	users.groups."${calibre.group}" = {};
 
 	system.activationScripts.calibreDatabaseDownload = ''
 		mkdir -p /var/lib/calibreWeb/collections

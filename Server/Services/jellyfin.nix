@@ -21,12 +21,17 @@ in {
 		home = "/var/lib/jellyfin";
 		createHome = true;
 		description = "Jellyfin";
-		group = "jellyfin";
+		group = "${jellyfin.group}";
 	};
 
-	system.activationScripts.jellyfinPermissionManager = ''
-		mkdir -p ${config.users.users.jellyfin.home}
-		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/jellyfin
-	'';
+	users.users.jellyfinData = {
+		home = "/var/lib/jellyfinData";
+		createHome = true;
+		homeMode = "777";
+		description = "Library Manager for Jellyfin";
+		group = "jellyfinData";
+		isSystemUser = true;
+	};
+	users.groups.jellyfinData = {};
 
 }
