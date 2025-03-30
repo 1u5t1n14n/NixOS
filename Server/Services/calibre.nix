@@ -11,6 +11,7 @@ in {
 			ip = "0.0.0.0";
 			port = 8083;
 		};
+		openFirewall = true;
 		options = {
 			enableBookConversion = true;
 			enableBookUploading = true;
@@ -19,8 +20,6 @@ in {
 		user = "calibreweb";
 		group = "calibreweb";
 	};
-
-	networking.firewall.allowedTCPPorts = [ calibre.listen.port ];
 
 	users.users.calibreweb = {
 		isNormalUser = true;
