@@ -17,7 +17,7 @@ in {
 		jellyfin-ffmpeg
 	];
 
-	system.activationScripts.calibreDatabaseDownload = ''
+	system.activationScripts.jellyfinDirectoryCreation = ''
 		mkdir -p /var/lib/${jellyfin.dataDir}/Library
 		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/${jellyfin.dataDir}
 	'';
