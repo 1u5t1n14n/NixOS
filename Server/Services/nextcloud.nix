@@ -1,4 +1,4 @@
-{ config, inputs, system, hostName, userName, ... }:
+{ config, inputs, system, hostName, ... }:
 
 {
 
@@ -43,15 +43,5 @@
 	};
 
 	environment.etc."nextcloudRoot".text = "${builtins.getEnv "NEXTCLOUD"}";
-
-	users.users.opendir = {
-		home = "/var/lib/openDir";
-		createHome = true;
-		homeMode = "777";
-		description = "Open Directory for all to use";
-		group = "opendir";
-		isSystemUser = true;
-	};
-	users.groups.opendir = {};
 
 }

@@ -8,8 +8,8 @@ in {
 	services.jellyfin = {
 		enable = true;
 		openFirewall = true;
-		user = "jellyfin";
-		group = "jellyfin";
+		user = "nextcloud";
+		group = "nextcloud";
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -17,11 +17,9 @@ in {
 		jellyfin-ffmpeg
 	];
 
-	users.users.jellyfin = {
-		home = "/var/lib/jellyfin";
-		createHome = true;
-		description = "Jellyfin";
-		group = "${jellyfin.group}";
-	};
+	system.activationScripts.calibreDatabaseDownload = ''
+		mkdir -p /var/lib/${jellyfin.dataDir}/Library
+		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/${jellyfin.dataDir}
+	'';
 
 }

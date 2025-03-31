@@ -20,10 +20,12 @@ in {
 	};
 
 	system.activationScripts.calibreDatabaseDownload = ''
-		if [ ! -f "/var/lib/openDir/Books/metadata.db" ]; then
-			cd /var/lib/openDir/Books
-			sudo -u calibre-web ${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
+		mkdir -p /var/lib/${calibre.dataDir}
+		if [ ! -f "/var/lib/calibreWeb/metadata.db" ]; then
+			cd /var/lib/${calibre.dataDir}
+			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
 		fi
+		chown -R ${calibre.user}:${calibre.group} /var/lib/${calibre.dataDir}
 	'';
 
 }
