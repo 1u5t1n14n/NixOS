@@ -14,7 +14,7 @@ in {
 
 	networking.firewall.allowedTCPPorts = [ pyload.port ];
 
-	system.activationScripts.calibreDatabaseDownload = ''
+	system.activationScripts.pyloadDirectoryManager = ''
 		mkdir -p ${pyload.downloadDirectory}
 		chown -R ${pyload.user}:${pyload.group} ${pyload.downloadDirectory}
 	'';
