@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, inputs, system, ... }:
 
 let
 	pyload = config.services.pyload;
@@ -7,6 +7,7 @@ in {
 
 	services.pyload = {
 		enable = true;
+		package = inputs.nixpkgsStable.legacyPackages."${system}".pyload-ng;
 		listenAddress = "0.0.0.0";
 		user = "nextcloud";
 		group = "nextcloud";
