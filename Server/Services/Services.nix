@@ -3,6 +3,7 @@
 {
 
         imports = [
+		./pyload.nix
 		./nextcloud.nix
 		#./immich.nix
 		./codeServer.nix
