@@ -5,6 +5,7 @@
 	networking = {
 		hostName = "${hostName}";
 		networkmanager.enable = true;
+		nameservers = [ "8.8.8.8" "8.8.4.4" ];
 		firewall.enable = true;
 		firewall.allowedTCPPorts = [ 22 ];
 	};

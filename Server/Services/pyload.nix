@@ -15,7 +15,7 @@ in {
 	networking.firewall.allowedTCPPorts = [ pyload.port ];
 
 	systemd.tmpfiles.rules = [
-		"d /var/lib/${pyload.downloadDirectory} 0770 ${pyload.user} ${pyload.group} - -"
+		"d ${pyload.downloadDirectory} 0770 ${pyload.user} ${pyload.group} - -"
 	];
 
 }

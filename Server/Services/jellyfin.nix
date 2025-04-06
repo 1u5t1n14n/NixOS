@@ -18,6 +18,6 @@ in {
 	];
 
 	systemd.tmpfiles.rules = [
-		"d /var/lib/${jellyfin.dataDir} 0770 ${jellyfin.user} ${jellyfin.group} - -"
+		"d ${jellyfin.dataDir} 0770 ${jellyfin.user} ${jellyfin.group} - -"
 	];
 }
