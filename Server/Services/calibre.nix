@@ -20,12 +20,14 @@ in {
 	};
 
 	system.activationScripts.calibreDatabaseDownload = ''
-		mkdir -p /var/lib/${calibre.dataDir}
 		if [ ! -f "/var/lib/calibreWeb/metadata.db" ]; then
 			cd /var/lib/${calibre.dataDir}
 			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
 		fi
-		chown -R ${calibre.user}:${calibre.group} /var/lib/${calibre.dataDir}
 	'';
+
+	systemd.tmpfiles.rules = [
+		"d /var/lib/${calibre.dataDir} 0770 ${calibre.user} ${calibre.group} - -"
+	];
 
 }

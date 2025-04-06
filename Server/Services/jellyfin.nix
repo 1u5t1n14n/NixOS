@@ -17,9 +17,7 @@ in {
 		jellyfin-ffmpeg
 	];
 
-	system.activationScripts.jellyfinDirectoryCreation = ''
-		mkdir -p /var/lib/${jellyfin.dataDir}
-		chown -R ${jellyfin.user}:${jellyfin.group} /var/lib/${jellyfin.dataDir}
-	'';
-
+	systemd.tmpfiles.rules = [
+		"d /var/lib/${jellyfin.dataDir} 0770 ${jellyfin.user} ${jellyfin.group} - -"
+	];
 }
