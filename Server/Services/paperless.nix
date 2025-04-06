@@ -9,7 +9,7 @@ in {
 		enable = true;
 		address = "0.0.0.0";
 		port = 28981;
-		passwordFile = "/etc/paperless/pass";
+		passwordFile = "/etc/paperlessRoot";
 		settings = {
 			PAPERLESS_APP_TITLE = "Archiv";
 			PAPERLESS_ADMIN_USER = "root";
@@ -19,7 +19,7 @@ in {
 				pdfa_image_compression = "lossless";
 			};
 			PAPERLESS_EMPTY_TRASH_DELAY = 15;
-			# Needed for Office Document Support
+
 			PAPERLESS_TIKA_ENABLED = true;
 			PAPERLESS_TIKA_ENDPOINT = "http://localhost:${toString config.services.tika.port}";
 			PAPERLESS_TIKA_GOTENBERG_ENDPOINT = "http://localhost:${toString config.services.gotenberg.port}";
@@ -27,7 +27,7 @@ in {
 		consumptionDirIsPublic = true;
 	};
 
-	environment.etc."paperless/pass".text = "${builtins.getEnv "PAPERLESS"}";
+	environment.etc."paperlessRoot".text = "${builtins.getEnv "PAPERLESS"}";
 
 	networking.firewall.allowedTCPPorts = [ paperless.port ];
 

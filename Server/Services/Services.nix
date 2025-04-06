@@ -6,7 +6,6 @@
 		./nextcloud.nix
 		#./immich.nix
 		./codeServer.nix
-		#./gitlab.nix
 		./domain.nix
 		./kian.nix
 		./jellyfin.nix
