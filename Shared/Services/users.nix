@@ -12,6 +12,8 @@
 		packages = with pkgs; [ ];
 	};
 
+	users.users.root.initialHashedPassword = "${builtins.getEnv "ROOT"}";
+
 	security.sudo = {
 		enable = true;
 		extraConfig = ''
