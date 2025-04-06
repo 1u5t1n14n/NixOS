@@ -20,9 +20,8 @@ in {
 	};
 
 	system.activationScripts.calibreDatabaseDownload = ''
-		if [ ! -f "/var/lib/calibreWeb/metadata.db" ]; then
-			cd /var/lib/${calibre.dataDir}
-			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db
+		if [ ! -f "/var/lib/${calibre.dataDir}/metadata.db" ]; then
+			${pkgs.wget}/bin/wget https://github.com/janeczku/calibre-web/raw/master/library/metadata.db -O /var/lib/${calibre.dataDir}/metadata.db
 		fi
 	'';
 
