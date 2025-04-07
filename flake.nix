@@ -21,7 +21,7 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, homeManager, ...}@inputs:
+	outputs = { self, nixpkgs, homeManager, nixVim, ...}@inputs:
 	let
 		userName = "1u5t1n14n";
 		system = "x86_64-linux";
@@ -34,6 +34,7 @@
 					inherit userName;
 					inherit hostName;
 					inherit hasDesktop;
+					inherit nixVim;
 				};
 				modules = [
 					./Configuration.nix

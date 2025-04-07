@@ -6,7 +6,6 @@
 
 	environment.systemPackages = with pkgs; [
 		bat
-		neovim
 		cmatrix
 		fastfetch
 		figlet
