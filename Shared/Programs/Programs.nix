@@ -4,7 +4,6 @@
 
 	imports = [
 		./tty.nix
-		./nixVim.nix
 	];
 
 	environment.systemPackages = with pkgs; [
