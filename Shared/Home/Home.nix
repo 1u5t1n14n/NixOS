@@ -5,7 +5,8 @@
 	imports = [
 		./Firefox
 		./GNOME
-		./NixVim/default.nix
+		./NixVim
+		./onlyoffice.nix
 		./zsh.nix
 		./zed.nix
 		./git.nix
