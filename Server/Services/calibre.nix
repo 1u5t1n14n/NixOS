@@ -8,7 +8,7 @@ in {
 	services.calibre-web = {
 		enable = true;
 		listen = {
-			ip = "0.0.0.0";
+			ip = "127.0.0.1";
 			port = 8083;
 		};
 		openFirewall = true;
@@ -26,7 +26,23 @@ in {
 	'';
 
 	systemd.tmpfiles.rules = [
-		"d /var/lib/${calibre.dataDir} 0770 ${calibre.user} ${calibre.group} - -"
+		"d /var/lib/${calibre.dataDir} 0700 ${calibre.user} ${calibre.group} - -"
 	];
+
+	services.nginx.virtualHosts."localhost" = {
+		locations = {
+			"/library/".proxyPass = "http://${calibre.listen.ip}:${toString calibre.listen.port}";
+			proxyWebsockets = true;
+			extraConfig = ''
+				proxy_set_header Host $host;
+				proxy_set_header X-Real-IP $remote_addr;
+				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+				proxy_set_header X-Forwarded-Proto $scheme;
+				proxy_set_header X-Script-Name /library;
+				proxy_redirect off;
+				client_max_body_size 1024M;
+			'';
+		};
+	};
 
 }

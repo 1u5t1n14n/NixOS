@@ -3,7 +3,6 @@
 {
 
 	environment.systemPackages = with pkgs.gnomeExtensions; [
-		gsconnect
 		dock-from-dash
 		just-perfection
 		blur-my-shell

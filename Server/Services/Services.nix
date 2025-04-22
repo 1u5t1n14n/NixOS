@@ -5,9 +5,9 @@
         imports = [
 		./pyload.nix
 		./nextcloud.nix
-		#./immich.nix
+		./immich.nix
 		./codeServer.nix
-		./domain.nix
+		./nginx.nix
 		./kian.nix
 		./jellyfin.nix
 		./calibre.nix

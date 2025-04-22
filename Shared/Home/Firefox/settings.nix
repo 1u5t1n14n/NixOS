@@ -18,6 +18,7 @@
 		# So do not wonder as to why I included Windows-specific
 		# options.
 
+		"widget.use-xdg-desktop-portal.file-picker" = 1;
 		"browser.aboutConfig.showWarning" = false;
 		"identity.fxaccounts.enabled" = false;
 

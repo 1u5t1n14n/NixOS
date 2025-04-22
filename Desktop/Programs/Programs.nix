@@ -3,7 +3,7 @@
 {
 
 	imports = [
-		./Firefox
+		./firefox.nix
 		./code.nix
 		./games.nix
 		./gnome.nix
@@ -18,7 +18,6 @@
 		obsidian
 		libreoffice-fresh
 		thunderbird
-		pdfarranger
 		vlc
 	];
 

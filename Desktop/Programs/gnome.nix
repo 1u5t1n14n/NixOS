@@ -37,8 +37,9 @@
 		mousam
 		paper-clip
 		papers
-		warp
+		pdfarranger
 		televido
+		warp
 
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
