@@ -30,17 +30,17 @@ in {
 	];
 
 	services.nginx.virtualHosts."localhost" = {
-		locations = {
-			"/library/".proxyPass = "http://${calibre.listen.ip}:${toString calibre.listen.port}";
+		locations."/library" = {
+			proxyPass = "http://${calibre.listen.ip}:${toString calibre.listen.port}";
 			proxyWebsockets = true;
 			extraConfig = ''
-				proxy_set_header Host $host;
-				proxy_set_header X-Real-IP $remote_addr;
-				proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-				proxy_set_header X-Forwarded-Proto $scheme;
-				proxy_set_header X-Script-Name /library;
-				proxy_redirect off;
-				client_max_body_size 1024M;
+				proxy_bind		$server_addr;
+				proxy_redirect		http://$server_addr	/;
+				proxy_set_header	Host			$host;
+				proxy_set_header	X-Forwarded-For		$proxy_add_x_forwarded_for;
+				proxy_set_header	X-Scheme		$scheme;
+				proxy_set_header	X-Script-Name		/library;
+				client_max_body_size	1024M;
 			'';
 		};
 	};
