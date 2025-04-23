@@ -1,14 +1,19 @@
-{ inputs, userName, config, hasDesktop, lib, ... }:
+{ inputs, userName, config, hasDesktop, lib, pkgs, ... }:
 
 {
 
 	imports = [ inputs.sops.nixosModules.sops ];
+	environment.systemPackages = [ pkgs.ssh-to-age pkgs.sops ];
 
 	sops = {
 		defaultSopsFile = ./Secrets.yaml;
 		defaultSopsFormat = "yaml";
 		age = {
 			keyFile = "/etc/sops/age/keys.txt";
+			# Somehow does not provide the correct key.
+			# You are better off just ssh-to-age'ing
+			# the keys for yourself.
+
 			sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 			generateKey = true;
 		};
@@ -28,12 +33,9 @@
 		};
 	};
 
-	system.activationScripts.copyToHomeDir = ''
-		mkdir -p ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
-		if [ ! -f "${config.sops.age.keyFile}" ]; then
-			cp ${config.sops.age.keyFile} ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
-		fi
-		chown -R ${userName}:users ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
+	system.activationScripts.exportAgeKey = ''
+		mkdir -p ${config.users.users.${userName}.home}/.config/sops/age/
+		$(cat /etc/ssh/ssh_host_ed25519_key.pub | ${pkgs.ssh-to-age}/bin/ssh-to-age) > ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
 	'';
 
 }
