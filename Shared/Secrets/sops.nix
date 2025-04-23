@@ -28,4 +28,9 @@
 		};
 	};
 
+	system.activationScripts.copyToHomeDir = ''
+		cp ${config.sops.age.keyFile} ${users.users.${userName}.home}/.config/sops/age/key.txt
+		chmod 777 ${users.users.${userName}.home}/.config/sops/age/key.txt
+	'';
+
 }
