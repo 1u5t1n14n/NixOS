@@ -1,4 +1,4 @@
-{ inputs, userName, config, ... }:
+{ inputs, userName, config, hasDesktop, ... }:
 
 {
 
@@ -13,10 +13,12 @@
 	sops.secrets."user/root" = { };
 	sops.secrets."user/user" = { };
 	sops.secrets."services/paperless" = {
-		owner = config.services.paperless.user;
+		owner = mkIf (!hasDesktop)
+		config.services.paperless.user;
 	};
 	sops.secrets."services/nextcloud" = {
-		owner = config.services.nextcloud.config.dbuser;
+		owner = mkIf (!hasDesktop)
+		config.services.nextcloud.config.dbuser;
 	};
 
 }
