@@ -6,7 +6,7 @@
 		enable = true;
 		hostName = "localhost";
 
-		package = inputs.nixpkgsStable.legacyPackages."${system}".nextcloud30;
+		package = inputs.nixpkgsStable.legacyPackages.${system}.nextcloud30;
 
 		database.createLocally = true;
 		configureRedis = true;
@@ -28,7 +28,7 @@
 			dbtype = "pgsql";
 			dbuser = "nextcloud";
 			adminuser = "root";
-			adminpassFile = "${config.sops.secrets."services/nextcloud".path}";
+			adminpassFile = config.sops.secrets."services/nextcloud".path;
 		};
 
 		settings = {
@@ -37,7 +37,7 @@
 			trusted_domains = [
 				"localhost"
 				"192.168.178.178"
-				"${hostName}"
+				hostName
 			];
 		};
 	};

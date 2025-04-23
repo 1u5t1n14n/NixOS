@@ -7,7 +7,7 @@
 	];
 
 	home = {
-		username = "${userName}";
+		username = userName;
 		homeDirectory = "/home/${config.home.username}";
 		stateVersion = "25.05";
 		packages = with pkgs; [ ];

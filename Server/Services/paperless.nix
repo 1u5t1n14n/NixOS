@@ -10,7 +10,7 @@ in {
 			enable = true;
 			address = "127.0.0.1";
 			port = 28981;
-			passwordFile = "${config.sops.secrets."services/paperless".path}";
+			passwordFile = config.sops.secrets."services/paperless".path;
 			settings = {
 				PAPERLESS_APP_TITLE = "Archives";
 				PAPERLESS_ADMIN_USER = "root";

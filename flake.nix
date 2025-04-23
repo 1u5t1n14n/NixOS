@@ -58,8 +58,8 @@
 			};
 		};
 
-		homeConfigurations."${userName}" = homeManager.lib.homeManagerConfiguration {
-			pkgs = nixpkgs.legacyPackages."${system}";
+		homeConfigurations.${userName} = homeManager.lib.homeManagerConfiguration {
+			pkgs = nixpkgs.legacyPackages.${system};
 			extraSpecialArgs = {
 				inherit userName;
 				inherit inputs;
