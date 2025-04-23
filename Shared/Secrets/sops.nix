@@ -12,7 +12,6 @@
 	sops.age.generateKey = true;
 
 	sops.validateSopsFiles = true;
-	filesystems."/etc/ssh".neededForBoot = true;
 
 	sops.secrets."user/kian" = {
 		neededForUsers = true;
