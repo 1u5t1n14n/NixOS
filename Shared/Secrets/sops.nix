@@ -7,7 +7,12 @@
 	sops.defaultSopsFile = ./Secrets.yaml;
 	sops.defaultSopsFormat = "yaml";
 
-	sops.age.keyFile = "${config.users.users."${userName}".home}/.config/sops/age/keys.txt";
+	#sops.age.keyFile = "/etc/sops/age/key.txt";
+	sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+	sops.age.generateKey = true;
+
+	sops.validateSopsFiles = true;
+	filesystems."/etc/ssh".neededForBoot = true;
 
 	sops.secrets."user/kian" = {
 		neededForUsers = true;
