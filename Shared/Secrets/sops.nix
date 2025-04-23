@@ -8,7 +8,7 @@
 		defaultSopsFile = ./Secrets.yaml;
 		defaultSopsFormat = "yaml";
 		age = {
-			keyFile = "/etc/sops/age/key.txt";
+			keyFile = "/etc/sops/age/keys.txt";
 			sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 			generateKey = true;
 		};
@@ -29,8 +29,11 @@
 	};
 
 	system.activationScripts.copyToHomeDir = ''
-		cp ${config.sops.age.keyFile} ${config.users.users.${userName}.home}/.config/sops/age/key.txt
-		chmod 777 ${config.users.users.${userName}.home}/.config/sops/age/key.txt
+		mkdir -p ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
+		if [ ! -f "${config.sops.age.keyFile}" ]; then
+			cp ${config.sops.age.keyFile} ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
+		fi
+		chown -R ${userName}:users ${config.users.users.${userName}.home}/.config/sops/age/keys.txt
 	'';
 
 }
