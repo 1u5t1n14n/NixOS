@@ -8,7 +8,7 @@
 		#./immich.nix
 		./codeServer.nix
 		./nginx.nix
-		./kian.nix
+		./user.nix
 		./jellyfin.nix
 		#./calibre.nix
 		./paperless.nix

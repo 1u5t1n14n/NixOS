@@ -28,7 +28,7 @@
 			dbtype = "pgsql";
 			dbuser = "nextcloud";
 			adminuser = "root";
-			adminpassFile = "/etc/nextcloudRoot";
+			adminpassFile = "${config.sops.secrets."user/user".path}";
 		};
 
 		settings = {
@@ -41,7 +41,5 @@
 			];
 		};
 	};
-
-	environment.etc."nextcloudRoot".text = "${builtins.getEnv "NEXTCLOUD"}";
 
 }

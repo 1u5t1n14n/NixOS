@@ -1,10 +1,11 @@
-{ pkgs, userName, ... }:
+{ pkgs, userName, config, ... }:
 
 {
 
 	users.users."${userName}" = {
 		isNormalUser = true;
 		createHome = true;
+		hashedPasswordFile = "${config.sops.secrets."user/user".path}";
 		initialHashedPassword = "${builtins.getEnv "PASSWD"}";
 		description = "${userName}";
 		shell = pkgs.zsh;
@@ -12,7 +13,7 @@
 		packages = with pkgs; [ ];
 	};
 
-	users.users.root.initialHashedPassword = "${builtins.getEnv "ROOT"}";
+	users.users.root.hashedPasswordFile = "${config.sops.secrets."user/root".path}";
 
 	security.sudo = {
 		enable = true;

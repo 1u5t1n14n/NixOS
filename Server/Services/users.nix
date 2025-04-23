@@ -5,7 +5,7 @@
 	users.users.kian = {
 		isNormalUser = true;
 		createHome = true;
-		initialHashedPassword = "${builtins.getEnv "KIAN"}";
+		hashedPasswordFile = "${config.sops.secrets."user/kian".path}";
 		description = "Kian";
 		shell = pkgs.zsh;
 		extraGroups = [ "networkmanager" ];

@@ -12,5 +12,11 @@
 	sops.secrets."user/kian" = { };
 	sops.secrets."user/root" = { };
 	sops.secrets."user/user" = { };
+	sops.secrets."services/paperless" = {
+		owner = config.services.paperless.user;
+	};
+	sops.secrets."services/nextcloud" = {
+		owner = config.services.nextcloud.user;
+	};
 
 }

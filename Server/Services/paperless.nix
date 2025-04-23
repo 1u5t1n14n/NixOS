@@ -5,14 +5,12 @@ let
 
 in {
 
-	environment.etc."paperlessRoot".text = "${builtins.getEnv "PAPERLESS"}";
-
 	services = {
 		paperless = {
 			enable = true;
 			address = "127.0.0.1";
 			port = 28981;
-			passwordFile = "/etc/paperlessRoot";
+			passwordFile = "${config.sops.secrets."services/paperless".path}";
 			settings = {
 				PAPERLESS_APP_TITLE = "Archives";
 				PAPERLESS_ADMIN_USER = "root";
@@ -23,7 +21,6 @@ in {
 				};
 				PAPERLESS_EMPTY_TRASH_DELAY = 15;
 
-				PAPERLESS_FORCE_SCRIPT_NAME = "/paperless";
 				PAPERLESS_TIKA_ENABLED = true;
 				PAPERLESS_TIKA_ENDPOINT = "http://localhost:${toString config.services.tika.port}";
 				PAPERLESS_TIKA_GOTENBERG_ENDPOINT = "http://localhost:${toString config.services.gotenberg.port}";
