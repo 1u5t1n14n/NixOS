@@ -16,7 +16,7 @@
 		owner = config.services.paperless.user;
 	};
 	sops.secrets."services/nextcloud" = {
-		owner = config.services.nextcloud.user;
+		owner = config.services.nextcloud.config.dbuser;
 	};
 
 }

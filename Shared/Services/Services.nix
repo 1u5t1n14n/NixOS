@@ -10,6 +10,7 @@
 		./users.nix
 		./executable.nix
 		./networking.nix
+		./sudo.nix
 	];
 
 }

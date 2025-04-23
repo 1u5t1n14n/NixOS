@@ -28,7 +28,7 @@
 			dbtype = "pgsql";
 			dbuser = "nextcloud";
 			adminuser = "root";
-			adminpassFile = "${config.sops.secrets."user/user".path}";
+			adminpassFile = "${config.sops.secrets."services/nextcloud".path}";
 		};
 
 		settings = {
