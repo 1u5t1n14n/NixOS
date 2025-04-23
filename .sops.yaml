@@ -1,0 +1,9 @@
+keys:
+  - &prometheus age1wge453sl3htc5hshl5zjqe9zeqkk5p9km5hd4egwqtumuj35aecswkmc3w
+  - &morpheus age1av6wzrkwm9kg2ym0fr3vyh8ag788c0kuz7w5fwmavw4muelwjvmqmpfnqp
+creation_rules:
+  - path_regex: Secrets/Secrets.yaml$
+    key_groups:
+      - age:
+        - *prometheus
+        - *morpheus
