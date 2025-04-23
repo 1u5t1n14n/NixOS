@@ -7,6 +7,7 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 		nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-24.11";
+		sops.url = "github:Mic92/sops-nix";
 		nur = {
 			url = "github:nix-community/NUR";
 			inputs.nixpkgs.follows = "nixpkgs";

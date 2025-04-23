@@ -1,8 +1,9 @@
-{ hasDesktop, lib, pkgs, ... }:
+{ hasDesktop, lib, pkgs, inputs, ... }:
 
 {
 
 	imports = [
+		./Shared/Secrets/sops.nix
 		./Shared/Services/Services.nix
 		./Shared/Programs/Programs.nix
 	]
