@@ -1,4 +1,4 @@
-{ inputs, userName, config, hasDesktop, ... }:
+{ inputs, userName, config, hasDesktop, lib, ... }:
 
 {
 
@@ -13,11 +13,11 @@
 	sops.secrets."user/root" = { };
 	sops.secrets."user/user" = { };
 	sops.secrets."services/paperless" = {
-		owner = mkIf (!hasDesktop)
+		owner = lib.mkIf (!hasDesktop)
 		config.services.paperless.user;
 	};
 	sops.secrets."services/nextcloud" = {
-		owner = mkIf (!hasDesktop)
+		owner = lib.mkIf (!hasDesktop)
 		config.services.nextcloud.config.dbuser;
 	};
 
