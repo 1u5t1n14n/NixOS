@@ -1,4 +1,2 @@
 .env
 .sops.yaml
-Secrets/Secrets.yaml
-
