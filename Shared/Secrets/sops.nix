@@ -14,7 +14,7 @@ in {
 		defaultSopsFormat = "yaml";
 		age = {
 			keyFile = "/etc/sops/age/keys.txt";
-			sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+			sshKeyPaths = [ sshKeyFile ];
 			generateKey = true;
 		};
 		validateSopsFiles = true;
@@ -36,7 +36,7 @@ in {
 	system.activationScripts.copyToHomeDir = ''
 		mkdir -p ${user.home}/.config/sops/age/
 		${pkgs.ssh-to-age}/bin/ssh-to-age -private-key -i ${sshKeyFile} -o ${user.home}/.config/sops/age/keys.txt
-		chown -R ${userName}:${user.group} ${user.home}/.config/sops/age/keys.txt
+		chown -R ${userName}:${user.group} ${user.home}/.config/sops/
 	'';
 
 }
