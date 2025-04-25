@@ -22,6 +22,10 @@ in {
 			"user/kian".neededForUsers = true;
 			"user/root".neededForUsers = true;
 			"user/user".neededForUsers = true;
+			"services/codeServer" = {
+				owner = lib.mkIf (!hasDesktop)
+					config.services.code-server.user;
+			};
 			"services/paperless" = {
 				owner = lib.mkIf (!hasDesktop)
 					config.services.paperless.user;
