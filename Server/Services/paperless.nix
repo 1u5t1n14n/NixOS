@@ -8,7 +8,7 @@ in {
 	services = {
 		paperless = {
 			enable = true;
-			address = "127.0.0.1";
+			address = "0.0.0.0";
 			port = 28981;
 			passwordFile = config.sops.secrets."services/paperless".path;
 			settings = {
@@ -36,5 +36,7 @@ in {
 			port = 3000;
 		};
 	};
+
+	networking.firewall.allowedTCPPorts = [ paperless.port ];
 
 }
