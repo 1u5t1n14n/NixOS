@@ -12,9 +12,12 @@
 		colorschemes.catppuccin.enable = true;
 		plugins = {
 			lualine.enable = true;
+
+			# Telescope
 			web-devicons.enable = true;
 			telescope = {
 				enable = true;
+				extensions.ui-select.enable = true;
 				keymaps = {
 					"<leader><leader>" = {
 						action = "live_grep";
@@ -30,7 +33,23 @@
 					};
 				};
 			};
+
+			# Treesitter
+			treesitter = {
+				enable = true;
+				settings = {
+					ensureInstalled = [ "nix" "c" "bash" "html" "markdown" "lua" ];
+					highlight = {
+						enable = true;
+						additional_vim_regex_highlighting = true;
+					};
+					indent.enable = true;
+				};
+			};
 		};
+		autoGroups."kickstart-lsp-attach".clear = true;
+
+		# Options
 		globals = {
 			mapleader = " ";
 		};
