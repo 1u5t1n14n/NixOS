@@ -2,7 +2,8 @@
 
 {
 
-        imports = [
+    imports = [
+		./invidious.nix
 		#./pyload.nix
 		./nextcloud.nix
 		#./immich.nix
