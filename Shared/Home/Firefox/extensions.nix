@@ -14,7 +14,6 @@
 			privacy-redirect
 			privacy-badger
 			vimium
-			return-youtube-dislikes
 		];
 		settings."uBlock0@raymondhill.net".settings = {
 			selectedFilterLists = [
