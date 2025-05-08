@@ -6,6 +6,7 @@
 		./settings.nix
 		./search.nix
 		./extensions.nix
+		./style.nix
 	];
 
 	programs.firefox = {

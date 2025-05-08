@@ -18,9 +18,11 @@
 		# So do not wonder as to why I included Windows-specific
 		# options.
 
+		"browser.gnome-search-provider.enabled" = true;
 		"widget.use-xdg-desktop-portal.file-picker" = 1;
 		"browser.aboutConfig.showWarning" = false;
 		"identity.fxaccounts.enabled" = false;
+		"browser.quitShortcut.disabled" = true;
 
 		# Startup
 		"browser.startup.page" = 0;
@@ -110,6 +112,7 @@
 		"browser.formfill.enable" = false;
 		"browser.urlbar.suggest.engines" = false;
 		"layout.css.visited_links_enabled" = false;
+		"full-screen-api.warning.timeout" = 0;
 		
 		# Passwords
 		"signon.autofillForms" = false;
@@ -118,6 +121,8 @@
 
 		# Disk Avoidance
 		"browser.cache.disk.enable" = false;
+		"browser.cache.memory.enable" = true;
+		"browser.sessionstore.interval" = 600000;
 		"browser.privatebrowsing.forceMediaMemoryCache" = true;
 		"media.memory_cache_max_size" = 65536;
 		"browser.sessionstore.privacy_level" = 2;
@@ -158,6 +163,7 @@
 		"dom.disable_window_move_resize" = true;
 
 		# Miscellaneous
+		"ui.caretBlinkTime" = 0;
 		"browser.download.start_downloads_in_tmp_dir" = true;
 		"browser.helperApps.deleteTempFileOnExit" = true;
 		"browser.uitour.enabled" = false;
@@ -166,11 +172,13 @@
 		"network.IDN_show_punycode" = true;
 		"pdfjs.disabled" = false;
 		"pdfjs.enableScripting" = false;
+		"pdfjs.spreadModeOnLoad" = 1;
 		"browser.tabs.searchclipboardfor.middleclick" = false;
 		"browser.contentanalysis.enabled" = false;
 		"browser.contentanalysis.default_result" = 0;
 
 		# Downloads
+		"browser.download.alwaysOpenPanel" = false;
 		"browser.download.useDownloadDir" = false;
 		"browser.download.alwaysOpenPanel" = false;
 		"browser.download.manager.addToRecentDocs" = false;
@@ -179,6 +187,7 @@
 		"extensions.webextensions.restritedDomains" = "";
 
 		# ETP
+		"privacy.trackingprotection.enabled" = true;
 		"browser.contentblocking.category" = "strict";
 
 		# Sanitize
@@ -207,6 +216,7 @@
 
 		# Preferences
 		"browser.download.folderList" = 2;
+		"layout.css.prefers-color-scheme.content-override" = 0;
 		"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
 		"dom.popup_allowed_events" = "click dblclick mousedown pointerdown";
 		"browser.toolbars.bookmarks.visibility" = "never";

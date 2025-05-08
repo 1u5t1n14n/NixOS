@@ -45,6 +45,12 @@
 				name = "YouTube";
 				urls = [{ template = "https://youtube.com/results?search_query={searchTerms}"; }];
 				iconMapObj."16" = "https://youtube.com/favicon.ico";
+				definedAliases = [ "@bg" "!bg" ];
+			};
+			"Invidious" = {
+				name = "Invidious";
+				urls = [{ template = "https://yewtu.be/results?search_query={searchTerms}"; }];
+				iconMapObj."16" = "https://invidious.io/favicon.ico";
 				definedAliases = [ "@yt" "!yt" ];
 			};
 

@@ -10,6 +10,7 @@
 	];
 
 	environment.systemPackages = with pkgs; [
+		inkscape
 		firefox
 		geogebra6
 		wezterm
