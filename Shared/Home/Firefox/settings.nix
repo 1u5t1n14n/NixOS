@@ -178,7 +178,7 @@
 		"browser.contentanalysis.default_result" = 0;
 
 		# Downloads
-		"browser.download.alwaysOpenPanel" = false;
+		"browser.download.open_pdf_attachments_inline" = true;
 		"browser.download.useDownloadDir" = false;
 		"browser.download.alwaysOpenPanel" = false;
 		"browser.download.manager.addToRecentDocs" = false;
@@ -217,6 +217,7 @@
 		# Preferences
 		"browser.download.folderList" = 2;
 		"layout.css.prefers-color-scheme.content-override" = 0;
+		"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 		"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
 		"dom.popup_allowed_events" = "click dblclick mousedown pointerdown";
 		"browser.toolbars.bookmarks.visibility" = "never";
