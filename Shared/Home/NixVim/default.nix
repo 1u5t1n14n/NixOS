@@ -38,7 +38,7 @@
 			treesitter = {
 				enable = true;
 				settings = {
-					ensureInstalled = [ "nix" "c" "bash" "html" "markdown" "lua" ];
+					ensureInstalled = [ "javascript" "nix" "c" "bash" "html" "markdown" "lua" ];
 					highlight = {
 						enable = true;
 						additional_vim_regex_highlighting = true;
