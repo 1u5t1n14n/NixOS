@@ -14,9 +14,11 @@
 			picture-uri = "file://${config.home.homeDirectory}/Pictures/Wallpapers/Wallpaper.png";
 		};
 		"org/gnome/desktop/interface" = {
+			monospace-font-name = "JetBrainsMono Nerd Font";
 			color-scheme = "prefer-dark";
 			icon-theme = "MoreWaita";
-			clock-show-date = false;
+			clock-show-date = true;
+			toolkit-accessibility = true;
 		};
 		"org/gnome/desktop/sound" = {
 			event-sounds = false;
