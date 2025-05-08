@@ -15,7 +15,6 @@
 		seahorse
 		simple-scan
 		snapshot
-		totem
 		yelp
 		geary
 	];
@@ -38,8 +37,10 @@
 		paper-clip
 		papers
 		pdfarranger
-		televido
 		warp
+
+		parabolic
+		televido
 
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
