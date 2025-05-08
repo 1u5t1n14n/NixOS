@@ -11,6 +11,7 @@
 			clearurls
 			facebook-container
 			duckduckgo-privacy-essentials
+			privacy-redirect
 			privacy-badger
 			vimium
 			return-youtube-dislikes
