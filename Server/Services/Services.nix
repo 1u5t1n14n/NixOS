@@ -7,6 +7,7 @@
 		#./pyload.nix
 		./nextcloud.nix
 		#./immich.nix
+		./homeAssistant.nix
 		./codeServer.nix
 		./nginx.nix
 		./users.nix
