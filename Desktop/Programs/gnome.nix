@@ -17,11 +17,11 @@
 		snapshot
 		yelp
 		geary
+		totem
 	];
 
 	environment.systemPackages = with pkgs; [
 		alpaca
-		bottles
 		citations
 		dconf-editor
 		decibels
@@ -38,9 +38,6 @@
 		papers
 		pdfarranger
 		warp
-
-		parabolic
-		televido
 
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
