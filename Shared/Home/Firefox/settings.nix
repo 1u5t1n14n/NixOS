@@ -172,7 +172,6 @@
 		"network.IDN_show_punycode" = true;
 		"pdfjs.disabled" = false;
 		"pdfjs.enableScripting" = false;
-		"pdfjs.spreadModeOnLoad" = 1;
 		"browser.tabs.searchclipboardfor.middleclick" = false;
 		"browser.contentanalysis.enabled" = false;
 		"browser.contentanalysis.default_result" = 0;
