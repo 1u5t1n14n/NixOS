@@ -8,6 +8,9 @@
 	];
 
 	dconf.settings = {
+		"org/gnome/desktop/a11y" = {
+			always-show-universal-access-status = true;
+		};
 		"org/gnome/desktop/background" = {
 			show-desktop-icons = true;
 			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/Wallpapers/WallpaperDark.jpg";
@@ -45,7 +48,6 @@
 				"native-window-placement@gnome-shell-extensions.gcampax.github.com"
 				"gsconnect@andyholmes.github.io"
 				"launch-new-instance@gnome-shell-extensions.gcampax.github.com"
-				"drive-menu@gnome-shell-extensions.gcampax.github.com"
 				"just-perfection-desktop@just-perfection"
 			];
 		};
@@ -75,7 +77,7 @@
 			edge-tiling = true;
 			dynamic-workspaces = true;
 			workspaces-only-primary = true;
-			center-new-windows = false;
+			center-new-windows = true;
 		};
 		"org/gnome/desktop/privacy" = {
 			remove-old-temp-files = true;

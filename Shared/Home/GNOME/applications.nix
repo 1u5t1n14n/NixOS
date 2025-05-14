@@ -3,7 +3,6 @@
 {
 
 	dconf.settings = {
-		"org/gnome/World/Secrets".window-size = "[360, 625]";
 		"org/gnome/epiphany" = {
 			ask-for-default = false;
 		};

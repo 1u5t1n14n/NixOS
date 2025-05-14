@@ -28,8 +28,8 @@
 			show-desktop = ["<Super>F3"];
 		};
 		"org/gnome/shell/keybindings" = {
-			shift-overview-down = ["<Super>Down"];
-			shift-overview-up = ["<Super>Up"];
+			shift-overview-down = [];
+			shift-overview-up = [];
 			toggle-quick-settings = ["<Super>comma"];
 			toggle-overview = ["<Alt>space"];
 			toggle-message-tray = ["<Super>n"];
