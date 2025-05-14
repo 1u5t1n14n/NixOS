@@ -6,6 +6,9 @@
 		displayManager.gdm = {
 			enable = true;
 			wayland = true;
+			banner = ''
+				This is a test.
+			'';
 		};
 		desktopManager.gnome.enable = true;
 	};
