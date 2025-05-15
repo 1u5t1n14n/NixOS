@@ -9,6 +9,10 @@ in {
 		enable = true;
 		extensions = [ "html" "nix" "typst" ];
 		userSettings = {
+			soft_wrap = "bounded";
+			scrollbar = {
+				show = "never";
+			};
 			vim_mode = true;
 			features.copilot = true;
 			telemetry = {
