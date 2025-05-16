@@ -15,7 +15,7 @@
 		};
 		"org/gnome/desktop/background" = {
 			show-desktop-icons = true;
-			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/WallpaperDark.jpg";
+			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/Wallpaper.jpg";
 			picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.jxl";
 		};
 		"org/gnome/desktop/interface" = {
@@ -30,6 +30,7 @@
 		};
 		"org/gnome/gnome-session" = {
 			logout-prompt = false;
+			idle-delay = 0;
 		};
 		"org/gnome/settings-daemon/plugins/power" = {
 			power-button-action = "interactive";
