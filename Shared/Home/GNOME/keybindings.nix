@@ -3,9 +3,6 @@
 {
 
 	dconf.settings = {
-		"org/gnome/settings-daemon/plugins/media-keys" = {
-			logout = ["<Alt>escape"];
-		};
 		"org/gnome/desktop/wm/preferences" = {
 			mouse-button-modifier = "<Alt>";
 		};
