@@ -9,7 +9,14 @@ in {
 		enable = true;
 		extensions = [ "html" "nix" "typst" ];
 		userSettings = {
-			soft_wrap = "bounded";
+			active_pane_modifiers = {
+				inactive_opacity = 0.9;
+				border_size = 0.0;
+			};
+			autosave = "off";
+			cursor_shape = "block";
+			hide_mouse = "on_typing";
+			auto_update = false;
 			scrollbar = {
 				show = "never";
 			};
@@ -24,8 +31,6 @@ in {
 				dark = "Andromeda";
 				light = "Gruvbox Light Soft";
 			};
-			active_pane_modifiers.border_size = 0.0;
-			autosave = "off";
 			restore_on_startup = "none";
 			buffer_font_family = font;
 			terminal.font_family = font;
