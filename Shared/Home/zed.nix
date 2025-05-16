@@ -14,7 +14,6 @@ in {
 				border_size = 0.0;
 			};
 			autosave = "off";
-			cursor_shape = "block";
 			hide_mouse = "on_typing";
 			auto_update = false;
 			scrollbar = {
