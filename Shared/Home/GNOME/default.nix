@@ -7,14 +7,16 @@
 		./keybindings.nix
 	];
 
+	xdg.configFile."${config.home.homeDirectory}/Pictures/Wallpaper.jpg".source = ../Wallpaper.jpg;
+
 	dconf.settings = {
 		"org/gnome/desktop/a11y" = {
 			always-show-universal-access-status = true;
 		};
 		"org/gnome/desktop/background" = {
 			show-desktop-icons = true;
-			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/Wallpapers/WallpaperDark.jpg";
-			picture-uri = "file://${config.home.homeDirectory}/Pictures/Wallpapers/Wallpaper.png";
+			picture-uri-dark = "file://${config.home.homeDirectory}/Pictures/WallpaperDark.jpg";
+			picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.jxl";
 		};
 		"org/gnome/desktop/interface" = {
 			monospace-font-name = "JetBrainsMono Nerd Font";
