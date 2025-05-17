@@ -21,19 +21,13 @@
 	];
 
 	environment.systemPackages = with pkgs; [
-		alpaca
 		citations
-		dconf-editor
 		decibels
 		errands
-		foliate
-		gapless
 		gnome-secrets
 		gnome-tweaks
 		impression
-		key-rack
 		morewaita-icon-theme
-		mousam
 		paper-clip
 		papers
 		pdfarranger
