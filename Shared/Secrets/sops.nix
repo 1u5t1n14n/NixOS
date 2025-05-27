@@ -10,6 +10,7 @@ in {
 	environment.systemPackages = [ pkgs.ssh-to-age pkgs.sops ];
 
 	sops = {
+		log = [ "secretChanges" ];
 		defaultSopsFile = ./Secrets.yaml;
 		defaultSopsFormat = "yaml";
 		age = {
