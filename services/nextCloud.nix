@@ -8,12 +8,12 @@ in
 
 	services.nextcloud = {
 		enable = true;
-		hostName = "localhost";
+		hostName = "192.168.178.178";
 
 		package = pkgs.nextcloud30;
 
 		configureRedis = true;
-		phpOptions."opcache.interned_strings_buffer" = 128;
+		phpOptions."opcache.interned_strings_buffer" = 16;
 
 		# App Installation
 		extraAppsEnable = true;
@@ -46,5 +46,7 @@ in
 			];
 		};
 	};
+
+	networking.firewall.allowedTCPPorts = [ 80 443 ];
 
 }
