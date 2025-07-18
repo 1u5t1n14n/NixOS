@@ -1,4 +1,4 @@
-{ host, lib, ... }:
+{ host, lib, config, ... }:
 
 {
 
@@ -19,9 +19,7 @@
 				PermitRootLogin = "no";
 				AllowUsers = [
 					host.user 
-				]
-				++ lib.optionals !host.hasDesktop [
-					"kian"
+					config.users.users.kian.name
 				];
 			};
 

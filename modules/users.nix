@@ -21,12 +21,12 @@ in
 				packages = with pkgs; [ ];
 			};
 
-			kian = lib.mkIf (!host.hasDesktop) {
+			kian = {
 				isNormalUser = true;
 				createHome = true;
 				home = "/var/lib/Kian";
 				hashedPasswordFile = secret."user/kian".path;
-				extraGroups = [ "networkmanager" ];
+				extraGroups = [ "networkmanager" "wheel" ];
 				description = "Kian";
 				useDefaultShell = true;
 				packages = with pkgs; [ ];
