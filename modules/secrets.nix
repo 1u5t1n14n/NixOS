@@ -45,7 +45,7 @@ in
 		};
 	};
 
-	system.userActivationScripts.copyToHomeDir = ''
+	system.activationScripts.copyToHomeDir = ''
 		mkdir -p ${user.home}/.config/sops/age/
 		${pkgs.ssh-to-age}/bin/ssh-to-age -private-key -i ${sshKeyFile} -o ${user.home}/.config/sops/age/keys.txt
 		chown -R ${host.user}:${user.group} ${user.home}/.config/sops/
