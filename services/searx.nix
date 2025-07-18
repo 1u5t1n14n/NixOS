@@ -7,7 +7,7 @@
 	# self as soon as possible.
 
 	services.searx = {
-		enable = true;
+		enable = false;
 		redisCreateLocally = true;
 
 		limiterSettings = {
