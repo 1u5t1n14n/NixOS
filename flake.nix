@@ -55,6 +55,15 @@
 	{
 
 		nixosConfigurations = {
+			Prometheus = mkNixosConfig {
+				host = {
+					name = "Prometheus";
+					system = "x86_64-linux";
+					user = "1u5t1n14n";
+					hasDesktop = false;
+				};
+			};
+
 			Hyperion = mkNixosConfig {
 				host = {
 					name = "Hyperion";
