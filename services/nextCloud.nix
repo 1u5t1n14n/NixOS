@@ -6,9 +6,6 @@ let
 in
 {
 
-	# One could also enable an Object Store
-	# When there is time.
-
 	services.nextcloud = {
 		enable = true;
 		hostName = "localhost";
@@ -24,6 +21,11 @@ in
 		extraApps = with cfg.package.packages.apps; {
 			inherit calendar contacts mail cookbook maps richdocuments;
 			#                                            ^^ Office App
+		};
+
+		nginx = {
+			hstsMaxAge = 15552000;
+			recommendedHttpHeaders = true;
 		};
 
 		database.createLocally = true;
