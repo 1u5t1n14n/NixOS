@@ -120,25 +120,4 @@
 		};
 	};
 
-	systemd.services.nginx.serviceConfig.ProtectHome = false;
-
-	users.groups.searx.members = [ "nginx" ];
-
-	services.nginx = {
-		enable = true;
-		recommendedGzipSettings = true;
-		recommendedOptimisation = true;
-		recommendedProxySettings = true;
-		recommendedTlsSettings = true;
-		virtualHosts = {
-			"localhost" = {
-				locations."/search" = {
-					extraConfig = ''
-						uwsgi_pass unix:${config.services.searx.uwsgiConfig.socket};
-					'';
-				};
-			};
-		};
-	};
-
 }
