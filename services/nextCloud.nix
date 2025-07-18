@@ -14,7 +14,6 @@ in
 		hostName = "localhost";
 
 		package = pkgs.nextcloud30;
-		# package = inputs.nixpkgStable.legacyPackages.${host.system}.nextcloud29;
 
 		configureRedis = true;
 		phpOptions."opcache.interned_strings_buffer" = 128;
