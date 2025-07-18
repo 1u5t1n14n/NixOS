@@ -20,7 +20,7 @@
 				AllowUsers = [
 					host.user 
 				]
-				++ lib.optionals host.hasDesktop [
+				++ lib.optionals !host.hasDesktop [
 					"kian"
 				];
 			};
