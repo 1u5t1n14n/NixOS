@@ -26,8 +26,8 @@ in
 				};
 				PAPERLESS_EMPTY_TRASH_DELAY = 15;
 				PAPERLESS_TIKA_ENABLED = config.services.tika.enable;
-				PAPERLESS_TIKA_ENDPOINT = "http://${services.tika.listenAddress}:${toString config.services.tika.port}";
-				PAPERLESS_TIKA_GOTENBERG_ENDPOINT = "http://${services.gotenberg.bindIP}:${toString config.services.gotenberg.port}";
+				PAPERLESS_TIKA_ENDPOINT = "http://${config.services.tika.listenAddress}:${toString config.services.tika.port}";
+				PAPERLESS_TIKA_GOTENBERG_ENDPOINT = "http://${config.services.gotenberg.bindIP}:${toString config.services.gotenberg.port}";
 			};
 		};
 

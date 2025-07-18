@@ -1,4 +1,4 @@
-{ config, inputs, host, ... }:
+{ config, inputs, host, pkgs, ... }:
 
 let
 	cfg = config.services.nextcloud;
@@ -13,7 +13,8 @@ in
 		enable = true;
 		hostName = "localhost";
 
-		package = inputs.nixpkgStable.legacyPackages.${system}.nextcloud30;
+		package = pkgs.nextcloud30;
+		# package = inputs.nixpkgStable.legacyPackages.${host.system}.nextcloud29;
 
 		configureRedis = true;
 		phpOptions."opcache.interned_strings_buffer" = 128;
@@ -23,7 +24,7 @@ in
 		autoUpdateApps.enable = cfg.extraAppsEnable;
 		extraApps = with cfg.package.packages.apps; {
 			inherit calendar contacts mail cookbook maps richdocuments;
-			#												^^ Office App
+			#                                            ^^ Office App
 		};
 
 		database.createLocally = true;
@@ -43,26 +44,6 @@ in
 				host.name
 			];
 		};
-	};
-
-	# Theming of Nextcloud via a Service
-	systemd.services.nextcloud-custom-config = {
-		path = [
-			config.services.nextcloud.occ
-		];
-		script = ''
-			# For now these are only taken from
-			# The Wiki Article. Will theme it
-			# Later.
-
-			# nextcloud-occ theming:config name "My Cloud"
-			# nextcloud-occ theming:config url "https://cloud.mine.com";
-			# nextcloud-occ theming:config privacyUrl "https://www.mine.com/privacy";
-			# nextcloud-occ theming:config color "#3253a5";
-			# nextcloud-occ theming:config logo ${./logo.png}
-		'';
-		after = [ "nextcloud-setup.service" ];
-		wantedBy = [ "multi-user.target" ];
 	};
 
 }
