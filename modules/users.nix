@@ -7,7 +7,7 @@ in
 {
 
 	users = {
-		mutableUsers = false;
+		mutableUsers = true;
 
 		users = {
 			root.hashedPasswordFile = secret."user/root".path;
