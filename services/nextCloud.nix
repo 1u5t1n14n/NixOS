@@ -35,6 +35,8 @@ in
 			adminpassFile = config.sops.secrets."services/nextcloud".path;
 		};
 
+		maxUploadSize = "1G";
+
 		settings = {
 			maintenance_window_start = 1;
 			default_phone_region = "DE";
