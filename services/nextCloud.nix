@@ -8,9 +8,9 @@ in
 
 	services.nextcloud = {
 		enable = true;
-		hostName = "192.168.178.178";
+		hostName = "localhost";
 
-		package = pkgs.nextcloud30;
+		package = pkgs.nextcloud31;
 
 		configureRedis = true;
 		phpOptions."opcache.interned_strings_buffer" = 16;
@@ -19,8 +19,7 @@ in
 		extraAppsEnable = true;
 		autoUpdateApps.enable = cfg.extraAppsEnable;
 		extraApps = with cfg.package.packages.apps; {
-			inherit calendar contacts mail cookbook maps richdocuments;
-			#                                            ^^ Office App
+			inherit calendar contacts mail cookbook maps;
 		};
 
 		nginx = {
