@@ -21,6 +21,7 @@ in
 		histFile = "$HOME/.zshHistory";
 
 		shellAliases = {
+			updateOS = "sudo nixos-rebuild switch --flake ${../flake.nix}#${host.name}";
 			ll = "ls -l";
 			spf = "superfile";
 		};
