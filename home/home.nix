@@ -5,9 +5,9 @@
 	imports = [
 		./firefox
 		./gnome
+		./nixvim
 		./git.nix
 		./gtk.nix
-		./nixVim.nix
 		./wezterm.nix
 		./zed.nix
 	];
