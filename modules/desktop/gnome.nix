@@ -51,15 +51,15 @@ in
 			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
 
-			config.programs.nautilus-open-any-terminal.terminal
-
 			citations
 			impression
 			gnome-secrets
 			morewaita-icon-theme
 			papers
 			pdfarranger
-		];
+		]
+
+		++ lib.optionals (config.programs.nautilus-open-any-terminal.terminal == "wezterm" ) [ wezterm ];
 
 		# Exclude Packages that would be installed
 		# For GNOME
