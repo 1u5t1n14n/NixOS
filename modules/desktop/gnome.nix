@@ -27,6 +27,11 @@ in
 			package = pkgs.gnomeExtensions.gsconnect;
 		};
 
+		nautilus-open-any-terminal = {
+			enable = true;
+			terminal = "wezterm";
+		};
+
 		# Disable GNOME Console Integrations
 		# Since it is no longer installed
 		bash.vteIntegration = false;
@@ -45,6 +50,8 @@ in
 			gnomeExtensions.media-controls
 			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
+
+			config.programs.nautilus-open-any-terminal.terminal
 
 			citations
 			impression
