@@ -16,7 +16,7 @@
 				"thunderbird.desktop"
 				"org.prismlauncher.PrismLauncher.desktop"
 				"steam.desktop"
-				"org.gnome.World.Secrets.desktop"
+				"startcenter.desktop"
 			];
 		};
 	};

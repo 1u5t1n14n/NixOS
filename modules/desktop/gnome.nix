@@ -53,7 +53,6 @@ in
 
 			citations
 			impression
-			gnome-secrets
 			morewaita-icon-theme
 			papers
 			pdfarranger

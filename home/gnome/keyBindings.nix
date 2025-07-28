@@ -16,12 +16,7 @@
 			binding = "<Alt>Return";
 			command = "wezterm";
 		};
-		"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-			name = "GNOME Secrets";
-			binding = "<Alt>0";
-			command = "secrets";
-		};
-		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" ];
+		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
 
 		"org/gnome/shell/app-switcher".current-workspace-only = true;
 		"org/gnome/shell/keybindings" = {
