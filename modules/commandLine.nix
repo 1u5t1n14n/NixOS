@@ -13,11 +13,6 @@
 			settings = { };
 		};
 
-		# nh = {
-		#	enable = true;
-		#	flake = "${../flake.nix}#${host.name}";
-		#};
-
 		neovim = {
 			enable = true;
 			package = pkgs.neovim-unwrapped;
