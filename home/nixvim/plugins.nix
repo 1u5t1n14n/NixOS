@@ -3,7 +3,7 @@
 {
 
 	programs.nixvim.plugins = {
-		hardtime.enable = true;
+		hardtime.enable = false;
 		lualine.enable = true;
 
 		web-devicons.enable = config.programs.nixvim.plugins.telescope.enable;
