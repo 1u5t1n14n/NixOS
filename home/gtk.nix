@@ -1,9 +1,9 @@
-{ pkgs, osConfig, ... }:
+{ pkgs, ... }:
 
 {
 
 	gtk = {
-		enable = osConfig.services.desktopManager.gnome.enable;
+		enable = true;
 
 		font = {
 			name = "Inter";
