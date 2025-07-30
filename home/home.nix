@@ -6,6 +6,7 @@
 		./firefox
 		./gnome
 		./nixvim
+		./hypr
 		./git.nix
 		./gtk.nix
 		./wezterm.nix

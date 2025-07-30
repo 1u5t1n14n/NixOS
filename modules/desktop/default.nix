@@ -9,6 +9,7 @@
 		./fonts.nix
 		./games.nix
 		./gnome.nix
+		./hyprland.nix
 		./keyMap.nix
 		./monitors.nix
 		./office.nix
