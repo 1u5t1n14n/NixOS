@@ -62,7 +62,13 @@ in
 	environment = {
 		# Install some extra Applications
 		systemPackages = with pkgs; [
-			# Core Apps
+			citations
+			morewaita-icon-theme
+			papers
+			pdfarranger
+		]
+
+		++ lib.optionals (!config.services.gnome.core-apps.enable) [
 			baobab
 			decibels
 			epiphany
@@ -75,12 +81,6 @@ in
 			gnome-maps
 			loupe
 			nautilus
-
-			# Extra Apps
-			citations
-			morewaita-icon-theme
-			papers
-			pdfarranger
 		]
 
 		# Nautilus Thumbnailer
