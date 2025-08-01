@@ -7,6 +7,9 @@
 
 		package = null;
 		portalPackage = null;
+
+		settings = {
+		};
 	};
 
 }
