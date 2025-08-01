@@ -70,6 +70,7 @@
 					system = "x86_64-linux";
 					user = "1u5t1n14n";
 					hasDesktop = true;
+					terminal = "wezterm";
 				};
 			};
 
@@ -79,6 +80,7 @@
 					system = "x86_64-linux";
 					user = "1u5t1n14n";
 					hasDesktop = true;
+					terminal = "wezterm";
 				};
 			};
 		};

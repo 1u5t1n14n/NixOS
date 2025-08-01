@@ -1,4 +1,4 @@
-{ ... }:
+{ host, ... }:
 
 {
 
@@ -12,9 +12,9 @@
 			email = [ "<Alt>4" ];
 		};
 		"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-			name = "WezTerm";
+			name = host.terminal;
 			binding = "<Alt>Return";
-			command = "wezterm";
+			command = host.terminal;
 		};
 		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
 
