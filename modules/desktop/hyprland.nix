@@ -5,7 +5,7 @@
 	programs.hyprland.enable = true;
 
 	environment.systemPackages = lib.mkIf config.programs.hyprland.enable [
-		pkgs.swww pkgs.waypaper
+		pkgs.swww pkgs.waypaper pkgs.rofi
 	];
 
 }
