@@ -8,6 +8,7 @@
 		./locale.nix
 		./networking.nix
 		./nix.nix
+		./overlays.nix
 		./secrets.nix
 		./shell.nix
 		./ssh.nix
