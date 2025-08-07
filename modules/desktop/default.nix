@@ -11,6 +11,7 @@
 		./gnome.nix
 		./hyprland.nix
 		./keyMap.nix
+		./lapTop.nix
 		./monitors.nix
 		./office.nix
 		./printing.nix
