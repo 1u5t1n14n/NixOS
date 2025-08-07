@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
-{
+let
+	cfg = config.gtk;
+
+in {
 
 	gtk = {
 		enable = true;
@@ -9,6 +12,12 @@
 			name = "Inter";
 			package = pkgs.inter;
 			size = 11;
+		};
+
+		cursorTheme = {
+			name = "Adwaita";
+			package = pkgs.adwaita-icon-theme;
+			size = 24;
 		};
 
 		iconTheme = {
@@ -23,6 +32,15 @@
 		gtk4.extraConfig.Settings = ''
 			gtk-application-prefer-dark-theme=1
 		'';
+	};
+
+	home.pointerCursor = {
+		name = cfg.cursorTheme.name;
+		package = cfg.cursorTheme.package;
+		size = cfg.cursorTheme.size;
+
+		gtk.enable = cfg.enable;
+		x11.enable = true;
 	};
 
 }
