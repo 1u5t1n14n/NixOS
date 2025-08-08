@@ -18,6 +18,9 @@
 		# So do not wonder as to why I included Windows-specific
 		# options.
 
+		"ui.key.menuAccessKey" = false;
+		"ui.key.generalAccessKey" = 18; # ALT
+
 		"browser.gnome-search-provider.enabled" = true;
 		"widget.use-xdg-desktop-portal.file-picker" = 1;
 		"browser.aboutConfig.showWarning" = false;
