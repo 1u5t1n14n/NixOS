@@ -7,7 +7,7 @@
 
 		admin.name = host.user;
 
-		host = "localhost";
+		host = "0.0.0.0";
 
 		settings = {
 			server.port = 3002;
