@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 
 {
 
@@ -14,7 +14,7 @@
 		thermald.enable = true;
 
 		tlp = {
-			enable = true;
+			enable = !config.services.power-profiles-daemon.enable;
 
 			settings = {
 				START_CHARGE_THRESH_BAT0 = 40;
