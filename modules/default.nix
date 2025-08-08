@@ -9,6 +9,7 @@
 		./networking.nix
 		./nix.nix
 		./overlays.nix
+		./packages.nix
 		./secrets.nix
 		./shell.nix
 		./ssh.nix
