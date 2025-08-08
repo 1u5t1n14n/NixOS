@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, config, host, ... }:
 
 let
 	cfg = config.services.desktopManager.gnome;
@@ -37,11 +37,15 @@ in
 		xserver.excludePackages = [ pkgs.xterm ];
 	};
 
+	xdg.terminal-exec = {
+		enable = cfg.enable;
+		settings.default = lib.mkIf (host.terminal == "wezterm") [ "org.wezfurlong.wezterm.desktop" ];
+	};
+
 	programs = {
-		# Enable GSConnect
 		kdeconnect = {
 			enable = cfg.enable;
-			package = pkgs.gnomeExtensions.gsconnect;
+			package = pkgs.valent;
 		};
 
 		# Disable GNOME Console Integrations
@@ -51,7 +55,7 @@ in
 
 		nautilus-open-any-terminal = {
 			enable = true;
-			terminal = "wezterm";
+			terminal = host.terminal;
 		};
 
 		evince.enable = true;
@@ -96,9 +100,12 @@ in
 			gnomeExtensions.media-controls
 			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
+			gnomeExtensions.gsconnect
+			gnomeExtensions.valent
+			valent
 		]
 
-		++ lib.optionals (config.programs.nautilus-open-any-terminal.terminal == "wezterm" ) [ wezterm ];
+		++ lib.optionals (host.terminal == "wezterm" ) [ wezterm ];
 
 		gnome.excludePackages = [ pkgs.gnome-tour ];
 

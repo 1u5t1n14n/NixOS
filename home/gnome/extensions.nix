@@ -6,7 +6,7 @@
 		"org/gnome/shell" = {
 			disable-user-extensions = false;
 			enabled-extensions = with pkgs.gnomeExtensions; [
-				gsconnect.extensionUuid
+				valent.extensionUuid
 				launch-new-instance.extensionUuid
 				blur-my-shell.extensionUuid
 				native-window-placement.extensionUuid

@@ -5,6 +5,19 @@
 	# Newest Version of morewaita-icon-theme
 	nixpkgs.overlays = [
 		(self: super: {
+			gnomeExtensions = super.gnomeExtensions // {
+				valent = super.gnomeExtensions.valent.overrideAttrs (oldAttrs: {
+					version = "v1.0.0.alpha.48";
+					src = super.fetchFromGitHub {
+						owner = "andyholmes";
+						repo = "gnome-shell-extension-valent";
+						tag = "v1.0.0.alpha.48";
+						hash = "sha256-j5590Emcga3Wp7/lC/ni2NpEC3bkR2/vT4Cq/m8GvBM=";
+					};
+				});
+			};
+		})
+		(self: super: {
 			morewaita-icon-theme = super.morewaita-icon-theme.overrideAttrs (old: rec {
 				version = "48.4";
 				src = super.fetchFromGitHub {
