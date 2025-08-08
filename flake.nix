@@ -6,16 +6,21 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-		nixpkgStable.url = "nixpkgs/nixos-25.05";
+
 		homeManager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
 		nixVim = {
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
 		sops.url = "github:Mic92/sops-nix";
+
+		ags.url = "github:aylur/ags";
+		walker.url = "github:abenz1267/walker";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs:
@@ -23,7 +28,6 @@
 
 		mkNixosConfig = { host }:
 			nixpkgs.lib.nixosSystem {
-				system = host.system;
 				specialArgs = { inherit host; inherit inputs; };
 				modules = [
 					./configuration.nix
@@ -45,6 +49,9 @@
 							users.${host.user}.imports = [
 								./home/home.nix
 								inputs.nixVim.homeModules.nixvim
+
+								inputs.ags.homeManagerModules.default
+								inputs.walker.homeManagerModules.default
 							];
 						};
 					}
@@ -58,7 +65,6 @@
 			Prometheus = mkNixosConfig {
 				host = {
 					name = "Prometheus";
-					system = "x86_64-linux";
 					user = "1u5t1n14n";
 					hasDesktop = false;
 				};
@@ -67,7 +73,6 @@
 			Hyperion = mkNixosConfig {
 				host = {
 					name = "Hyperion";
-					system = "x86_64-linux";
 					user = "1u5t1n14n";
 					hasDesktop = true;
 					terminal = "wezterm";
@@ -77,7 +82,6 @@
 			Morpheus = mkNixosConfig {
 				host = {
 					name = "Morpheus";
-					system = "x86_64-linux";
 					user = "1u5t1n14n";
 					hasDesktop = true;
 					terminal = "wezterm";
