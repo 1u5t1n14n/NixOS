@@ -42,6 +42,10 @@ in
 				owner = lib.mkIf config.services.searx.enable
 					"nginx";
 			};
+			"services/write" = {
+				owner = lib.mkIf config.services.writefreely.enable
+					config.services.writefreely.user;
+			};
 		};
 	};
 
