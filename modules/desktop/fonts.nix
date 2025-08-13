@@ -4,7 +4,11 @@
 
 	fonts = {
 		fontDir.enable = true;
+		enableDefaultPackages = true;
 		packages = with pkgs; [
+			jost
+			eb-garamond
+
 			ibm-plex
 			inter
 			literate
