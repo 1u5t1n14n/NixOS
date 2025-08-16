@@ -14,7 +14,7 @@ in
 			initialPasswordFile = config.sops.secrets."services/write".path;
 		};
 
-		host = "0.0.0.0";
+		host = host.name;
 
 		settings = {
 			server.port = 3002;
