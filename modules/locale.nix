@@ -9,7 +9,7 @@ in
 	time.timeZone = "Europe/Berlin";
 
 	i18n = {
-		defaultLocale = "en_US.UTF-8";
+		defaultLocale = "en_GB.UTF-8";
 		extraLocaleSettings = {
 			LC_ADDRESS = extraLocale;
 			LC_IDENTIFICATION = extraLocale;
