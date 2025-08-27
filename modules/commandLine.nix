@@ -27,9 +27,7 @@
 		ripgrep fastfetch onefetch tree gcc tree-sitter
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
-
-		# Typesetting
-		texliveFull pandoc typst
+		gnupg pandoc typst texliveFull bitwarden-cli
 
 		# FFmpeg
 		(pkgs.ffmpeg-full.override { withUnfree = true; })
