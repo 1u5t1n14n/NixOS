@@ -37,11 +37,6 @@ in
 		xserver.excludePackages = [ pkgs.xterm ];
 	};
 
-	xdg.terminal-exec = {
-		enable = cfg.enable;
-		settings.default = lib.mkIf (host.terminal == "wezterm") [ "org.wezfurlong.wezterm.desktop" ];
-	};
-
 	programs = {
 		kdeconnect = {
 			enable = cfg.enable;
@@ -55,7 +50,7 @@ in
 
 		nautilus-open-any-terminal = {
 			enable = true;
-			terminal = host.terminal;
+			terminal = "wezterm";
 		};
 
 		evince.enable = true;
@@ -103,9 +98,7 @@ in
 			gnomeExtensions.gsconnect
 			gnomeExtensions.valent
 			valent
-		]
-
-		++ lib.optionals (host.terminal == "wezterm" ) [ wezterm ];
+		];
 
 		gnome.excludePackages = [ pkgs.gnome-tour ];
 

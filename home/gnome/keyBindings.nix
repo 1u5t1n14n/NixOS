@@ -12,16 +12,22 @@
 			email = [ "<Alt>4" ];
 		};
 		"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-			name = host.terminal;
+			name = "WezTerm";
 			binding = "<Alt>Return";
-			command = host.terminal;
+			command = "wezterm";
 		};
-		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+		"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+			name = "Vicinae";
+			binding = "<Alt>space";
+			command = "vicinae";
+		};
+		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
+			"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+			"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+		];
 
 		"org/gnome/shell/app-switcher".current-workspace-only = true;
 		"org/gnome/shell/keybindings" = {
-			toggle-overview = [ "<Alt>space" ];
-
 			screenshot = [ "Print" ];
 			show-screenshot-ui = [ "<Shift><Super>s" ];
 
