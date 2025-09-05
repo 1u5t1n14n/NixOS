@@ -32,13 +32,14 @@
 			banner = ''
 
 
-				YOU SHALL NOT PASS!
+				Kian, wenn du das bist, schick mir bitte einfach deinen Public SSH Key, damit
+				ich Passwort-Authentifizierung ausschalten kann.
 
 
 			'';
 
 			# Already default
-			allowSFTP = true;
+			allowSFTP = config.services.openssh.settings.PasswordAuthentication;
 		};
 	};
 
