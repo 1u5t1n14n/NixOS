@@ -2,6 +2,10 @@
 
 {
 
+	users.users.${host.user}.openssh.authorizedKeys.keys = [
+		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwFDVhbXfV9zM8iQurlgoCo0lpIMBuJ1R7TS+tcYT1"
+	];
+
 	services = {
 		fail2ban.enable = true;
 		openssh = {
