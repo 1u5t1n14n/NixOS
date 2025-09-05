@@ -24,10 +24,6 @@ in
 				"waypaper --restore"
 			]
 
-			++ lib.optionals config.programs.ags.enable [
-				"ags"
-			]
-
 			++ lib.optionals config.programs.waybar.enable [
 				"waybar"
 			];

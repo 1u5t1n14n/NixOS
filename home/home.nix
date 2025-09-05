@@ -8,6 +8,7 @@
 		./nixvim
 		./hypr
 		./git.nix
+		./vicinae.nix
 		./gtk.nix
 		./wezterm.nix
 		./zed.nix
