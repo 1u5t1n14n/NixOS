@@ -39,7 +39,25 @@ in
 
 		settings = {
 			maintenance_window_start = 1;
+			updatechecker = false;
+
+			preview_libreoffice_path = "${pkgs.libreoffice-fresh}/bin/libreoffice";
+			preview_ffmpeg_path = "${pkgs.ffmpeg-full}/bin/ffmpeg";
+
+			# Should be 1 when Changing happens
+			filesystem_check_changes = 0;
+
+			defaultapp = "files";
+			"simpleSignUpLink.shown" = false;
+			login_form_autocomplete = false;
+
 			default_phone_region = "DE";
+			default_language = "de_DE";
+			default_locale = "de";
+			default_timezone = "Europe/Berlin";
+
+			reduce_to_languages = [ "de" "de_DE" "en" ];
+
 			trusted_domains = [
 				cfg.hostName
 				"192.168.178.178"
