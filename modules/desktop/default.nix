@@ -12,13 +12,13 @@
 		./hyprland.nix
 		./keyMap.nix
 		./lapTop.nix
+		./miscellaneous.nix
 		./monitors.nix
 		./office.nix
 		./printing.nix
 		./sound.nix
 		./suspend.nix
 		./texts.nix
-		./tools.nix
 		./video.nix
 	];
 

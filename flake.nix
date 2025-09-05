@@ -12,15 +12,14 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		vicinae.url = "github:vicinaehq/vicinae";
+
 		nixVim = {
 			url = "github:nix-community/nixvim";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		sops.url = "github:Mic92/sops-nix";
-
-		ags.url = "github:aylur/ags";
-		walker.url = "github:abenz1267/walker";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs:
@@ -49,9 +48,7 @@
 							users.${host.user}.imports = [
 								./home/home.nix
 								inputs.nixVim.homeModules.nixvim
-
-								inputs.ags.homeManagerModules.default
-								inputs.walker.homeManagerModules.default
+								inputs.vicinae.homeManagerModules.default
 							];
 						};
 					}
@@ -75,7 +72,6 @@
 					name = "Hyperion";
 					user = "1u5t1n14n";
 					hasDesktop = true;
-					terminal = "wezterm";
 				};
 			};
 
@@ -84,7 +80,6 @@
 					name = "Morpheus";
 					user = "1u5t1n14n";
 					hasDesktop = true;
-					terminal = "wezterm";
 				};
 			};
 		};
