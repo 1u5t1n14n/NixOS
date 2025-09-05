@@ -1,9 +1,9 @@
-{ ... }:
+{ host, ... }:
 
 {
 
 	services.vicinae = {
-		enable = true;
+		enable = host.hasDesktop;
 		autoStart = true;
 	};
 
