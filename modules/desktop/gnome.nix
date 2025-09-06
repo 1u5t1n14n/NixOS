@@ -65,6 +65,7 @@ in
 			morewaita-icon-theme
 			papers
 			pdfarranger
+			seahorse
 		]
 
 		++ lib.optionals (!config.services.gnome.core-apps.enable) [
