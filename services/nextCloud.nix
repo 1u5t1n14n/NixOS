@@ -6,6 +6,8 @@ let
 in
 {
 
+	sops.secrets."services/nextcloud".owner = cfg.config.dbuser;
+
 	services.nextcloud = {
 		enable = true;
 		hostName = "localhost";

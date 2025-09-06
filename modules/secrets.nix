@@ -25,27 +25,6 @@ in
 			"user/kian".neededForUsers = true;
 			"user/root".neededForUsers = true;
 			"user/user".neededForUsers = true;
-
-			"services/paperless" = {
-				owner = lib.mkIf config.services.paperless.enable
-					config.services.paperless.user;
-			};
-			"services/nextcloud" = {
-				owner = lib.mkIf config.services.nextcloud.enable
-					config.services.nextcloud.config.dbuser;
-			};
-			"services/send" = {
-				owner = lib.mkIf config.services.send.enable
-					null;
-			};
-			"services/searx" = {
-				owner = lib.mkIf config.services.searx.enable
-					"nginx";
-			};
-			"services/write" = {
-				owner = lib.mkIf config.services.writefreely.enable
-					config.services.writefreely.user;
-			};
 		};
 	};
 

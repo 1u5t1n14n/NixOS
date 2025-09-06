@@ -6,6 +6,8 @@ let
 in
 {
 
+	sops.secrets."services/paperless".owner = cfg.user;
+
 	services = {
 		paperless = {
 			enable = true;
