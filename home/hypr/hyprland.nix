@@ -8,6 +8,7 @@ in
 
 	imports = [
 		./binds.nix
+		./waybar.nix
 	];
 
 	wayland.windowManager.hyprland = {
