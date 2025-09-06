@@ -21,7 +21,7 @@ in
 				packages = with pkgs; [ ];
 			};
 
-			kian = {
+			kian = lib.mkIf !host.hasDesktop {
 				isNormalUser = true;
 				createHome = true;
 				home = "/var/lib/Kian";
