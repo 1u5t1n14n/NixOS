@@ -3,6 +3,9 @@
 let
 	cfg = config.services.nextcloud;
 
+	accessKey = "nextcloud";
+	secretKey = "diesisteinsecretkey";
+
 in
 {
 
@@ -71,14 +74,14 @@ in
 			config.objectstore.s3 = {
 				enable = true;
 				bucket = "nextcloud";
-				autocreate = true;
-				key = cfg.config.objectstore.s3.bucket;
-				secretFile = config.sops.secrets."services/minio".path;
+				verify_bucket_exists = true;
+				key = accessKey;
+				secretFile = "/etc/minioPassNextCloud";
 				hostname = "localhost";
 				useSsl = false;
 				port = 9000;
 				usePathStyle = true;
-				region = "eu-central-1";
+				region = "us-east-1";
 			};
 		};
 
@@ -86,35 +89,32 @@ in
 			enable = true;
 			listenAddress = "127.0.0.1:9000";
 			consoleAddress = "127.0.0.1:9001";
-			rootCredentialsFile = sops.templates."services/minio".path;
+			rootCredentialsFile = "/etc/minioPass";
 		};
 	};
 
+	systemd.services.minioSetup = {
+		path = [ pkgs.minio-client pkgs.getent ];
+		script = ''
+			mc alias set minio http://localhost:9000 ${accessKey} ${secretKey} --api s3v4
+			mc mb --ignore-existing minio/nextcloud
+		'';
+		after = [ "minio.service" ];
+		wantedBy = [ "nextcloud-setup.service" ];
+	};
+
 	environment = {
-		systemPackages = [ pkgs.minio-client ];
-
-		# Exec when creating Bucket!
-		etc."minioCreateBucket.sh".text = ''
-			#!/bin/sh
-			mc config add minio http://localhost:9000 ${cfg.config.objectstore.s3.bucket} $(cat ${sops.templates.minioForUser.path}) --api s3v4
-			mc mb --ignore minio/${cfg.config.objectstore.s3}
-		'';
+		# Is it working without this?
+		# systemPackages = [ pkgs.minio-client ];
+		etc = {
+			minioPass.text = ''
+				MINIO_ROOT_USER=${cfg.config.dbuser}
+				MINIO_ROOT_PASSWORD=${secretKey}
+			'';
+			minioPassNextCloud.text = secretKey;
+		};
 	};
 
-	sops.secrets."services/minio".owner = cfg.config.dbuser;
-
-	sops.templates.minioForUser = {
-		owner = host.user;
-		content = ''
-			${config.sops.placeholder."services/minio"}
-		'';
-	};
-	sops.templates.minio = {
-		owner = "minio";
-		content = ''
-			MINIO_ROOT_USER=${cfg.config.objectstore.s3.bucket}
-			MINIO_ROOT_PASSWORD=${config.sops.placeholder."services/minio"}
-		'';
-	};
+	networking.firewall.allowedTCPPorts = [ 80 443 ];
 
 }
