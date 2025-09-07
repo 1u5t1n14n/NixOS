@@ -1,4 +1,4 @@
-{ host, config, ... }:
+{ host, config, lib, ... }:
 
 {
 
@@ -26,7 +26,7 @@
 				PermitRootLogin = "no";
 				AllowUsers = [
 					host.user 
-					config.users.users.kian.name
+					"kian"
 				];
 			};
 
