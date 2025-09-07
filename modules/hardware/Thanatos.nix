@@ -14,9 +14,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/9e240fce-f492-4f33-b0e4-da07a48a5a45";
+    { device = "/dev/disk/by-uuid/eb830de1-a408-4b3a-ba71-a67f1326d7b9";
       fsType = "ext4";
     };
+
+  boot.initrd.luks.devices."luks-644ae185-e2cb-4498-9836-f8381a39f556" = {
+  	device = "/dev/disk/by-uuid/644ae185-e2cb-4498-9836-f8381a39f556";
+	allowDiscards = true;
+	keyFileSize = 4096;
+	keyFile = "/dev/sda";
+	fallbackToPassword = true;
+	};
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/0580-D600";

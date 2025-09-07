@@ -67,9 +67,9 @@
 				};
 			};
 
-			Hyperion = mkNixosConfig {
+			Thanatos = mkNixosConfig {
 				host = {
-					name = "Hyperion";
+					name = "Thanatos";
 					user = "1u5t1n14n";
 					hasDesktop = true;
 				};
