@@ -24,10 +24,9 @@
 			settings = {
 				PasswordAuthentication = true;
 				PermitRootLogin = "no";
-				AllowUsers = [
-					host.user 
-					"kian"
-				];
+				AllowUsers = [ host.user ]
+
+				++ lib.optionals (!hasDesktop) [ config.users.users.kian.description ];
 			};
 
 			banner = ''
