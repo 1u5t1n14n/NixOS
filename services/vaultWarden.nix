@@ -1,11 +1,15 @@
-{ ... }:
+{ config, ... }:
 
+let
+	cfg = config.services.vaultwarden;
+
+in
 {
 
 	services.vaultwarden = {
 		enable = true;
 
-		dbbackend = "sqlite";
+		#dbbackend = "sqlite";
 
 		config = {
 			ROCKET_ADDRESS = "0.0.0.0";
@@ -13,5 +17,7 @@
 			SIGNUPS_ALLOWED = true;
 		};
 	};
+
+	networking.firewall.allowedTCPPorts = [ cfg.config.ROCKET_PORT ];
 
 }
