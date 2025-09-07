@@ -26,7 +26,7 @@
 				PermitRootLogin = "no";
 				AllowUsers = [ host.user ]
 
-				++ lib.optionals (!hasDesktop) [ config.users.users.kian.description ];
+				++ lib.optionals (!host.hasDesktop) [ config.users.users.kian.description ];
 			};
 
 			banner = ''
