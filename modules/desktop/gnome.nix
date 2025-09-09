@@ -15,10 +15,22 @@ let
 in
 {
 
+	# Automatic Login
+	systemd.services."getty@tty1".enable = false;
+	systemd.services."autovt@tty1".enable = false;
+
 	services = {
-		displayManager.gdm = {
-			enable = true;
-			banner = "Non mortem timendum, sed quod numquam incipiat vivere.";
+		displayManager = {
+			autoLogin = {
+				enable = true;
+				user = host.user;
+			};
+
+			# GDM
+			gdm = {
+				enable = true;
+				banner = "Non mortem timendum, sed quod numquam incipiat vivere.";
+			};
 		};
 		desktopManager.gnome.enable = true;
 
