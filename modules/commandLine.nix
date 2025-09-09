@@ -36,9 +36,7 @@
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
 		pandoc typst texliveFull bitwarden-cli gnupg
-
-		# FFmpeg
-		(pkgs.ffmpeg-full.override { withUnfree = true; })
+		ffmpeg-full
 	]
 
 	++ lib.optionals host.hasDesktop [ wl-clipboard ];
