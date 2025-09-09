@@ -2,14 +2,6 @@
 
 {
 
-	programs.firefox.policies = {
-		DisablePocket = true;
-		DisableSetDesktopBackground = true;
-		DisableTelemetry = true;
-		DisableFirefoxStudies = true;
-		DontCheckDefaultBrowser = true;
-		NoDefaultBookmarks = true;
-	};
 	programs.firefox.profiles.default.settings = {
 		# This is just copied from the arkenfox Project.
 		# Take a look at it for more details.
@@ -24,15 +16,12 @@
 		"browser.gnome-search-provider.enabled" = true;
 		"widget.use-xdg-desktop-portal.file-picker" = 1;
 		"browser.aboutConfig.showWarning" = false;
-		"identity.fxaccounts.enabled" = false;
 		"browser.quitShortcut.disabled" = true;
 
 		# Startup
 		"browser.startup.page" = 0;
 		"browser.startup.homepage" = "about:blank";
 		"browser.newtabpage.enabled" = false;
-		"browser.newtabpage.activity-stream.showSponsored" = false;
-		"browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
 		"browser.newtabpage.activity-stream.default.sites" = false;
 		"browser.newtabpage.activity-stream.feeds.telemetry" = false;
 		"browser.newtabpage.activity-stream.telemetry" = false;
@@ -49,12 +38,9 @@
 		"browser.shopping.experience2023.enabled" = false;
 
 		# Telemetry
-		"datareporting.policy.dataSubmissionEnabled" = false;
-		"datareporting.healthreport.uploadEnabled" = false;
 		"toolkit.telemetry.unified" = false;
 		"toolkit.telemetry.enabled" = false;
 		"toolkit.telemetry.server" = false;
-		"toolkit.telemetry.archive.enabled" = false;
 		"toolkit.telemetry.newProfilePing.enabled" = false;
 		"toolkit.telemetry.shutdownPingSender.enabled" = false;
 		"toolkit.telemetry.updatePing.enabled" = false;
@@ -75,7 +61,6 @@
 		"browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
 
 		"captivedetect.canonicalURL" = "";
-		"network.captive-portal-service.enabled" = false;
 		"network.connectivity-service.enabled" = false;
 
 		"browser.safebrowsing.downloads.remote.enabled" = false;
@@ -112,7 +97,6 @@
 		"browser.urlbar.yelp.featureGate" = false;
 		"browser.urlbar.clipboard.featureGate" = false;
 		
-		"browser.formfill.enable" = false;
 		"browser.urlbar.suggest.engines" = false;
 		"layout.css.visited_links_enabled" = false;
 		"full-screen-api.warning.timeout" = 0;
@@ -167,7 +151,6 @@
 
 		# Miscellaneous
 		"ui.caretBlinkTime" = 0;
-		"browser.download.start_downloads_in_tmp_dir" = true;
 		"browser.helperApps.deleteTempFileOnExit" = true;
 		"browser.uitour.enabled" = false;
 		"devtools.debugger.remote-enabled" = false;
