@@ -1,7 +1,7 @@
 keys:
   - &prometheus age18zdvkrse266y9mhlvh86vldp6aq39tr8qu4k2mqc727ngramnu3qynzucy
   - &morpheus age1av6wzrkwm9kg2ym0fr3vyh8ag788c0kuz7w5fwmavw4muelwjvmqmpfnqp
-  - &thanatos age1qfy94pqqtvyl47jqe66rzsnahsa6tyme3wh54f0zd56p6wrrf96qjrx9mp
+  - &thanatos age1us5370u8l2374r33cmgn863kcjm4r5ga7408nndhk075exp8230q25nvaf
 creation_rules:
   - path_regex: secrets.yaml$
     key_groups:
