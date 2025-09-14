@@ -40,12 +40,7 @@ in
 					"${getUrl "consent-o-matic" 18863655}"
 					"${getUrl "tineye-reverse-image-search" 3304309}"
 					"${getUrl "facebook-container" 4757633}"
-
-					# Only testing this
-					"${getUrl "side-view" 4757633}"
-
-					# Only for E-Mail Masking
-					"${getUrl "duckduckgo-for-firefox" 3946396}"
+					"${getUrl "localtube-manager" 18857709}"
 				];
 			};
 		};
