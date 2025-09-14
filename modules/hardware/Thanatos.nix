@@ -9,25 +9,25 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "usb_storage" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/eb830de1-a408-4b3a-ba71-a67f1326d7b9";
+    { device = "/dev/disk/by-uuid/400f5371-4e47-4718-9e0f-fdb68e630849";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-644ae185-e2cb-4498-9836-f8381a39f556" = {
-  	device = "/dev/disk/by-uuid/644ae185-e2cb-4498-9836-f8381a39f556";
-	allowDiscards = true;
-	keyFileSize = 4096;
-	keyFile = "/dev/sda";
-	fallbackToPassword = true;
+  boot.initrd.luks.devices.luksRoot = {
+		device = "/dev/disk/by-uuid/8704c513-8c34-4414-96af-705ddc05bc1d";
+		allowDiscards = true;
+		keyFileSize = 4096;
+		keyFile = "/dev/sda";
+		fallbackToPassword = true;
 	};
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0580-D600";
+    { device = "/dev/disk/by-uuid/4721-FA99";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
