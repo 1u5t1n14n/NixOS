@@ -46,12 +46,6 @@
 				name = "YouTube";
 				urls = [{ template = "https://youtube.com/results?search_query={searchTerms}"; }];
 				iconMapObj."16" = "https://youtube.com/favicon.ico";
-				definedAliases = [ "@bg" ];
-			};
-			invidious = {
-				name = "Invidious";
-				urls = [{ template = "https://inv.nadeko.net/results?search_query={searchTerms}"; }];
-				iconMapObj."16" = "https://invidious.io/favicon.ico";
 				definedAliases = [ "@yt" ];
 			};
 
