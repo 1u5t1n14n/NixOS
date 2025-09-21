@@ -5,9 +5,7 @@
 	environment.systemPackages = with pkgs; [
 
 		# Calibre
-		(calibre.override {
-			unrarSupport = true;
-		})
+		calibre
 
 		# Reading Texts
 		kiwix
