@@ -15,14 +15,17 @@ let
 in
 {
 
+	# Automatic Keyring Decryption
+	security.pam.services.login.enableGnomeKeyring = cfg.enable;
+
 	# Automatic Login
-	systemd.services."getty@tty1".enable = false;
-	systemd.services."autovt@tty1".enable = false;
+	systemd.services."getty@tty1".enable = lib.mkIf cfg.enable false;
+	systemd.services."autovt@tty1".enable = lib.mkIf cfg.enable false;
 
 	services = {
 		displayManager = {
 			autoLogin = {
-				enable = true;
+				enable = cfg.enable;
 				user = host.user;
 			};
 
@@ -84,15 +87,17 @@ in
 			baobab
 			decibels
 			epiphany
-			gnome-text-editor
 			gnome-calculator
 			gnome-calendar
 			gnome-characters
 			gnome-contacts
 			gnome-font-viewer
 			gnome-maps
+			gnome-text-editor
 			loupe
 			nautilus
+			showtime
+			wordbook
 		]
 
 		# Nautilus Thumbnailer
@@ -118,7 +123,7 @@ in
 		sessionVariables = {
 			# Nautilus
 			NAUTILUS_4_EXTENSION_DIR = lib.mkIf cfg.enable "${config.system.path}/lib/nautilus/extensions-4";
-			XDG_DATA_DIRS = lib.mkIf cfg.enable [ "${mimeAppsList}/share" ];
+			#XDG_DATA_DIRS = lib.mkIf cfg.enable [ "${mimeAppsList}/share" ];
 
 			# Hint Electron Apps to use Wayland
 			NIXOS_OZONE_WL = "1";
