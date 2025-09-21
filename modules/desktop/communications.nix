@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 
@@ -13,5 +13,9 @@
 			PasswordManagerEnabled = false;
 		};
 	};
+
+	environment.systemPackages = with pkgs; [
+		bitwarden-desktop signal-desktop ente-auth
+	];
 
 }
