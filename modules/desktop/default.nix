@@ -4,6 +4,7 @@
 
 	imports = [
 		./appimage.nix
+		./applications.nix
 		./communications.nix
 		./firefox.nix
 		./fonts.nix
