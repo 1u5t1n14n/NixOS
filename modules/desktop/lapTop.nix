@@ -5,10 +5,10 @@
 	powerManagement.enable = true;
 
 	services = {
-		logind = {
-			lidSwitch = "poweroff";
-			lidSwitchExternalPower = "poweroff";
-			lidSwitchDocked = "ignore";
+		logind.settings.Login = {
+			HandleLidSwitch = "poweroff";
+			HandleLidSwitchExternalPower = "poweroff";
+			HandleLidSwitchDocked = "ignore";
 		};
 
 		thermald.enable = true;
