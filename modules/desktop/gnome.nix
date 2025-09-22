@@ -113,7 +113,6 @@ in
 			gnomeExtensions.media-controls
 			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
-			gnomeExtensions.gsconnect
 			gnomeExtensions.valent
 			valent
 		];
