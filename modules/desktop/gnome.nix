@@ -3,15 +3,6 @@
 let
 	cfg = config.services.desktopManager.gnome;
 
-	mimeAppsList = pkgs.writeTextFile {
-		name = "gnome-mimeapps";
-		destination = "/share/applications/mimeapps.list";
-		text = ''
-			[Default Applications]
-			inode/directory=nautilus.desktop;org.gnome.Nautilus.desktop
-		'';
-	};
-
 in
 {
 
@@ -101,7 +92,10 @@ in
 		]
 
 		# Nautilus Thumbnailer
-		++ [ libheif libheif.out ]
+		++ [
+				gnome-epub-thumbnailer ffmpegthumbnailer gnome-font-viewer
+				libheif libheif.out 
+		]
 
 		# And GNOME Shell Extensions
 		++ lib.optionals cfg.enable [
@@ -122,7 +116,6 @@ in
 		sessionVariables = {
 			# Nautilus
 			NAUTILUS_4_EXTENSION_DIR = lib.mkIf cfg.enable "${config.system.path}/lib/nautilus/extensions-4";
-			#XDG_DATA_DIRS = lib.mkIf cfg.enable [ "${mimeAppsList}/share" ];
 
 			# Hint Electron Apps to use Wayland
 			NIXOS_OZONE_WL = "1";
