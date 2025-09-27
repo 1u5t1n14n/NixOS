@@ -25,7 +25,7 @@ in
 			extraAppsEnable = true;
 			autoUpdateApps.enable = cfg.extraAppsEnable;
 			extraApps = with cfg.package.packages.apps; {
-				inherit calendar contacts mail cookbook maps;
+				inherit calendar contacts cookbook maps;
 			};
 
 			nginx = {
@@ -76,7 +76,7 @@ in
 				bucket = "nextcloud";
 				verify_bucket_exists = true;
 				key = accessKey;
-				secretFile = "/etc/minioPassNextCloud";
+				secretFile = "/etc/minio/NextCloudPass";
 				hostname = "localhost";
 				useSsl = false;
 				port = 9000;
@@ -87,18 +87,22 @@ in
 
 		minio = {
 			enable = true;
-			listenAddress = "127.0.0.1:9000";
+			listenAddress = "127.0.0.1:${toString cfg.config.objectstore.s3.port}";
 			consoleAddress = "127.0.0.1:9001";
-			rootCredentialsFile = "/etc/minioPass";
+			rootCredentialsFile = "/etc/minio/Pass";
 		};
 	};
 
-	systemd.services.minioSetup = {
+	systemd.services.minioSetup = lib.mkIf (cfg.config.objectstore.s3.enable && config.services.minio.enable) {
 		path = [ pkgs.minio-client pkgs.getent ];
 		script = ''
-			mc alias set minio http://localhost:9000 ${accessKey} ${secretKey} --api s3v4
-			mc mb --ignore-existing minio/nextcloud
+			mc alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
+			mc mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
 		'';
+		serviceConfig = {
+			User = config.systemd.services.minio.serviceConfig.User;
+			Group = config.systemd.services.minio.serviceConfig.Group;
+		};
 		after = [ "minio.service" ];
 		wantedBy = [ "nextcloud-setup.service" ];
 	};
@@ -107,11 +111,11 @@ in
 		# Is it working without this?
 		# systemPackages = [ pkgs.minio-client ];
 		etc = {
-			minioPass.text = ''
+			"minio/Pass".text = ''
 				MINIO_ROOT_USER=${cfg.config.dbuser}
 				MINIO_ROOT_PASSWORD=${secretKey}
 			'';
-			minioPassNextCloud.text = secretKey;
+			"minio/NextcloudPass".text = secretKey;
 		};
 	};
 
