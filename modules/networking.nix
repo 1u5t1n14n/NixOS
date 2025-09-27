@@ -4,9 +4,10 @@
 
 	networking = {
 		hostName = host.name;
+
+		nftables.enable = true;
 		firewall.enable = true;
 
-		# Already enabled if using GNOME
 		networkmanager.enable = true;
 	};
 
