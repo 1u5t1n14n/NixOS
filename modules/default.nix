@@ -6,6 +6,7 @@
 		./bootLoader.nix
 		./commandLine.nix
 		./locale.nix
+		./media.nix
 		./networking.nix
 		./nix.nix
 		./overlays.nix
