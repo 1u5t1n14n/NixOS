@@ -14,12 +14,12 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/400f5371-4e47-4718-9e0f-fdb68e630849";
+    { device = "/dev/mapper/luksRoot";
       fsType = "ext4";
     };
 
   boot.initrd.luks.devices.luksRoot = {
-		device = "/dev/disk/by-uuid/8704c513-8c34-4414-96af-705ddc05bc1d";
+		device = "/dev/nvme0n1p2";
 		allowDiscards = true;
 		keyFileSize = 4096;
 		keyFile = "/dev/sda";
@@ -27,7 +27,7 @@
 	};
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/4721-FA99";
+    { device = "/dev/nvme0n1p1";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
