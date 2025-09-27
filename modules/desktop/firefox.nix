@@ -35,6 +35,7 @@ in
 
 			Extensions = {
 				Install = [
+					"${getUrl "vimium-ff" 14971172}"
 					"${getUrl "ublock-origin" 11423598}"
 					"${getUrl "clearurls" 13196993}"
 					"${getUrl "consent-o-matic" 18863655}"
