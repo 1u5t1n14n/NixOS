@@ -7,6 +7,7 @@
 		enableZshIntegration = osConfig.programs.zsh.enable;
 		extraConfig = ''
 			return {
+				default_cursor_style = 'SteadyBlock',
 				hide_tab_bar_if_only_one_tab = true,
 				window_background_opacity = 0.9,
 				window_padding = {

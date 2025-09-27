@@ -31,6 +31,7 @@
 			swapfile = false;
 			spell = false;
 			foldenable = false;
+			guicursor = "";
 		};
 		clipboard.providers.wl-copy.enable = true;
 	};
