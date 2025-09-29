@@ -3,6 +3,7 @@
 {
 
 	boot = {
+		plymouth.enable = true;
 		kernelParams = [ "quiet" "random.trust_cpu=off" ];
 		loader = {
 			systemd-boot.enable = true;
