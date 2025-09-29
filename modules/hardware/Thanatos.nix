@@ -24,7 +24,6 @@
 
 		keyFileSize = 4096;
 		keyFile = "/dev/sda";
-		keyFileTimeout = 10;
 		fallbackToPassword = true;
 	};
 
