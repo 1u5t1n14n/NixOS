@@ -14,15 +14,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/luksRoot";
+    { device = "/dev/mapper/root";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices.luksRoot = {
+  boot.initrd.luks.devices.root = {
 		device = "/dev/nvme0n1p2";
 		allowDiscards = true;
+
 		keyFileSize = 4096;
 		keyFile = "/dev/sda";
+		keyFileTimeOut = 10;
 		fallbackToPassword = true;
 	};
 
