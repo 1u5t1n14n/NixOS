@@ -1,4 +1,4 @@
-{ config, inputs, host, pkgs, ... }:
+{ config, host, pkgs, lib, ... }:
 
 let
 	cfg = config.services.nextcloud;
