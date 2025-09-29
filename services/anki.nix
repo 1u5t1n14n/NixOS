@@ -1,4 +1,4 @@
-{ ... }:
+{ config, host, ... }:
 
 {
 
@@ -9,10 +9,14 @@
 		address = "0.0.0.0";
 		openFirewall = true;
 
-		users.main = {
-			username = host.user;
-			passwordFile = config.sops.secrets."".path;
-		};
+		users = [
+			{
+				username = host.user;
+				passwordFile = config.sops.secrets."services/anki".path;
+			}
+		];
 	};
+
+	sops.secrets."services/anki".owner = "root";
 
 }
