@@ -1,4 +1,4 @@
-{ ... }:
+{ host, ... }:
 
 let
 	font = "JetBrainsMono Nerd Font";
@@ -7,7 +7,7 @@ in
 {
 
 	programs.zed-editor = {
-		enable = true;
+		enable = host.hasDesktop;
 
 		extensions = [ "html" "nix" "typst" ];
 		userSettings = {

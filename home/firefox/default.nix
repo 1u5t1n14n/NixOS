@@ -1,4 +1,4 @@
-{ ... }:
+{ host, ... }:
 
 {
 
@@ -9,10 +9,10 @@
 	];
 
 	programs.firefox = {
-		enable = true;
+		enable = host.hasDesktop;
 		profiles.default = {
 			isDefault = true;
-			name = "Firefox";
+			name = "default";
 			id = 0;
 		};
 	};

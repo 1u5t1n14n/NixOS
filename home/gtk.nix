@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, host, ... }:
 
 let
 	cfg = config.gtk;
@@ -6,7 +6,7 @@ let
 in {
 
 	gtk = {
-		enable = true;
+		enable = host.hasDesktop;
 
 		font = {
 			name = "Inter";
@@ -40,7 +40,7 @@ in {
 		size = cfg.cursorTheme.size;
 
 		gtk.enable = cfg.enable;
-		x11.enable = true;
+		x11.enable = host.hasDesktop;
 	};
 
 }

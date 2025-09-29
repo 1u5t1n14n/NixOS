@@ -3,7 +3,7 @@
 {
 
 	programs.wezterm = {
-		enable = true;
+		enable = host.hasDesktop;
 		enableZshIntegration = osConfig.programs.zsh.enable;
 		extraConfig = ''
 			return {
