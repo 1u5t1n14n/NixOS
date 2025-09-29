@@ -27,18 +27,18 @@ in
 					pdfa_image_compression = "lossless";
 				};
 				PAPERLESS_EMPTY_TRASH_DELAY = 15;
-				PAPERLESS_TIKA_ENABLED = config.services.tika.enable;
+				PAPERLESS_TIKA_ENABLED = true;
 				PAPERLESS_TIKA_ENDPOINT = "http://${config.services.tika.listenAddress}:${toString config.services.tika.port}";
 				PAPERLESS_TIKA_GOTENBERG_ENDPOINT = "http://${config.services.gotenberg.bindIP}:${toString config.services.gotenberg.port}";
 			};
 		};
 
 		tika = {
-			enable = true;
+			enable = cfg.settings.PAPERLESS_TIKA_ENABLED;
 			port = 9998;
 		};
 		gotenberg = {
-			enable = true;
+			enable = cfg.settings.PAPERLESS_TIKA_ENABLED;
 			port = 3001;
 
 			# Hoping this is working
