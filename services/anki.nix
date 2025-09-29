@@ -17,6 +17,13 @@
 		];
 	};
 
-	sops.secrets."services/anki".owner = "root";
+	sops.secrets.ankiServer = {
+		key = "services/anki";
+	};
+
+	sops.secrets.ankiHome = {
+		owner = host.user;
+		key = "services/anki";
+	};
 
 }
