@@ -60,7 +60,7 @@ in
 				default_phone_region = "DE";
 				default_language = "de_DE";
 				default_locale = "de";
-				default_timezone = "Europe/Berlin";
+				default_timezone = config.time.timeZone;
 
 				reduce_to_languages = [ "de" "de_DE" "en" ];
 
@@ -86,7 +86,7 @@ in
 		};
 
 		minio = {
-			enable = true;
+			enable = cfg.config.objectstore.s3.enable;
 			listenAddress = "127.0.0.1:${toString cfg.config.objectstore.s3.port}";
 			consoleAddress = "127.0.0.1:9001";
 			rootCredentialsFile = "/etc/${config.environment.etc.minio.target}";
@@ -96,7 +96,7 @@ in
 		};
 	};
 
-	systemd.services.minioSetup = lib.mkIf (cfg.config.objectstore.s3.enable && config.services.minio.enable) {
+	systemd.services.minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
 		path = [ pkgs.minio-client pkgs.getent ];
 		script = ''
 			mc alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
@@ -104,7 +104,7 @@ in
 		'';
 		serviceConfig = {
 			User = cfg.config.dbuser;
-			Group = config.users.users.${config.systemd.services.minioSetup.serviceConfig.User}.group;
+			Group = config.users.users.${cfg.config.dbuser}.group;
 			WorkingDirectory = cfg.home;
 
 			# Tryin'
