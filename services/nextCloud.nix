@@ -76,8 +76,8 @@ in
 				bucket = "nextcloud";
 				verify_bucket_exists = true;
 				key = accessKey;
-				secretFile = "/etc/minio/NextCloudPass";
-				hostname = "localhost";
+				secretFile = "/etc/${config.environment.etc.nextcloud.target}";
+				hostname = cfg.hostName;
 				useSsl = false;
 				port = 9000;
 				usePathStyle = true;
@@ -89,7 +89,10 @@ in
 			enable = true;
 			listenAddress = "127.0.0.1:${toString cfg.config.objectstore.s3.port}";
 			consoleAddress = "127.0.0.1:9001";
-			rootCredentialsFile = "/etc/minio/Pass";
+			rootCredentialsFile = "/etc/${config.environment.etc.minio.target}";
+
+			# Only listens on localhost.
+			browser = false;
 		};
 	};
 
@@ -100,25 +103,29 @@ in
 			mc mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
 		'';
 		serviceConfig = {
-			User = config.systemd.services.minio.serviceConfig.User;
-			Group = config.systemd.services.minio.serviceConfig.Group;
+			User = cfg.config.dbuser;
+			Group = config.users.users.${config.systemd.services.minioSetup.serviceConfig.User}.group;
+			WorkingDirectory = cfg.home;
+
+			# Tryin'
+			ProtectHome = true;
+			PrivateDevices = true;
+			ProtectClock = true;
 		};
 		after = [ "minio.service" ];
 		wantedBy = [ "nextcloud-setup.service" ];
 	};
 
 	environment = {
-		# Is it working without this?
-		# systemPackages = [ pkgs.minio-client ];
 		etc = {
-			"minio/Pass".text = ''
+			minio.text = ''
 				MINIO_ROOT_USER=${cfg.config.dbuser}
 				MINIO_ROOT_PASSWORD=${secretKey}
 			'';
-			"minio/NextcloudPass".text = secretKey;
+			nextcloud.text = secretKey;
 		};
 	};
 
-	networking.firewall.allowedTCPPorts = [ 80 443 ];
+	networking.firewall.allowedTCPPorts = lib.mkIf cfg.enable [ 80 443 ];
 
 }
