@@ -6,6 +6,8 @@ let
 in
 {
 
+	nix.allowedUsers = [ "@wheel" "root" host.user "kian" ];
+
 	users = {
 		mutableUsers = false;
 
@@ -26,8 +28,7 @@ in
 				createHome = true;
 				home = "/var/lib/Kian";
 				hashedPasswordFile = secret."user/kian".path;
-				extraGroups = [ "networkmanager" "wheel" ];
-				description = "Kian";
+				extraGroups = [ "networkmanager" ];
 				useDefaultShell = true;
 				packages = with pkgs; [ ];
 			};
