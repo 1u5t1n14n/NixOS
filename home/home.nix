@@ -3,7 +3,6 @@
 {
 
 	imports = [
-		./anki.nix
 		./firefox
 		./gnome
 		./nixvim
