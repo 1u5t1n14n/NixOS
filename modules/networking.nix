@@ -1,11 +1,11 @@
-{ host, ... }:
+{ host, config, ... }:
 
 {
 
 	networking = {
 		hostName = host.name;
 
-		nftables.enable = true;
+		nftables.enable = config.networking.firewall.enable;
 		firewall.enable = true;
 
 		networkmanager.enable = true;
