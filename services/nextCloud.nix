@@ -45,7 +45,6 @@ in
 
 			settings = {
 				maintenance_window_start = 1;
-				"upgrade.disable-web" = false;
 				updatechecker = false;
 
 				preview_libreoffice_path = "${pkgs.libreoffice-fresh}/bin/libreoffice";
