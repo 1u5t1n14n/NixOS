@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
+let
+	cfg = config.services.Kant-O-Mat;
+
+in
 {
 
 	nixpkgs.overlays = [
@@ -8,10 +12,33 @@
 		})
 	];
 
-	services.nginx = {
-		enable = true;
-		virtualHosts.localhost.locations."/kant-o-mat" = {
-			root = "${pkgs.kant-o-mat}";
+	config = lib.mkIf cfg.enable {
+		services.nginx = {
+			enable = true;
+			virtualHosts.${cfg.hostName}.locations."/${cfg.subDirectory}" =  {
+				root = "${pkgs.kant-o-mat}";
+			};
+		};
+	};
+
+	options.services.Kant-O-Mat = {
+		enable = lib.mkEnableOption "Enable the mighty Kant-O-Mat.";
+
+		hostName = lib.mkOption {
+			type = lib.types.str;
+			default = "localhost";
+			description = "The host to listen on.";
+		};
+
+		subDirectory = lib.mkOption {
+			type = lib.types.str;
+			default = "kant-o-mat";
+			description = ''
+				This is the sub directory on the host that contains the
+				Kant-O-Mat. When omitted it is served on the host '/' itself.
+
+				Only input the part after the solidus.
+			'';
 		};
 	};
 
