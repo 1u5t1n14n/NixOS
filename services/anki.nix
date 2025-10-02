@@ -12,11 +12,16 @@
 		users = [
 			{
 				username = host.user;
-				passwordFile = config.sops.secrets."services/anki".path;
+				passwordFile = config.sops.secrets."services/anki/main".path;
+			}
+			{
+				username = "jonathan";
+				passwordFile = config.sops.secrets."services/anki/jonathan".path;
 			}
 		];
 	};
 
-	sops.secrets."services/anki" = { };
+	sops.secrets."services/anki/main" = { };
+	sops.secrets."services/anki/jonathan" = { };
 
 }

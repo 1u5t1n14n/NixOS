@@ -24,7 +24,7 @@ in
 		secrets = {
 			"user/kian".neededForUsers = true;
 			"user/root".neededForUsers = true;
-			"user/user".neededForUsers = true;
+			"user/main".neededForUsers = true;
 		};
 	};
 

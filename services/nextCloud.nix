@@ -9,7 +9,10 @@ let
 in
 {
 
-	sops.secrets."services/nextcloud".owner = cfg.config.dbuser;
+	sops.secrets = {
+		"services/nextcloud/main".owner = cfg.config.dbuser;
+		"services/nextcloud/jonathan".owner = cfg.config.dbuser;
+	};
 
 	services = {
 		nextcloud = {
@@ -39,7 +42,7 @@ in
 				dbtype = "pgsql";
 				dbuser = "nextcloud";
 				adminuser = "root";
-				adminpassFile = config.sops.secrets."services/nextcloud".path;
+				adminpassFile = config.sops.secrets."services/nextcloud/main".path;
 			};
 
 			maxUploadSize = "1G";
@@ -98,39 +101,24 @@ in
 		};
 	};
 
-	systemd.services = {
-		minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
-			path = [ pkgs.minio-client pkgs.getent ];
-			script = ''
-				mc alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
-				mc mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
-			'';
-			serviceConfig = {
-				User = cfg.config.dbuser;
-				Group = config.users.users.${cfg.config.dbuser}.group;
-				WorkingDirectory = cfg.home;
+	systemd.services.minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
+		path = [ pkgs.minio-client pkgs.getent ];
+		script = ''
+			mc alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
+			mc mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
+		'';
+		serviceConfig = {
+			User = cfg.config.dbuser;
+			Group = config.users.users.${cfg.config.dbuser}.group;
+			WorkingDirectory = cfg.home;
 
-				# Tryin'
-				ProtectHome = true;
-				PrivateDevices = true;
-				ProtectClock = true;
-			};
-			after = [ "minio.service" ];
-			wantedBy = [ "nextcloud-setup.service" ];
+			# Tryin'
+			ProtectHome = true;
+			PrivateDevices = true;
+			ProtectClock = true;
 		};
-
-		nextcloudSetupOCC = {
-			path = [ cfg.occ ];
-			script = ''
-				occ config:app:set dav system_addressbook_exposed --value="no"
-			''
-			+ lib.optionalString config.paperless.enable ''
-				occ app:enable files_external
-				occ files_external:create /${config.services.paperless.settings.PAPERLESS_APP_TITLE} local null:null -c datadir=${config.services.paperless.consumptionDir}
-			'';
-			after = [ "nextcloud-setup.service" ];
-			wantedBy = [ "multi-user.target" ];
-		};
+		after = [ "minio.service" ];
+		wantedBy = [ "nextcloud-setup.service" ];
 	};
 
 	environment = {

@@ -16,7 +16,7 @@ in
 			${host.user} = {
 				isNormalUser = true;
 				createHome = true;
-				hashedPasswordFile = secret."user/user".path;
+				hashedPasswordFile = secret."user/main".path;
 				extraGroups = [ "networkmanager" "wheel" ];
 				description = host.user;
 				shell = pkgs.zsh;
