@@ -30,6 +30,7 @@ in
 
 			"text/plain" = editor;
 			"text/xml" = editor;
+			"text/x-objective-c" = editor;
 
 			"inode/directory" = [
 				"org.gnome.Nautilus.desktop"
