@@ -6,13 +6,13 @@ let
 in
 {
 
-	nixpkgs.overlays = [
-		(self: super: rec {
-			kant-o-mat = super.callPackage ../modules/packages/kantOMat.nix {};
-		})
-	];
-
 	config = lib.mkIf cfg.enable {
+		nixpkgs.overlays = [
+			(self: super: rec {
+				kant-o-mat = super.callPackage ../modules/packages/kantOMat.nix {};
+			})
+		];
+
 		services.nginx = {
 			enable = true;
 			virtualHosts.${cfg.hostName}.locations."/${cfg.subDirectory}" =  {
