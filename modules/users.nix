@@ -6,7 +6,7 @@ let
 in
 {
 
-	nix.allowedUsers = [ "@wheel" "root" host.user "kian" ];
+	nix.settings.allowed-users = [ "@wheel" "root" host.user "kian" ];
 
 	users = {
 		mutableUsers = false;

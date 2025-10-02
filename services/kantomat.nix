@@ -1,14 +1,14 @@
 { pkgs, config, lib, ... }:
 
 let
-	cfg = config.services.Kant-O-Mat;
+	cfg = config.services.kantOMat;
 
 in
 {
 
 	nixpkgs.overlays = [
 		(self: super: rec {
-			kant-o-mat = super.callPackage ../modules/packages/Kant-O-Mat.nix {};
+			kant-o-mat = super.callPackage ../modules/packages/kantOMat.nix {};
 		})
 	];
 
@@ -21,7 +21,7 @@ in
 		};
 	};
 
-	options.services.Kant-O-Mat = {
+	options.services.kantOMat = {
 		enable = lib.mkEnableOption "Enable the mighty Kant-O-Mat.";
 
 		hostName = lib.mkOption {
