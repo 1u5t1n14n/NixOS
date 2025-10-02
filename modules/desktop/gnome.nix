@@ -6,12 +6,12 @@ let
 in
 {
 
-	# Automatic Keyring Decryption
-	security.pam.services.login.enableGnomeKeyring = cfg.enable;
-
 	# Automatic Login
-	systemd.services."getty@tty1".enable = lib.mkIf cfg.enable false;
-	systemd.services."autovt@tty1".enable = lib.mkIf cfg.enable false;
+	systemd.services."getty@tty1".enable = !config.services.displayManager.autoLogin.enable;
+	systemd.services."autovt@tty1".enable = !config.services.displayManager.autoLogin.enable;
+
+	# Automatic Keyring Decryption
+	security.pam.services.login.enableGnomeKeyring = config.services.displayManager.autoLogin.enable;
 
 	services = {
 		displayManager = {
@@ -19,16 +19,12 @@ in
 				enable = cfg.enable;
 				user = host.user;
 			};
-
-			# GDM
-			gdm = {
-				enable = true;
-				banner = "Non mortem timendum, sed quod numquam incipiat vivere.";
-			};
+			gdm.enable = true;
 		};
 		desktopManager.gnome.enable = true;
 
 		gnome = {
+			gnome-keyring.enable = cfg.enable;
 			# Calendar Server
 			evolution-data-server.enable = true;
 
@@ -93,9 +89,15 @@ in
 
 		# Nautilus Thumbnailer
 		++ [
-				gnome-epub-thumbnailer ffmpegthumbnailer gnome-font-viewer
-				libheif libheif.out 
+			gnome-epub-thumbnailer
+			ffmpegthumbnailer
+			gnome-font-viewer
+
+			libheif
+			libheif.out 
 		]
+
+		++ lib.optionals config.services.displayManager.autoLogin.enable [ gcr ]
 
 		# And GNOME Shell Extensions
 		++ lib.optionals cfg.enable [
@@ -108,6 +110,7 @@ in
 			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
 			gnomeExtensions.valent
+
 			valent
 		];
 
