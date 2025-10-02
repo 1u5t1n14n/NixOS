@@ -26,7 +26,7 @@ in
 			extraAppsEnable = true;
 			autoUpdateApps.enable = cfg.extraAppsEnable;
 			extraApps = with cfg.package.packages.apps; {
-				inherit calendar contacts maps;
+				inherit calendar contacts maps news;
 			};
 
 			nginx = {
