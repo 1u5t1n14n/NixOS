@@ -39,9 +39,12 @@ in
 		};
 	};
 
-	sops.templates.searx.content = ''
-		SEARXNG_SECRET=${config.sops.placeholder."services/searx"}
-	'';
+	sops = {
+		secrets."services/searx" = { };
+		templates.searx.content = ''
+			SEARXNG_SECRET=${config.sops.placeholder."services/searx"}
+		'';
+	};
 
 	networking.firewall.allowedTCPPorts = [ cfg.settings.server.port ];
 
