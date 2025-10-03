@@ -5,8 +5,8 @@
 	networking = {
 		hostName = host.name;
 
-		nftables.enable = config.networking.firewall.enable;
 		firewall.enable = true;
+		nftables.enable = config.networking.firewall.enable;
 
 		networkmanager.enable = true;
 	};
