@@ -19,7 +19,7 @@ in
 				hashedPasswordFile = secret."user/main".path;
 				extraGroups = [ "networkmanager" "wheel" ];
 				description = host.user;
-				shell = pkgs.zsh;
+				shell = pkgs.zsh; #gonna change this later to nushell
 				packages = with pkgs; [ ];
 			};
 
