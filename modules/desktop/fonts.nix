@@ -6,15 +6,21 @@
 		fontDir.enable = true;
 		enableDefaultPackages = true;
 		packages = with pkgs; [
+			# Free (?)
 			jost
 			eb-garamond
-
-			ibm-plex
 			inter
-			literate
-			corefonts
-			font-awesome
 
+			# Rendering
+			noto-fonts
+			unifont
+			ibm-plex 
+			# Unfree ~v
+			symbola
+			corefonts
+			ibm-plex
+
+			# Nerd Fonts
 			nerd-fonts.blex-mono
 			nerd-fonts.jetbrains-mono
 		];
