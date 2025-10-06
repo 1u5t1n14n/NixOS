@@ -15,6 +15,7 @@
 		./lapTop.nix
 		./miscellaneous.nix
 		./monitors.nix
+		./nautilus.nix
 		./office.nix
 		./printing.nix
 		./sound.nix

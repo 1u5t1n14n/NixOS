@@ -28,9 +28,6 @@ in
 			# Calendar Server
 			evolution-data-server.enable = true;
 
-			# Previewer for Nautilus
-			sushi.enable = true;
-
 			# Core Apps not installing by default
 			core-apps.enable = false;
 		};
@@ -40,6 +37,7 @@ in
 	};
 
 	programs = {
+		nautilus.enable = true;
 		kdeconnect = {
 			enable = cfg.enable;
 			package = pkgs.valent;
@@ -49,11 +47,6 @@ in
 		# Since it is no longer installed
 		bash.vteIntegration = false;
 		zsh.vteIntegration = false;
-
-		nautilus-open-any-terminal = {
-			enable = true;
-			terminal = "wezterm";
-		};
 
 		evince.enable = true;
 		file-roller.enable = true;
@@ -82,19 +75,8 @@ in
 			gnome-maps
 			gnome-text-editor
 			loupe
-			nautilus
 			showtime
 			wordbook
-		]
-
-		# Nautilus Thumbnailer
-		++ [
-			gnome-epub-thumbnailer
-			ffmpegthumbnailer
-			gnome-font-viewer
-
-			libheif
-			libheif.out 
 		]
 
 		++ lib.optionals config.services.displayManager.autoLogin.enable [ gcr ]
@@ -117,9 +99,6 @@ in
 		gnome.excludePackages = [ pkgs.gnome-tour ];
 
 		sessionVariables = {
-			# Nautilus
-			NAUTILUS_4_EXTENSION_DIR = lib.mkIf cfg.enable "${config.system.path}/lib/nautilus/extensions-4";
-
 			# Hint Electron Apps to use Wayland
 			NIXOS_OZONE_WL = "1";
 
@@ -128,29 +107,7 @@ in
 			QT_QPA_PLATFORMTHEME = "gtk2";
 			QT_QPA_PLATFORM = "wayland";
 		};
-
-		# Nautilus
-		pathsToLink = [
-			"/share/nautilus-python/extensions"
-
-			# Thumbnailers
-			"share/thumbnailers"
-		];
 	};
-
-	# GStreamer Plugins for Nautilus
-	nixpkgs.overlays = [
-		(final: prev: {
-			nautilus = prev.nautilus.overrideAttrs (nprev: {
-				buildInputs =
-					nprev.buildInputs
-					++ (with pkgs.gst_all_1; [
-						gst-plugins-good
-						gst-plugins-bad
-					]);
-			});
-		})
-	];
 
 	# Automatic Screen Rotation
 	hardware.sensor.iio.enable = true;
