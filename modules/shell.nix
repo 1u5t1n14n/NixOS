@@ -29,7 +29,10 @@ in
 	users.defaultUserShell = defaultShell;
 	environment = {
 		shells = [ defaultShell ];
-		systemPackages = [ defaultShell ];
+		systemPackages = [
+			(lib.mkIf (defaultShell != pkgs.nushell) pkgs.nushell)
+			defaultShell
+		];
 	};
 
 	system.userActivationScripts.zshrc = lib.mkIf (defaultShell == pkgs.zsh) ''
