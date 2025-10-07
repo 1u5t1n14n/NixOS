@@ -1,8 +1,6 @@
-{ ... }:
+{ host, ... }:
 
 {
-
-	system.stateVersion = "25.11";
 
 	nix = {
 		settings = {
@@ -12,9 +10,19 @@
 
 		gc = {
 			automatic = true;
-			dates = "weekly";
-			options = "--delete-older-than 30d";
+			dates = "daily";
+			options = "--delete-older-than 3d";
 		};
+	};
+
+	system = {
+		autoUpgrade = {
+			flake = "github:1u5t1n14n/NixOS\#${host.name}";
+			enable = host.hasDesktop;
+			upgrade = false;
+		};
+
+		stateVersion = "25.11";
 	};
 
 	nixpkgs.config = {
