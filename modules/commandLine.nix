@@ -1,4 +1,4 @@
-{ pkgs, host, ... }:
+{ pkgs, host, config, ... }:
 
 {
 
@@ -28,15 +28,15 @@
 		};
 	};
 
-	services.pcscd.enable = true;
+	services.pcscd.enable = (config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses);
 
 	environment.systemPackages = with pkgs; [
 		# Common CLIs
 		ripgrep fastfetch onefetch tree gcc tree-sitter
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
-		pandoc typst texliveFull bitwarden-cli gnupg
-		ffmpeg-full
+		pandoc typst gnupg lynx ffmpeg-full texliveFull
+		bitwarden-cli
 	]
 
 	++ lib.optionals host.hasDesktop [ wl-clipboard ];
