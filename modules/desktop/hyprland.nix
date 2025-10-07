@@ -6,9 +6,6 @@
 
 	environment.systemPackages = lib.mkIf config.programs.hyprland.enable [
 		pkgs.swww pkgs.waypaper pkgs.waybar
-
-		# For default Config
-		pkgs.kitty
 	];
 
 }
