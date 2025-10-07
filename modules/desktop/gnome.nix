@@ -16,7 +16,7 @@ in
 	services = {
 		displayManager = {
 			autoLogin = {
-				enable = cfg.enable;
+				enable = false;
 				user = host.user;
 			};
 			gdm.enable = true;
@@ -38,9 +38,9 @@ in
 
 	programs = {
 		nautilus.enable = true;
-		kdeconnect = {
-			enable = cfg.enable;
-			package = pkgs.valent;
+		kdeconnect = lib.mkIf cfg.enable {
+			enable = true;
+			package = lib.mkForce pkgs.valent;
 		};
 
 		# Disable GNOME Console Integrations

@@ -11,6 +11,7 @@
 		./games.nix
 		./gnome.nix
 		./hyprland.nix
+		# ./kde.nix
 		./keyMap.nix
 		./lapTop.nix
 		./miscellaneous.nix
