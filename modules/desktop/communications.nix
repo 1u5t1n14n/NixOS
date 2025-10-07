@@ -2,6 +2,10 @@
 
 {
 
+	programs.chromium = {
+		enable = true;
+	};
+
 	programs.thunderbird = {
 		enable = true;
 
@@ -16,6 +20,7 @@
 
 	environment.systemPackages = with pkgs; [
 		bitwarden-desktop signal-desktop ente-auth
+		ungoogled-chromium
 	];
 
 }
