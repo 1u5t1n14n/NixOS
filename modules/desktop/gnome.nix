@@ -7,13 +7,15 @@ in
 {
 
 	# Automatic Login
-	systemd.services."getty@tty1".enable = !config.services.displayManager.autoLogin.enable;
-	systemd.services."autovt@tty1".enable = !config.services.displayManager.autoLogin.enable;
+	systemd = {
+		services."autovt@tty1".enable = !config.services.displayManager.autoLogin.enable;
+		services."getty@tty1".enable = !config.services.displayManager.autoLogin.enable;
+	};
 
-	# Automatic Keyring Decryption
-	security.pam.services.login.enableGnomeKeyring = config.services.displayManager.autoLogin.enable;
+	security.pam.services.login.enableGnomeKeyring = cfg.enable;
 
 	services = {
+		desktopManager.gnome.enable = true;
 		displayManager = {
 			autoLogin = {
 				enable = false;
@@ -21,15 +23,13 @@ in
 			};
 			gdm.enable = true;
 		};
-		desktopManager.gnome.enable = true;
 
 		gnome = {
+			core-apps.enable = false;
 			gnome-keyring.enable = cfg.enable;
+
 			# Calendar Server
 			evolution-data-server.enable = true;
-
-			# Core Apps not installing by default
-			core-apps.enable = false;
 		};
 
 		# Disable XTerm
@@ -48,6 +48,7 @@ in
 		bash.vteIntegration = false;
 		zsh.vteIntegration = false;
 
+		seahorse.enable = true;
 		evince.enable = true;
 		file-roller.enable = true;
 		gnome-disks.enable = true;
@@ -60,7 +61,9 @@ in
 			morewaita-icon-theme
 			papers
 			pdfarranger
-			seahorse
+
+			# Looks cool
+			ghostty
 		]
 
 		++ lib.optionals (!config.services.gnome.core-apps.enable) [
@@ -108,6 +111,8 @@ in
 			QT_QPA_PLATFORM = "wayland";
 		};
 	};
+
+	qt.platformTheme = lib.mkIf cfg.enable "gnome";
 
 	# Automatic Screen Rotation
 	hardware.sensor.iio.enable = true;
