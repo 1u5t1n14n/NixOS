@@ -1,4 +1,4 @@
-{ host, config, ... }:
+{ host, config, lib, ... }:
 
 let
 	mkWifiConfig = ssid: {
@@ -12,7 +12,8 @@ let
 			mode = "infrastructure";
 		};
 		wifi-security = {
-			psk = "$" + ssid;
+			# Make Variable Lower Case
+			psk = "$" + lib.toLower ssid;
 			key-mgmt = "wpa-psk";
 		};
 		ipv4.method = "auto";
