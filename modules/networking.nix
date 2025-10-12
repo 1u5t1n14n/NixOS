@@ -1,7 +1,7 @@
 { host, config, lib, ... }:
 
 let
-	mkWifiConfig = ssid: {
+	mkWifiConfig = { ssid, extVar, ... }: {
 		connection = {
 			type = "wifi";
 			id = ssid;
@@ -12,8 +12,7 @@ let
 			mode = "infrastructure";
 		};
 		wifi-security = {
-			# Make Variable Lower Case
-			psk = "$" + lib.toLower ssid;
+			psk = "$" + extVar;
 			key-mgmt = "wpa-psk";
 		};
 		ipv4.method = "auto";
@@ -29,27 +28,44 @@ in
 		nftables.enable = config.networking.firewall.enable;
 
 		networkmanager = {
-			enable = !config.networking.wireless.enable;
+			enable = true;
 			ensureProfiles = {
 				environmentFiles = [ config.sops.templates.wifi.path ];
 
 				profiles = {
-					trautesheim = mkWifiConfig "trautesheim";
-					kant = mkWifiConfig "kant";
-					Paulina = mkWifiConfig "Paulina";
-					Pixel = mkWifiConfig "Pixel";
+					trautesheim = mkWifiConfig {
+						ssid = "trautesheim";
+						extVar = "trautesheim";
+					};
+					kant = mkWifiConfig {
+						ssid = "kant";
+						extVar = "kant";
+					};
+					Paulina = mkWifiConfig {
+						ssid = "Paulina";
+						extVar = "paulina";
+					};
+					Wanzka = mkWifiConfig {
+						ssid = "FRITZ!Wanzka KKBSO";
+						extVar = "wanzka";
+					};
+					Pixel = mkWifiConfig {
+						ssid = "Pixel";
+						extVar = "pixel";
+					};
 				};
 			};
 		};
 
 		wireless = {
-			enable = false;
+			enable = !config.networking.networkmanager.enable;
 			secretsFile = config.sops.templates.wifi.path;
 			networks = {
 				Paulina.psk = "ext:paulina";
 				Pixel.psk = "ext:pixel";
 				kant.psk = "ext:kant";
 				trautesheim.psk = "ext:trautesheim";
+				"Fritz!Wanzka KKBSO".psk = "ext:wanzka";
 			};
 		};
 	};
@@ -60,14 +76,15 @@ in
 			"networking/pixel" = { };
 			"networking/kant" = { };
 			"networking/trautesheim" = { };
+			"networking/wanzka" = { };
 		};
 		templates.wifi = {
-			owner = "root";
 			content = ''
 				paulina=${config.sops.placeholder."networking/paulina"}
 				pixel=${config.sops.placeholder."networking/pixel"}
 				kant=${config.sops.placeholder."networking/kant"}
 				trautesheim=${config.sops.placeholder."networking/trautesheim"}
+				wanzka=${config.sops.placeholder."networking/wanzka"}
 			'';
 		};
 	};
