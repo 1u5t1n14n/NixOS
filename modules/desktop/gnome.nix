@@ -71,7 +71,6 @@ in
 			decibels
 			epiphany
 			gnome-calculator
-			gnome-calendar
 			gnome-characters
 			gnome-contacts
 			gnome-font-viewer
@@ -82,21 +81,22 @@ in
 			wordbook
 		]
 
-		++ lib.optionals config.services.displayManager.autoLogin.enable [ gcr ]
+		++ lib.optionals config.services.gnome.evolution-data-server.enable [ gnome-calendar ]
+
+		++ lib.optionals (config.services.displayManager.autoLogin.enable && cfg.enable) [ gcr ]
 
 		# And GNOME Shell Extensions
 		++ lib.optionals cfg.enable [
-			gnomeExtensions.launch-new-instance
 			gnomeExtensions.blur-my-shell
-			gnomeExtensions.native-window-placement
-			gnomeExtensions.just-perfection
 			gnomeExtensions.dash-to-dock
-			gnomeExtensions.media-controls
-			gnomeExtensions.unite
 			gnomeExtensions.hide-activities-button
+			gnomeExtensions.just-perfection
+			gnomeExtensions.launch-new-instance
+			gnomeExtensions.media-controls
+			gnomeExtensions.native-window-placement
+			gnomeExtensions.rounded-window-corners-reborn
+			gnomeExtensions.unite
 			gnomeExtensions.valent
-
-			valent
 		];
 
 		gnome.excludePackages = [ pkgs.gnome-tour ];

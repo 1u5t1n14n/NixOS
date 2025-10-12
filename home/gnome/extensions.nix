@@ -6,15 +6,16 @@
 		"org/gnome/shell" = {
 			disable-user-extensions = false;
 			enabled-extensions = with pkgs.gnomeExtensions; [
-				valent.extensionUuid
-				launch-new-instance.extensionUuid
 				blur-my-shell.extensionUuid
-				native-window-placement.extensionUuid
-				just-perfection.extensionUuid
 				dash-to-dock.extensionUuid
-				media-controls.extensionUuid
-				unite.extensionUuid
 				hide-activities-button.extensionUuid
+				just-perfection.extensionUuid
+				launch-new-instance.extensionUuid
+				media-controls.extensionUuid
+				native-window-placement.extensionUuid
+				rounded-window-corners-reborn.extensionUuid
+				unite.extensionUuid
+				valent.extensionUuid
 			];
 		};
 
@@ -48,6 +49,7 @@
 			overlay-key = false;
 
 			# Desktop
+			workspaces-in-app-grid = false;
 			startup-status = 0;
 			workspace-wrap-around = true;
 
