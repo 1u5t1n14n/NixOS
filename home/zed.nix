@@ -9,6 +9,8 @@ in
 	programs.zed-editor = {
 		enable = host.hasDesktop;
 
+		package = null;
+
 		extensions = [ "html" "nix" "typst" ];
 		userSettings = {
 			active_pane_modifiers = {
