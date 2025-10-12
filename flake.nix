@@ -33,8 +33,7 @@
 					./modules/hardware/${host.name}.nix
 
 					inputs.sops.nixosModules.sops
-					inputs.homeManager.nixosModules.home-manager
-					{
+					inputs.homeManager.nixosModules.home-manager {
 						home-manager = {
 							extraSpecialArgs = {
 								inherit host;
