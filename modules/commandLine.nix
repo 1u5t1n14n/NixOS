@@ -28,7 +28,7 @@
 		};
 	};
 
-	services.pcscd.enable = (config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses);
+	services.pcscd.enable = ((config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses) && config.programs.gnupgp.agent.enable);
 
 	environment.systemPackages = with pkgs; [
 		# Common CLIs
@@ -36,7 +36,7 @@
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
 		pandoc typst gnupg lynx ffmpeg-full texliveFull
-		bitwarden-cli
+		bitwarden-cli ocrmypdf
 	]
 
 	++ lib.optionals host.hasDesktop [ wl-clipboard ];
