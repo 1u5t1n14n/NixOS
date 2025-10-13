@@ -19,6 +19,9 @@
 				"startcenter.desktop"
 			];
 		};
+
+		# Enable Papers Night-Mode
+		"org/gnome/papers".night-mode = false;
 	};
 
 }
