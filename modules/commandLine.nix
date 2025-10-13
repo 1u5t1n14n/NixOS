@@ -28,7 +28,7 @@
 		};
 	};
 
-	services.pcscd.enable = ((config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses) && config.programs.gnupgp.agent.enable);
+	services.pcscd.enable = ((config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses) && config.programs.gnupg.agent.enable);
 
 	environment.systemPackages = with pkgs; [
 		# Common CLIs
