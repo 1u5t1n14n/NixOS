@@ -37,10 +37,6 @@ in
 						ssid = "trautesheim";
 						extVar = "trautesheim";
 					};
-					kant = mkWifiConfig {
-						ssid = "kant";
-						extVar = "kant";
-					};
 					Paulina = mkWifiConfig {
 						ssid = "Paulina";
 						extVar = "paulina";
@@ -63,7 +59,6 @@ in
 			networks = {
 				Paulina.psk = "ext:paulina";
 				Pixel.psk = "ext:pixel";
-				kant.psk = "ext:kant";
 				trautesheim.psk = "ext:trautesheim";
 				"Fritz!Wanzka KKBSO".psk = "ext:wanzka";
 			};
@@ -74,7 +69,6 @@ in
 		secrets = {
 			"networking/paulina" = { };
 			"networking/pixel" = { };
-			"networking/kant" = { };
 			"networking/trautesheim" = { };
 			"networking/wanzka" = { };
 		};
@@ -82,7 +76,6 @@ in
 			content = ''
 				paulina=${config.sops.placeholder."networking/paulina"}
 				pixel=${config.sops.placeholder."networking/pixel"}
-				kant=${config.sops.placeholder."networking/kant"}
 				trautesheim=${config.sops.placeholder."networking/trautesheim"}
 				wanzka=${config.sops.placeholder."networking/wanzka"}
 			'';
