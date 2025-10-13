@@ -21,6 +21,8 @@
 
 		"org/gnome/shell/extensions/blur-my-shell/dash-to-dock".blur = false;
 		"org/gnome/shell/extensions/dash-to-dock" = {
+			transparency-mode = "FIXED";
+			background-opacity = 0.4;
 			dock-position = "LEFT";
 			dash-max-icon-size = 54;
 			hot-keys = false;
@@ -45,6 +47,8 @@
 			extension-position = "Right";
 		};
 		"org/gnome/shell/extensions/just-perfection" = {
+			support-notifier-type = 0;
+
 			dash-separator = true;
 			overlay-key = false;
 
