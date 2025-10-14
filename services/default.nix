@@ -3,6 +3,7 @@
 {
 
 	imports = [
+		./ttyd.nix
 		./searxng.nix
 		./kantomat.nix
 		./anki.nix
