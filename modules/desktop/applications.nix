@@ -20,6 +20,8 @@ in
 				"org.kiwix.desktop.desktop"
 				editor
 			];
+
+			"application/vnd.oasis.opendocument.text" = "writer.desktop";
 			"application/vnd.sqlite3" = "base.desktop";
 			"application/pdf" = "org.gnome.Papers.desktop";
 			"application/epub+zip" = "calibre-ebook-viewer.desktop";
@@ -33,8 +35,8 @@ in
 			"text/x-objective-c" = editor;
 
 			"inode/directory" = [
-				"org.gnome.Nautilus.desktop"
 				"nautilus.desktop"
+				"org.gnome.Nautilus.desktop"
 			];
 		};
 	};
