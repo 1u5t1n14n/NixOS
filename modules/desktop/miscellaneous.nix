@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
 
@@ -12,5 +12,8 @@
 		enable = true;
 		settings.default = [ "org.wezfurlong.wezterm.desktop" ];
 	};
+
+	services.blueman.enable = config.hardware.bluetooth.enable;
+	hardware.bluetooth.enable = true;
 
 }
