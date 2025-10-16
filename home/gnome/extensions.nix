@@ -19,6 +19,10 @@
 			];
 		};
 
+		"org/gnome/shell/extensions/rounded-window-corners-reborn".blacklist = [
+			"Bitwarden"
+		];
+
 		"org/gnome/shell/extensions/blur-my-shell/dash-to-dock".blur = false;
 		"org/gnome/shell/extensions/dash-to-dock" = {
 			transparency-mode = "FIXED";
