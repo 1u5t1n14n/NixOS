@@ -102,23 +102,11 @@ in
 	};
 
 	systemd.services = {
-		nextcloudEnvironmentSetup = {
-			path = [ cfg.occ ];
+		minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
+			path = [ pkgs.minio-client pkgs.getent ];
 			script = ''
-				${lib.getExe cfg.occ} app:enable encryption
-				${lib.getExe cfg.occ} encryption:enable
-
-				${lib.getExe cfg.occ} app:enable files_external
-
-				${lib.getExe cfg.occ} theming:config disable-user-theming yes
-				${lib.getExe cfg.occ} theming:config name "${host.name}"
-				${lib.getExe cfg.occ} theming:config color "#7d1fa3"
-				${lib.getExe cfg.occ} theming:config background backgroundColor
-
-			'' + lib.optionalString config.services.paperless.enable ''
-
-				${lib.getExe cfg.occ} files_external:create /${config.services.paperless.settings.PAPERLESS_APP_TITLE} local null::null -c datadir=${config.services.paperless.consumptionDir}
-
+				${lib.getExe pkgs.minio-client} alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
+				${lib.getExe pkgs.minio-client} mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
 			'';
 			serviceConfig = {
 				User = cfg.config.dbuser;
@@ -128,17 +116,6 @@ in
 				PrivateDevices = true;
 				ProtectClock = true;
 			};
-			after = [ "nextcloud-setup.service" ];
-			wantedBy = [ "multi-user.target" ];
-		};
-
-		minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
-			path = [ pkgs.minio-client pkgs.getent ];
-			script = ''
-				${lib.getExe pkgs.minio-client} alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4
-				${lib.getExe pkgs.minio-client} mb --ignore-existing minio/${cfg.config.objectstore.s3.bucket}
-			'';
-			serviceConfig = config.systemd.services.nextcloudEnvironmentSetup.serviceConfig;
 			after = [ "minio.service" ];
 			wantedBy = [ "nextcloud-setup.service" ];
 		};
