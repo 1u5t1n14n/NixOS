@@ -24,7 +24,7 @@
 		gnupg.agent = {
 			enable = true;
 			pinentryPackage = pkgs.pinentry-curses;
-			enableSSHSupport = true;
+			enableSSHSupport = !config.programs.ssh.startAgent;
 		};
 	};
 

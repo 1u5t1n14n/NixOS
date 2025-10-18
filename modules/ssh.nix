@@ -1,6 +1,15 @@
 { host, config, lib, ... }:
 
+let
+	cfg = config.services.openssh;
+
+in
 {
+
+	sops.secrets."ssh/${host.name}" = {
+		owner = host.user;
+		mode = "0400";
+	};
 
 	users.users.${host.user}.openssh.authorizedKeys.keys = [
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwFDVhbXfV9zM8iQurlgoCo0lpIMBuJ1R7TS+tcYT1 user@Termius"
@@ -10,37 +19,43 @@
 	];
 
 	services = {
-		fail2ban.enable = true;
+		fail2ban.enable = cfg.enable;
+		endlessh = {
+			enable = cfg.enable;
+			port = 22;
+			openFirewall = true;
+		};
+
 		openssh = {
 			enable = true;
 
-			# Should probably change default Port
-			# due to Security Risks
-			ports = [ 22 ];
+			ports = [ 20001 ];
 			openFirewall = true;
 
-			# Activate when not a Server
 			startWhenNeeded = host.hasDesktop;
 			settings = {
-				PasswordAuthentication = true;
+				PasswordAuthentication = false;
+				KbdInteractiveAuthentication = false;
 				PermitRootLogin = "no";
 				AllowUsers = [ host.user ]
 
 				++ lib.optionals (!host.hasDesktop) [ config.users.users.kian.description ];
 			};
 
-			banner = ''
-
-
-				Kian, wenn du das bist, schick mir bitte einfach deinen Public SSH Key, damit
-				ich Passwort-Authentifizierung ausschalten kann.
-
-
-			'';
-
-			# Already default
 			allowSFTP = config.services.openssh.settings.PasswordAuthentication;
 		};
+	};
+
+	programs.ssh = lib.mkIf (host.name == "Thanatos") {
+		extraConfig = ''
+			Host server
+				HostName Prometheus
+				Port 20001
+				User ${host.user}
+
+				IdentitiesOnly yes
+				IdentityFile ${config.sops.secrets."ssh/${host.name}".path}
+		'';
 	};
 
 }
