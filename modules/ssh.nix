@@ -41,4 +41,11 @@ in
 		};
 	};
 
+	programs.ssh.extraConfig = ''
+		Host server
+			HostName Prometheus
+			Port 20001
+			User ${host.user}
+	'';
+
 }
