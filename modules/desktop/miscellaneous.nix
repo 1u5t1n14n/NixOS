@@ -5,7 +5,7 @@
 	environment.systemPackages = with pkgs; [
 		inkscape geogebra6 obsidian zed-editor
 		jetbrains.clion xorg.xprop keepassxc
-		wezterm anki-bin
+		wezterm anki-bin qemu quickemu
 	];
 
 	xdg.terminal-exec = {
