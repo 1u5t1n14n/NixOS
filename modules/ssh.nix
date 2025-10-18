@@ -6,11 +6,6 @@ let
 in
 {
 
-	sops.secrets."ssh/${host.name}" = {
-		owner = host.user;
-		mode = "0400";
-	};
-
 	users.users.${host.user}.openssh.authorizedKeys.keys = [
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwFDVhbXfV9zM8iQurlgoCo0lpIMBuJ1R7TS+tcYT1 user@Termius"
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFP9kyiHSaLuGocie+qs2a5jXRRzsOpruo2P+Bq5j4fS user@Hyperion"
@@ -44,18 +39,6 @@ in
 
 			allowSFTP = config.services.openssh.settings.PasswordAuthentication;
 		};
-	};
-
-	programs.ssh = lib.mkIf (host.name == "Thanatos") {
-		extraConfig = ''
-			Host server
-				HostName Prometheus
-				Port 20001
-				User ${host.user}
-
-				IdentitiesOnly yes
-				IdentityFile ${config.sops.secrets."ssh/${host.name}".path}
-		'';
 	};
 
 }
