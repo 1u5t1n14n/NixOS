@@ -9,6 +9,8 @@ let
 in
 {
 
+	imports = [ ../modules/pkgs/nextcloud.nix ];
+
 	sops.secrets = {
 		"services/nextcloud/main".owner = cfg.config.dbuser;
 		"services/nextcloud/jonathan".owner = cfg.config.dbuser;
@@ -112,6 +114,10 @@ in
 				User = cfg.config.dbuser;
 				Group = config.users.users.${cfg.config.dbuser}.group;
 				WorkingDirectory = cfg.home;
+
+				Type = "oneshot";
+				RemainAfterExit = true;
+
 				ProtectHome = true;
 				PrivateDevices = true;
 				ProtectClock = true;
