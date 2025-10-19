@@ -1,42 +1,50 @@
-{ config,config,  ... }:
+{ config, lib, ... }:
 
 let
 	cfg = config.services.nextcloud;
+	occ = "${cfg.occ}/bin/nextcloud-occ";
 
 in
 {
 
 	options = {
 		services.nextcloud = {
-			theming = {
-				name = mkOption {
-					type = lib.types.str;
-					default = null;
-					example = "Our Cloud";
-					description = ''
-						Name of the Instance to be set by the `theming:config`
-						command.
-					'';
-				};
+			extraOCC = lib.mkOption {
+				default = "";
+				type = lib.types.lines;
+				example = "nextcloud-occ app:enable files_external";
+				description = ''
+					Extra commands to be run through Nextcloud's OCC at
+					rebuilding.
+				'';
 			};
 		};
 	};
 
-	config = lib.mkIf cfg.enable = {
-		systemd.services.nextcloudCustomConfig = {
+	config = lib.mkIf cfg.enable {
+		systemd.services.nextcloudExtraOCC = {
 			path = [ cfg.occ ];
 			script = ''
-				nextcloud-occ theming:config name "Our Cloud"
-				'';
+				${cfg.extraOCC}
+			'';
 			serviceConfig = {
 				WorkingDirectory = cfg.home;
 
 				Type = "oneshot";
 				RemainAfterExit = true;
 
-				ProtectHome = true;
+				NoNewPrivileges = true;
 				PrivateDevices = true;
+				PrivateTmp = true;
 				ProtectClock = true;
+				ProtectHome = true;
+				ProtectHostname = true;
+				ProtectKernelLogs = true;
+				ProtectKernelModules = true;
+				ProtectKernelTunables = true;
+				ProtectSystem = "strict";
+				RestrictNamespaces = true;
+				SystemCallArchitectures = true;
 			};
 			after = [ "nextcloud-setup.service" ];
 			wantedBy = [ "multi-user.target" ];

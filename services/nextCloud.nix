@@ -2,6 +2,7 @@
 
 let
 	cfg = config.services.nextcloud;
+	occ = "${cfg.occ}/bin/nextcloud-occ";
 
 	accessKey = "nextcloud";
 	secretKey = "diesisteinsecretkey";
@@ -9,7 +10,7 @@ let
 in
 {
 
-	imports = [ ../modules/pkgs/nextcloud.nix ];
+	imports = [ ../modules/pkgs/nextCloud.nix ];
 
 	sops.secrets = {
 		"services/nextcloud/main".owner = cfg.config.dbuser;
@@ -22,6 +23,17 @@ in
 			hostName = "localhost";
 
 			package = pkgs.nextcloud31;
+
+			# Set Theming URL
+			extraOCC = ''
+				${occ} theming:config url "${
+					if cfg.https then
+						"https"
+					else "http"}://${
+					if (cfg.hostName != "localhost") then
+						cfg.hostName
+					else host.name}"
+			'';
 
 			configureRedis = true;
 			phpOptions."opcache.interned_strings_buffer" = 16;
