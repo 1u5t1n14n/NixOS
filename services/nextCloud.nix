@@ -22,7 +22,7 @@ in
 			enable = true;
 			hostName = "localhost";
 
-			package = pkgs.nextcloud31;
+			package = pkgs.nextcloud32;
 
 			# Set Theming URL
 			extraOCC = ''
@@ -48,7 +48,6 @@ in
 
 			nginx = {
 				hstsMaxAge = 15552000;
-				recommendedHttpHeaders = true;
 			};
 
 			database.createLocally = true;
