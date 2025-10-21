@@ -6,6 +6,7 @@
 		settings = {
 			auto-optimise-store = true;
 			experimental-features = [ "nix-command" "flakes" ];
+			download-buffer-size = 1024 * 1024 * 1024;
 		};
 
 		gc = {
@@ -19,6 +20,7 @@
 		autoUpgrade = {
 			flake = "github:1u5t1n14n/NixOS\#${host.name}";
 			enable = host.hasDesktop;
+			allowReboot = !host.hasDesktop;
 			upgrade = false;
 		};
 
