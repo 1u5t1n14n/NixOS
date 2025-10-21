@@ -2,11 +2,14 @@
 
 {
 
-	environment.systemPackages = with pkgs; [
-		inkscape geogebra6 obsidian zed-editor
-		jetbrains.clion xorg.xprop keepassxc
-		wezterm anki-bin qemu quickemu
-	];
+	environment = {
+		sessionVariables.ANKI_WAYLAND = 1;
+
+		systemPackages = with pkgs; [
+			inkscape geogebra6 obsidian zed-editor jetbrains.clion keepassxc
+			wezterm anki-bin qemu quickemu xorg.xprop
+		];
+	};
 
 	xdg.terminal-exec = {
 		enable = true;
