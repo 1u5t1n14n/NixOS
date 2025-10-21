@@ -19,9 +19,9 @@
 	system = {
 		autoUpgrade = {
 			flake = "github:1u5t1n14n/NixOS\#${host.name}";
-			enable = host.hasDesktop;
+			enable = true;
 			allowReboot = !host.hasDesktop;
-			upgrade = false;
+			upgrade = host.hasDesktop;
 		};
 
 		stateVersion = "25.11";
