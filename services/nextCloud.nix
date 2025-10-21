@@ -26,7 +26,7 @@ in
 
 			# Set Theming URL
 			extraOCC = ''
-				${occ} theming:config url "${
+				#${occ} theming:config url "${
 					if cfg.https then
 						"https"
 					else "http"}://${
@@ -42,8 +42,10 @@ in
 			appstoreEnable = false;
 			extraAppsEnable = true;
 			autoUpdateApps.enable = cfg.extraAppsEnable;
+
+			# TODO: Add `maps` once it's packaged for NextCloud 32
 			extraApps = with cfg.package.packages.apps; {
-				inherit calendar contacts maps news;
+				inherit calendar contacts news;
 			};
 
 			nginx = {
