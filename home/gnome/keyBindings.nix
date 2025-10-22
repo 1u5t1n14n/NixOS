@@ -5,7 +5,6 @@
 	dconf.settings = {
 		"org/gnome/settings-daemon/plugins/media-keys" = {
 			calculator = [ "Calculator" ];
-
 			control-center = [ "<Alt>comma" ];
 			www = [ "<Alt>2" ];
 			home = [ "<Alt>3" ];
@@ -19,7 +18,7 @@
 		"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
 			name = "Vicinae";
 			binding = "<Alt>space";
-			command = "vicinae";
+			command = "vicinae toggle";
 		};
 		"org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
 			"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
