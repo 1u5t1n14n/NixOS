@@ -7,7 +7,7 @@
 
 		"org/gnome/desktop/background" = {
 			picture-uri = "/run/current-system/sw/share/backgrounds/gnome/map-l.svg";
-			picture-uri-dark = "/run/current-system/sw/share/backgrounds/gnome/map-d.svg";
+			picture-uri-dark = "${../wallPaper.jpg}";
 		};
 		"org/gnome/desktop/interface" = {
 			color-scheme = "prefer-dark";
