@@ -5,7 +5,16 @@
 	programs = {
 		bat = {
 			enable = true;
-			settings = { };
+			settings = { theme = "GitHub"; };
+			extraPackages = with pkgs.bat-extras; [
+				batman
+				batwatch
+				core
+				batgrep
+				batpipe
+				batdiff
+				prettybat
+			];
 		};
 
 		lazygit = {
@@ -16,6 +25,11 @@
 		neovim = {
 			enable = true;
 			package = pkgs.neovim-unwrapped;
+
+			viAlias = true;
+			vimAlias = true;
+
+			defaultEditor = true;
 		};
 
 		nano.enable = true;
@@ -31,12 +45,11 @@
 	services.pcscd.enable = ((config.programs.gnupg.agent.pinentryPackage == pkgs.pinentry-curses) && config.programs.gnupg.agent.enable);
 
 	environment.systemPackages = with pkgs; [
-		# Common CLIs
 		ripgrep fastfetch onefetch tree gcc tree-sitter
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
 		pandoc typst gnupg lynx ffmpeg-full texliveFull
-		bitwarden-cli ocrmypdf
+		bitwarden-cli ocrmypdf cava
 	]
 
 	++ lib.optionals host.hasDesktop [ wl-clipboard ];
