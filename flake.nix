@@ -12,6 +12,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
+		niri.url = "github:sodiboo/niri-flake";
 		vicinae.url = "github:vicinaehq/vicinae";
 
 		nixVim = {
@@ -48,6 +49,7 @@
 								./home/home.nix
 								inputs.nixVim.homeModules.nixvim
 								inputs.vicinae.homeManagerModules.default
+								inputs.niri.homeModules.niri
 							];
 						};
 					}
