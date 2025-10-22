@@ -7,11 +7,8 @@
 		niri.enable = true;
 	};
 
-	environment.systemPackages = [
-		pkgs.swww pkgs.waypaper pkgs.waybar
-
-		# Default for Niri
-		pkgs.alacritty
+	environment.systemPackages = with pkgs; [
+		swww waypapaer waybar niriswitcher
 	];
 
 }

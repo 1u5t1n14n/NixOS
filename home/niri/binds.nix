@@ -14,6 +14,10 @@ in
 			repeat = false;
 		};
 
+		"${main}+Tab" = {
+			action = spawn "niriswitcherctl" "show" "--window";
+			repeat = false;
+		};
 		"${main}+Space".action = spawn "vicinae" "toggle";
 		"${main}+Return".action = spawn "wezterm";
 

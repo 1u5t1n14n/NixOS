@@ -7,10 +7,10 @@
 		./git.nix
 		./gnome
 		./gtk.nix
-		./hypr
 		./niri
 		./nixvim
 		./vicinae.nix
+		./waybar.nix
 		./wezterm.nix
 		./zed.nix
 	];
