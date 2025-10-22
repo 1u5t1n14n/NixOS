@@ -11,12 +11,26 @@ in
 
 		package = null;
 
-		extensions = [ "html" "nix" "typst" ];
+		extensions = [
+			"catppuccin"
+
+			"html"
+			"nix"
+			"typst"
+			"c"
+		];
+
 		userSettings = {
+			disable_ai = true;
+
+			when_closing_with_no_tabs = "close_window";
+			on_last_window_closed = "quit_app";
+
 			active_pane_modifiers = {
-				inactive_opacity = 0.9;
+				inactive_opacity = 1.0;
 				border_size = 0.0;
 			};
+
 			scrollbar.show = "never";
 			hide_mouse = "on_typing";
 			toolbar = {
@@ -31,8 +45,8 @@ in
 
 			theme = {
 				mode = "dark";
-				dark = "Andromeda";
-				light = "Gruvbox Light Soft";
+				dark = "Catppuccin Mocha";
+				light = "Catppuccin Frappé";
 			};
 
 			autosave = "off";
@@ -43,15 +57,15 @@ in
 				diagnostics = false;
 			};
 			vim_mode = true;
-			features.copilot = true;
 
 			restore_on_startup = "none";
-			dock = "right";
 
 			cursor_blink = false;
 			cursor_shape = "block";
 			always_treat_brackets_as_autoclosed = true;
-			hour_format = "hour24";
+			scroll_beyond_last_line = "off";
+			autoscroll_on_clicks = true;
+			show_whitespaces = "trailing";
 		};
 	};
 
