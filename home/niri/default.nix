@@ -46,11 +46,13 @@
 				focus-ring.enable = false;
 				border.enable = false;
 			};
-
 			prefer-no-csd = true;
 
 			spawn-at-startup = [
-				{ argv = [ "swww" ]; }
+				{ argv = [ "swww-daemon" ]; }
+				{ argv = [ "swww" "img" "${../wallPaper.jpg}" ]; }
+				{ argv = [ "niriswitcher" ]; }
+				{ argv = [ "waybar" ]; }
 			];
 
 			screenshot-path = "${config.home.homeDirectory}/Pictures/Screenshot/%Y%m$d.png";
