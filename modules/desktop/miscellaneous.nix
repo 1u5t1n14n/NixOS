@@ -6,7 +6,7 @@
 		sessionVariables.ANKI_WAYLAND = "1";
 
 		systemPackages = with pkgs; [
-			inkscape geogebra6 obsidian zed-editor jetbrains.clion keepassxc
+			geogebra6 obsidian zed-editor jetbrains.clion keepassxc
 			wezterm anki-bin qemu quickemu xorg.xprop
 		];
 	};
