@@ -1,14 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
 
-	programs = {
-		hyprland.enable = false;
-		niri.enable = true;
-	};
+	programs.niri.enable = true;
 
 	environment.systemPackages = with pkgs; [
-		swww waypapaer waybar niriswitcher
+		swww waybar niriswitcher
 	];
 
 }

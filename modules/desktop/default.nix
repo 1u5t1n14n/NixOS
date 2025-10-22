@@ -13,6 +13,7 @@
 		./gnome.nix
 		./keyMap.nix
 		./lapTop.nix
+		./media.nix
 		./miscellaneous.nix
 		./monitors.nix
 		./nautilus.nix
@@ -21,7 +22,6 @@
 		./sound.nix
 		./suspend.nix
 		./texts.nix
-		./video.nix
 		./windowManager.nix
 	];
 
