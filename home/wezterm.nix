@@ -5,6 +5,7 @@
 	programs.wezterm = {
 		enable = host.hasDesktop;
 		enableZshIntegration = osConfig.programs.zsh.enable;
+
 		extraConfig = ''
 			return {
 				default_cursor_style = 'SteadyBlock',

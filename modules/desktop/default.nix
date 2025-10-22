@@ -3,6 +3,7 @@
 {
 
 	imports = [
+		# ./kde.nix
 		./appimage.nix
 		./applications.nix
 		./communications.nix
@@ -10,8 +11,6 @@
 		./fonts.nix
 		./games.nix
 		./gnome.nix
-		./hyprland.nix
-		# ./kde.nix
 		./keyMap.nix
 		./lapTop.nix
 		./miscellaneous.nix
@@ -23,6 +22,7 @@
 		./suspend.nix
 		./texts.nix
 		./video.nix
+		./windowManager.nix
 	];
 
 }

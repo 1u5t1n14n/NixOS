@@ -4,12 +4,13 @@
 
 	imports = [
 		./firefox
-		./gnome
-		./nixvim
-		./hypr
 		./git.nix
-		./vicinae.nix
+		./gnome
 		./gtk.nix
+		./hypr
+		./niri
+		./nixvim
+		./vicinae.nix
 		./wezterm.nix
 		./zed.nix
 	];
