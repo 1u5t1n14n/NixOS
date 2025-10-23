@@ -5,7 +5,7 @@
 	programs = {
 		bat = {
 			enable = true;
-			settings = { theme = "GitHub"; };
+			settings = { };
 			extraPackages = with pkgs.bat-extras; [
 				batman
 				batwatch
