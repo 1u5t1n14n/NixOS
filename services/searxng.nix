@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
 	cfg = config.services.searx;
@@ -19,7 +19,7 @@ in
 			};
 
 			server = {
-				bind_address = "0.0.0.0";
+				bind_address = "127.0.0.1";
 				port = 8888;
 				public_instance = false;
 			};
@@ -46,6 +46,6 @@ in
 		'';
 	};
 
-	networking.firewall.allowedTCPPorts = [ cfg.settings.server.port ];
+	networking.firewall.allowedTCPPorts = lib.mkIf (cfg.enable && (cfg.settings.server.bind_address == "0.0.0.0")) [ cfg.settings.server.port ];
 
 }

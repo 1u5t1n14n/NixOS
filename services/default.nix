@@ -12,4 +12,13 @@
 		./vaultWarden.nix
 	];
 
+	services = {
+		paperless.enable = true;
+		nextcloud.enable = true;
+		vaultwarden.enable = true;
+		anki-sync-server.enable = true;
+		searx.enable = true;
+		kantOMat.enable = false;
+	};
+
 }

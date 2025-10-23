@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
 	cfg = config.services.vaultwarden;
@@ -7,17 +7,13 @@ in
 {
 
 	services.vaultwarden = {
-		enable = true;
-
-		#dbbackend = "sqlite";
-
 		config = {
-			ROCKET_ADDRESS = "0.0.0.0";
+			ROCKET_ADDRESS = "127.0.0.1";
 			ROCKET_PORT = 8222;
-			SIGNUPS_ALLOWED = true;
+			SIGNUPS_ALLOWED = false;
 		};
 	};
 
-	networking.firewall.allowedTCPPorts = [ cfg.config.ROCKET_PORT ];
+	networking.firewall.allowedTCPPorts = lib.mkIf (cfg.enable && (cfg.config.ROCKET_ADDRESS == "0.0.0.0")) [ cfg.config.ROCKET_PORT ];
 
 }

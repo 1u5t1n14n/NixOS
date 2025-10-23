@@ -19,7 +19,6 @@ in
 
 	services = {
 		nextcloud = {
-			enable = true;
 			hostName = "localhost";
 
 			package = pkgs.nextcloud32;
@@ -106,7 +105,7 @@ in
 		};
 
 		minio = {
-			enable = cfg.config.objectstore.s3.enable;
+			enable = (cfg.config.objectstore.s3.enable && cfg.enable);
 			listenAddress = "127.0.0.1:${toString cfg.config.objectstore.s3.port}";
 			consoleAddress = "127.0.0.1:9001";
 			rootCredentialsFile = "/etc/${config.environment.etc.minio.target}";
@@ -117,7 +116,7 @@ in
 	};
 
 	systemd.services = {
-		minioSetup = lib.mkIf (config.services.minio.enable && cfg.enable) {
+		minioSetup = lib.mkIf config.services.minio.enable {
 			path = [ pkgs.minio-client pkgs.getent ];
 			script = ''
 				${lib.getExe pkgs.minio-client} alias set minio http://${cfg.config.objectstore.s3.hostname}:${toString cfg.config.objectstore.s3.port} ${accessKey} ${secretKey} --api s3v4

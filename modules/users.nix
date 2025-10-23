@@ -1,4 +1,4 @@
-{ host, pkgs, lib, config, ... }:
+{ host, pkgs, config, ... }:
 
 let
 	secret = config.sops.secrets;
@@ -6,7 +6,7 @@ let
 in
 {
 
-	nix.settings.allowed-users = [ "@wheel" "root" host.user "kian" ];
+	nix.settings.allowed-users = [ "@wheel" "root" host.user ];
 
 	users = {
 		mutableUsers = false;
@@ -20,16 +20,6 @@ in
 				extraGroups = [ "networkmanager" "wheel" ];
 				description = host.user;
 				shell = pkgs.zsh; #gonna change this later to nushell
-				packages = with pkgs; [ ];
-			};
-
-			kian = lib.mkIf (!host.hasDesktop) {
-				isNormalUser = true;
-				createHome = true;
-				home = "/var/lib/Kian";
-				hashedPasswordFile = secret."user/kian".path;
-				extraGroups = [ "networkmanager" ];
-				useDefaultShell = true;
 				packages = with pkgs; [ ];
 			};
 		};

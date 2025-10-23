@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
 	cfg = config.services.paperless;
@@ -10,8 +10,7 @@ in
 
 	services = {
 		paperless = {
-			enable = true;
-			address = "0.0.0.0";
+			address = "127.0.0.1";
 			port = 28981;
 
 			consumptionDir = "${cfg.dataDir}/${cfg.settings.PAPERLESS_APP_TITLE}";
@@ -41,12 +40,11 @@ in
 			enable = cfg.settings.PAPERLESS_TIKA_ENABLED;
 			port = 3001;
 
-			# Hoping this is working
 			chromium.package = pkgs.ungoogled-chromium;
-			extraFontPackages = [ pkgs.corefonts ];
+			extraFontPackages = config.fonts.packages;
 		};
 	};
 
-	networking.firewall.allowedTCPPorts = [ cfg.port ];
+	networking.firewall.allowedTCPPorts = lib.mkIf (cfg.enable && (cfg.address == "0.0.0.0")) [ cfg.port ];
 
 }

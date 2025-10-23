@@ -1,16 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, host, ... }:
 
 {
 
 	services = {
 		printing = {
-			enable = true;
+			enable = host.hasDesktop;
 			drivers = with pkgs; [ ];
 			cups-pdf.enable = true;
 		};
 
 		avahi = {
-			enable = true;
+			enable = host.hasDesktop;
 			nssmdns4 = true;
 			openFirewall = true;
 		};

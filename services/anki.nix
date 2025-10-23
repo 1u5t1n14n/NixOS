@@ -1,13 +1,15 @@
 { config, host, ... }:
 
+let
+	cfg = config.services.anki-sync-server;
+
+in
 {
 
 	services.anki-sync-server = {
-		enable = true;
-
 		port = 27701;
 		address = "0.0.0.0";
-		openFirewall = true;
+		openFirewall = (cfg.address == "0.0.0.0");
 
 		users = [
 			{

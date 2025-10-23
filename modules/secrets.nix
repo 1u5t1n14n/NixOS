@@ -22,7 +22,6 @@ in
 		validateSopsFiles = true;
 
 		secrets = {
-			"user/kian".neededForUsers = true;
 			"user/root".neededForUsers = true;
 			"user/main".neededForUsers = true;
 		};

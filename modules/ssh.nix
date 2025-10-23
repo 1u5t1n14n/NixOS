@@ -14,13 +14,6 @@ in
 	];
 
 	services = {
-		fail2ban.enable = cfg.enable;
-		endlessh = {
-			enable = cfg.enable;
-			port = 22;
-			openFirewall = true;
-		};
-
 		openssh = {
 			enable = true;
 
@@ -32,12 +25,28 @@ in
 				PasswordAuthentication = false;
 				KbdInteractiveAuthentication = false;
 				PermitRootLogin = "no";
-				AllowUsers = [ host.user ]
-
-				++ lib.optionals (!host.hasDesktop) [ config.users.users.kian.description ];
+				AllowUsers = [ host.user ];
 			};
 
 			allowSFTP = config.services.openssh.settings.PasswordAuthentication;
+		};
+
+		fail2ban = {
+			enable = cfg.enable;
+			maxretry = 5;
+			bantime = "2h";
+
+			bantime-increment = {
+				enable = true;
+				multipliers = "1 2 4 8 16 32 64 128 256";
+				maxtime = "168h";
+				overalljails = true;
+			};
+		};
+		endlessh = {
+			enable = cfg.enable;
+			port = 22;
+			openFirewall = true;
 		};
 	};
 

@@ -5,6 +5,7 @@
 	imports = [
 		./bootLoader.nix
 		./commandLine.nix
+		./extra.nix
 		./locale.nix
 		./media.nix
 		./networking.nix
