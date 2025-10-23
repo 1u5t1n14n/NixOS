@@ -9,7 +9,7 @@ in
 	config = lib.mkIf cfg.enable {
 		nixpkgs.overlays = [
 			(self: super: rec {
-				kant-o-mat = super.callPackage ../modules/packages/kantOMat.nix {};
+				kant-o-mat = super.callPackage ../modules/pkgs/kantOMat.nix {};
 			})
 		];
 
