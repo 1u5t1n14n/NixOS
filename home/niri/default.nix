@@ -52,7 +52,7 @@
 				{ argv = [ "swww-daemon" ]; }
 				{ argv = [ "swww" "img" "${../wallPaper.jpg}" ]; }
 				{ argv = [ "niriswitcher" ]; }
-				{ argv = [ "waybar" ]; }
+				#{ argv = [ "waybar" ]; }
 			];
 
 			screenshot-path = "${config.home.homeDirectory}/Pictures/Screenshot/%Y%m$d.png";

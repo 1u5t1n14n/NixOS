@@ -2,10 +2,14 @@
 
 {
 
-	programs.niri.enable = true;
+	programs = {
+		niri.enable = true;
+
+		waybar.enable = true;
+	};
 
 	environment.systemPackages = with pkgs; [
-		swww waybar niriswitcher
+		swww niriswitcher
 	];
 
 }
