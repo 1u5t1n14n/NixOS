@@ -1,9 +1,9 @@
-{ ... }:
+{ osConfig, ... }:
 
 {
 
 	programs.waybar = {
-		enable = true;
+		enable = osConfig.programs.waybar.enable;
 		style = ''
 			* {
 				font-family: Inter;
