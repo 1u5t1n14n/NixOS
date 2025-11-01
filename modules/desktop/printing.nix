@@ -4,13 +4,13 @@
 
 	services = {
 		printing = {
-			enable = host.hasDesktop;
+			enable = true;
 			drivers = with pkgs; [ ];
 			cups-pdf.enable = true;
 		};
 
 		avahi = {
-			enable = host.hasDesktop;
+			enable = true;
 			nssmdns4 = true;
 			openFirewall = true;
 		};

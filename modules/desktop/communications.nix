@@ -2,20 +2,24 @@
 
 {
 
-	programs.chromium = {
-		enable = true;
-	};
-
-	programs.thunderbird = {
-		enable = true;
-
-		policies = {
-			CaptivePortal = false;
-			DisableTelemetry = true;
-
-			OfferToSaveLogins = false;
-			PasswordManagerEnabled = false;
+	programs = {
+		chromium = {
+			enable = true;
 		};
+
+		thunderbird = {
+			enable = true;
+
+			policies = {
+				CaptivePortal = false;
+				DisableTelemetry = true;
+
+				OfferToSaveLogins = false;
+				PasswordManagerEnabled = false;
+			};
+		};
+
+		adb.enable = true;
 	};
 
 	environment.systemPackages = with pkgs; [

@@ -1,4 +1,4 @@
-{ host, pkgs, config, ... }:
+{ host, pkgs, config, lib, ... }:
 
 let
 	secret = config.sops.secrets;
@@ -17,9 +17,12 @@ in
 				isNormalUser = true;
 				createHome = true;
 				hashedPasswordFile = secret."user/main".path;
-				extraGroups = [ "networkmanager" "wheel" ];
+
+				extraGroups = [ "networkmanager" "wheel" ]
+				++ lib.optionals config.programs.adb [ "adbusers" "kvm" ];
+
 				description = host.user;
-				shell = pkgs.zsh; #gonna change this later to nushell
+				shell = pkgs.zsh;
 				packages = with pkgs; [ ];
 			};
 		};
