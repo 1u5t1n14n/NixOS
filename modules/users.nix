@@ -19,7 +19,7 @@ in
 				hashedPasswordFile = secret."user/main".path;
 
 				extraGroups = [ "networkmanager" "wheel" ]
-				++ lib.optionals config.programs.adb [ "adbusers" "kvm" ];
+				++ lib.optionals (config.programs.adb.enable) [ "adbusers" "kvm" ];
 
 				description = host.user;
 				shell = pkgs.zsh;
