@@ -25,8 +25,12 @@ in
 		};
 
 		gnome = {
-			core-apps.enable = false;
 			gnome-keyring.enable = cfg.enable;
+
+			# Implemented as 'Only Core Apps' Option.
+			# Disables most Libadwaita Applications
+			# not part of GNOME Core Apps if enabled.
+			core-apps.enable = false;
 
 			# Calendar Server
 			evolution-data-server.enable = true;
@@ -55,18 +59,18 @@ in
 	};
 
 	environment = {
-		# Install some extra Applications
-		systemPackages = with pkgs; [
+		systemPackages = with pkgs; [ ghostty ]
+
+		++ lib.optionals (!config.services.gnome.core-apps.enable) [
 			citations
 			morewaita-icon-theme
 			papers
 			pdfarranger
+			showtime
+			wordbook
+			diebahn
+			learn6502
 
-			# Looks cool
-			ghostty
-		]
-
-		++ lib.optionals (!config.services.gnome.core-apps.enable) [
 			baobab
 			decibels
 			epiphany
@@ -77,8 +81,6 @@ in
 			gnome-maps
 			gnome-text-editor
 			loupe
-			showtime
-			wordbook
 		]
 
 		++ lib.optionals config.services.gnome.evolution-data-server.enable [ gnome-calendar ]
@@ -99,7 +101,7 @@ in
 			gnomeExtensions.valent
 		];
 
-		gnome.excludePackages = [ pkgs.gnome-tour ];
+		gnome.excludePackages = lib.mkIf (!config.services.gnome.core-apps.enable) [ pkgs.gnome-tour ];
 
 		sessionVariables = {
 			# Hint Electron Apps to use Wayland
