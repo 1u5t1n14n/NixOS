@@ -63,13 +63,14 @@ in
 
 		++ lib.optionals (!config.services.gnome.core-apps.enable) [
 			citations
+			diebahn
+			gnome-podcasts
+			learn6502
 			morewaita-icon-theme
 			papers
 			pdfarranger
 			showtime
 			wordbook
-			diebahn
-			learn6502
 
 			baobab
 			decibels
