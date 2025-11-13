@@ -49,7 +49,7 @@
 		fastfetch fzf figlet zip unzip wget yt-dlp btop
 		gh cmatrix browsh imagemagick superfile gnumake
 		pandoc typst gnupg lynx ffmpeg-full texliveFull
-		bitwarden-cli ocrmypdf cava
+		bitwarden-cli ocrmypdf cava zbar
 	]
 
 	++ lib.optionals host.hasDesktop [ wl-clipboard ];
