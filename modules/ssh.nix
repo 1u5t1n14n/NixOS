@@ -28,7 +28,7 @@ in
 				AllowUsers = [ host.user ];
 			};
 
-			allowSFTP = config.services.openssh.settings.PasswordAuthentication;
+			allowSFTP = cfg.settings.PasswordAuthentication;
 		};
 
 		fail2ban = {
