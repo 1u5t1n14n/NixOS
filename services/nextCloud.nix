@@ -25,17 +25,21 @@ in
 
 			# Set Theming URL
 			extraOCC = ''
-				#${occ} theming:config url "${
+				${occ} theming:config url "${
 					if cfg.https then
 						"https"
 					else "http"}://${
 					if (cfg.hostName != "localhost") then
 						cfg.hostName
 					else host.name}"
+
+				${occ} app:disable photos
+				${occ} app:disable dashboard
 			'';
 
 			configureRedis = true;
 			phpOptions."opcache.interned_strings_buffer" = 16;
+			nginx.hstsMaxAge = 15552000;
 
 			# App Installation
 			appstoreEnable = false;
@@ -43,12 +47,8 @@ in
 			autoUpdateApps.enable = cfg.extraAppsEnable;
 
 			# TODO: Add `maps` once it's packaged for NextCloud 32
-			extraApps = with cfg.package.packages.apps; {
-				inherit calendar contacts news;
-			};
-
-			nginx = {
-				hstsMaxAge = 15552000;
+			extraApps = {
+				inherit (cfg.package.packages.apps) calendar contacts news memories;
 			};
 
 			database.createLocally = true;
