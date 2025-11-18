@@ -96,7 +96,7 @@ in
 				verify_bucket_exists = true;
 				key = accessKey;
 				secretFile = "/etc/${config.environment.etc.nextcloud.target}";
-				hostname = cfg.hostName;
+				hostname = "localhost";
 				useSsl = false;
 				port = 9000;
 				usePathStyle = true;
