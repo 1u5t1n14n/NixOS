@@ -1,11 +1,15 @@
-{ ... }:
+{ lib, ... }:
 
 {
 
 	programs.firefox.profiles.default.search = {
 		default = "ddg";
 		engines = {
-			wikipedia.definedAliases = [ "@w" ];
+			ddg = {
+				name = "Quacksy Duck";
+				urls = lib.mkForce [{ template = "https://noai.duckduckgo.com/?q={searchTerms}"; }];
+				iconMapObj."16" = lib.mkForce "https://duckduckgo.com/favicon.ico";
+			};
 			nueschtOS = {
 				name = "NüschtOS Sucheingabe";
 				urls = [{ template = "https://search.xn--nschtos-n2a.de/?query={searchTerms}"; }];
