@@ -7,7 +7,7 @@
 
 		systemPackages = with pkgs; [
 			geogebra6 obsidian zed-editor jetbrains.clion keepassxc
-			wezterm anki-bin qemu quickemu xorg.xprop
+			wezterm anki-bin qemu quickemu xorg.xprop greenfoot
 		];
 	};
 
