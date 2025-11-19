@@ -31,7 +31,7 @@ in
 					else "http"}://${
 					if (cfg.hostName != "localhost") then
 						cfg.hostName
-					else host.name}"
+					else lib.toLower host.name}"
 
 				${occ} app:disable photos
 				${occ} app:disable dashboard
