@@ -62,6 +62,7 @@ in
 		systemPackages = with pkgs; [ ghostty ]
 
 		++ lib.optionals (!config.services.gnome.core-apps.enable) [
+			eartag
 			citations
 			diebahn
 			gnome-podcasts
