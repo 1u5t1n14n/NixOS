@@ -7,7 +7,7 @@ in
 {
 
 	users.users.${host.user}.openssh.authorizedKeys.keys = [
-		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEwFDVhbXfV9zM8iQurlgoCo0lpIMBuJ1R7TS+tcYT1 user@Termius"
+		"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqWPzSSIRXnOpaNalDm+k1AWLiaZE3DwlhgFoswI2aK4u862UCZO9AplQ15xtCvBfJplkP35Y468qVnmopOHvK1vUmPVC//3QWhRgWdhhg4Pp73bHxv2QmbUnmW7JM/QE/XV1/g+j92ZpcxLwh+qdR+QA/5O1ervQ2S31SUvJtSWDVy/oKJmGEFTMPNWvEI9idpHPiVMQ0RHK6BmDl8gbZaLepMf+QiJMJ32+G4D88lyXe/ESFzwCwjGeLpNS0Tnvgpj6ITwYxKXfk+CwBxE8VJHRcSwVaeAQ8aejEWUaVIZuRpO1Obk3RG46Q+iBsrf0WYHxdR47pekGlqGoF7jGV user@Termius"
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFP9kyiHSaLuGocie+qs2a5jXRRzsOpruo2P+Bq5j4fS user@Hyperion"
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINduKkKYcK2ef0B7n63abU009TjGYdVC+Oqmtbsdflks user@Prometheus"
 		"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHcp2AjNY9/YQOnOsC40WZE79/9z+whkatioUMfImg+ user@Morpheus"
