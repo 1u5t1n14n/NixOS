@@ -10,7 +10,7 @@
 			return {
 				warn_about_missing_glyphs = false,
 				default_cursor_style = 'SteadyBlock',
-				hide_tab_bar_if_only_one_tab = true,
+				enable_tab_bar = false,
 				window_background_opacity = 0.9,
 				window_padding = {
 					left = 0,
