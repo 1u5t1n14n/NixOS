@@ -3,6 +3,11 @@
 {
 
 	programs = {
+		localsend = {
+			enable = true;
+			openFirewall = true;
+		};
+
 		chromium = {
 			enable = true;
 		};
