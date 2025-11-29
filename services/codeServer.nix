@@ -1,5 +1,9 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
+let
+	cfg = config.services.code-server;
+
+in
 {
 
 	services.code-server = {
@@ -24,5 +28,7 @@
 		shell = pkgs.zsh;
 		packages = with pkgs; [ ];
 	};
+
+	networking.firewall.allowedTCPPorts = [ cfg.port ];
 
 }

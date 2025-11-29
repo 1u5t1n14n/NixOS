@@ -3,6 +3,7 @@
 {
 
 	imports = [
+		./codeServer.nix
 		./searxng.nix
 		./kantomat.nix
 		./anki.nix
