@@ -10,6 +10,12 @@
 				urls = lib.mkForce [{ template = "https://noai.duckduckgo.com/?q={searchTerms}"; }];
 				iconMapObj."16" = lib.mkForce "https://duckduckgo.com/favicon.ico";
 			};
+			wiki = {
+				name = "Wikipedia Enzyklopädie";
+				urls = [{ template = "https://de.wikipedia.org/wiki/Spezial:Suche?search={searchTerms}&go=Artikel-Suche"; }];
+				iconMapObj."16" = "https://de.wikipedia.org/favicon.ico";
+				definedAliases = [ "@w" ];
+			};
 			nueschtOS = {
 				name = "NüschtOS Sucheingabe";
 				urls = [{ template = "https://search.xn--nschtos-n2a.de/?query={searchTerms}"; }];
