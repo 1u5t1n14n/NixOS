@@ -18,13 +18,15 @@
       fsType = "ext4";
     };
 
+	boot.initrd.systemd.enable = true;
   boot.initrd.luks.devices.root = {
 		device = "/dev/nvme0n1p2";
 		allowDiscards = true;
 
+		keyFileTimeout = 5;
 		keyFileSize = 4096;
 		keyFile = "/dev/sda";
-		fallbackToPassword = true;
+		#fallbackToPassword = true;
 	};
 
   fileSystems."/boot" =
