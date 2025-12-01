@@ -78,6 +78,7 @@ in
 			epiphany
 			gnome-calculator
 			gnome-characters
+			gnome-clocks
 			gnome-contacts
 			gnome-font-viewer
 			gnome-maps
