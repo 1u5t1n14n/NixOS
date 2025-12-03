@@ -7,20 +7,22 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
+		sops.url = "github:Mic92/sops-nix";
 		homeManager = {
 			url = "github:nix-community/home-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		nixVim = {
+			url = "github:nix-community/nixvim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		lanzaboote = {
+			url = "github:nix-community/lanzaboote/v0.4.3";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		niri.url = "github:sodiboo/niri-flake";
 		vicinae.url = "github:vicinaehq/vicinae";
-
-		nixVim = {
-			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		sops.url = "github:Mic92/sops-nix";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs:
